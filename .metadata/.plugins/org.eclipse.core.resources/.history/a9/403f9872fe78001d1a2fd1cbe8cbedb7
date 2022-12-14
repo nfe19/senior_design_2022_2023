@@ -1,0 +1,123 @@
+/*
+ *   HW ASSIGNMENT: GPGM0
+ *   EEL-4746 Fall 2021
+ *   Najeeb Eeso
+ *   Date written: 9/19/21
+ *   First EEL-4746 C Program
+ */
+
+// Standard Includes
+
+#include "driverlib.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <eusci_b_i2c.h>
+// files for BCUART functions
+#include <stdbool.h>
+#include "HAL_UART_4746.h"
+#include <HAL_FR5994_OPT3001.h>
+
+void GPIO_init(void);
+
+//  Main Function
+void main(void){
+
+    // define local variable buffer
+    char buffer[100];
+
+    // Halt the WatchDog Timer
+    WDT_A_hold(WDT_A_BASE);
+
+    //initialize all GPIO
+    GPIO_init();
+
+    //initialize LED0 and set it to LOW
+    GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0); // initialize
+    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0); // set as low
+
+
+//    GPIO_setAsPeripheralModuleFunctionInputPin( GPIO_PORT_P7, ( GPIO_PIN0 | GPIO_PIN1 ), GPIO_PRIMARY_MODULE_FUNCTION );
+//    GPIO_setAsPeripheralModuleFunctionInputPin( GPIO_PORT_P7, ( GPIO_PIN0 | GPIO_PIN1 ), GPIO_SECONDARY_MODULE_FUNCTION );
+    GPIO_setAsPeripheralModuleFunctionOutputPin( GPIO_PORT_P7, GPIO_PIN0, GPIO_PRIMARY_MODULE_FUNCTION);
+    GPIO_setAsPeripheralModuleFunctionOutputPin( GPIO_PORT_P7, GPIO_PIN1, GPIO_PRIMARY_MODULE_FUNCTION);
+
+
+    // Activate new port configurations
+    PMM_unlockLPM5();
+
+    //Configure the I2C bus
+    EUSCI_B_I2C_initMasterParam i2c_master_init_param = {0};
+    i2c_master_init_param.selectClockSource      = EUSCI_B_I2C_CLOCKSOURCE_SMCLK;       //use SMCLK clock signal
+    i2c_master_init_param.i2cClk                 = CS_getSMCLK();                       //Give SMCLK freq in Hz
+    i2c_master_init_param.dataRate               = EUSCI_B_I2C_SET_DATA_RATE_100KBPS;   //100KBps datarate
+    i2c_master_init_param.byteCounterThreshold   = 0;                                   //Don't care because 'no auto stop'
+    i2c_master_init_param.autoSTOPGeneration     = 1;            //We will handle the stop bit manually
+
+    EUSCI_B_I2C_initMasterParam personal =
+    {
+            EUSCI_B_I2C_CLOCKSOURCE_SMCLK,          // SMCLK Clock Source
+            10000000,                               // SMCLK = 1.00MHzMHz
+            EUSCI_B_I2C_SET_DATA_RATE_400KBPS,      // Desired I2C Clock of 100khz
+    };
+
+    EUSCI_B_I2C_disable(EUSCI_B2_BASE);
+    EUSCI_B_I2C_initMaster( EUSCI_B2_BASE, &i2cConfig );    //initialize with parameters
+//    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, 0x01);                   //set the salve address
+//    EUSCI_B_I2C_setMode(EUSCI_B2_BASE,EUSCI_B_I2C_TRANSMIT_MODE);       //set to transmit (master) mode
+    EUSCI_B_I2C_enable(EUSCI_B2_BASE);  //enable i2c
+    OPT3001_init(0x44);
+    uint8_t data = 0xAA;
+    uint16_t mId;
+    while(1){
+        //mId = OPT3001_readManufacturerId(0x44);  //send the data, expect <start> <address> <ACK> <register address> <ACK> <data> <ACK> <end>
+        __delay_cycles(1000000);    //Toggle PIN to indicate data was sent
+        GPIO_toggleOutputOnPin(GPIO_PORT_P1, GPIO_PIN0);                    //delay
+    }
+
+}
+static void init_hardware( void )
+{
+
+    //Disable internal watchdog timer
+    WDTCTL = WDTPW | WDTHOLD;
+
+    //This block initializes the i2c peripheral
+    //Configure pins P7.0 (SDA) and P7.1 (SCL) for I2C (secondary module functionality)
+    GPIO_setAsPeripheralModuleFunctionInputPin( GPIO_PORT_P7, ( GPIO_PIN0 | GPIO_PIN1 ), GPIO_PRIMARY_MODULE_FUNCTION );
+
+
+    PMM_unlockLPM5(); //Clear the LOCKLPM5 bit so the GPIO and i2c configuration takes effect
+
+    //Configure the I2C bus
+    EUSCI_B_I2C_initMasterParam i2c_master_init_param = {0};
+    i2c_master_init_param.selectClockSource      = EUSCI_B_I2C_CLOCKSOURCE_SMCLK;       //use SMCLK clock signal
+    i2c_master_init_param.i2cClk                 = CS_getSMCLK();                       //Give SMCLK freq in Hz
+    i2c_master_init_param.dataRate               = EUSCI_B_I2C_SET_DATA_RATE_100KBPS;   //100KBps datarate
+    i2c_master_init_param.byteCounterThreshold   = 0;                                   //Don't care because 'no auto stop'
+    i2c_master_init_param.autoSTOPGeneration     = EUSCI_B_I2C_NO_AUTO_STOP;            //We will handle the stop bit manually
+    EUSCI_B_I2C_initMaster( EUSCI_B2_BASE, &i2c_master_init_param );
+
+    EUSCI_B_I2C_enable(EUSCI_B2_BASE);  //Enable the I2C bus (i.e. pull it out of reset state)
+
+}
+
+/* Initializes GPIO */
+void GPIO_init(){
+    /* Terminate all GPIO pins to Output LOW to minimize power consumption */
+    GPIO_setAsOutputPin(GPIO_PORT_PA, GPIO_PIN_ALL16);
+    GPIO_setAsOutputPin(GPIO_PORT_PB, GPIO_PIN_ALL16);
+    GPIO_setAsOutputPin(GPIO_PORT_PC, GPIO_PIN_ALL16);
+    GPIO_setAsOutputPin(GPIO_PORT_PD, GPIO_PIN_ALL16);
+    GPIO_setAsOutputPin(GPIO_PORT_PE, GPIO_PIN_ALL16);
+    GPIO_setAsOutputPin(GPIO_PORT_PF, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PA, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PB, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PC, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PD, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PE, GPIO_PIN_ALL16);
+    GPIO_setOutputLowOnPin(GPIO_PORT_PF, GPIO_PIN_ALL16);
+
+    // Disable the GPIO power-on default high-impedance mode
+    // to activate previously configured port settings
+    PMM_unlockLPM5();
+}

@@ -1,0 +1,11 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+activeLaunchTarget=null\:---
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:CPGMF21_0,org.eclipse.launchbar.core.descriptorType.default\:I2CExample,org.eclipse.launchbar.core.descriptorType.default\:cpgm0,org.eclipse.launchbar.core.descriptorType.default\:cpgm2,org.eclipse.launchbar.core.descriptorType.default\:cpgm2A,org.eclipse.launchbar.core.descriptorType.default\:cpgm3,org.eclipse.launchbar.core.descriptorType.default\:emptyProject,org.eclipse.launchbar.core.descriptorType.default\:myFirstCCSProject
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:CPGMF21_0/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:CPGMF21_0/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:I2CExample/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:I2CExample/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:cpgm5/activeLaunchMode=debug

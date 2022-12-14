@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;I2CExample/cpgm3.c&apos; to &apos;I2C.c&apos;" description="Rename resource &apos;cpgm3.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="cpgm3.c" name="I2C.c" stamp="1668993112371" updateReferences="true"/>
+</session>

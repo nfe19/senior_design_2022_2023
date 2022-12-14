@@ -1,0 +1,198 @@
+/*
+ * Programming Assignment 2C
+ * Najeeb Eeso
+ * Spring 2021
+ * Date Written: 10/12/21
+ * This program creates an arbitrary data set and takes the first 8
+ * signed bits and considers them the x coordinate, and takes the last 8
+ * and considers them the y coordinate. Logic is also used to differentiate
+ * between the 4 quadrants and whetehr the x-y lies on the axis
+ *
+ */
+
+// Standard Includes
+#include "driverlib.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "HAL_UART_4746.h"
+#include <stdio.h>
+
+// Defines
+#define SEED 'E'        //seed value used
+#define MASKY 0x00FF    //masks only the right most byte
+#define MASKX 0xFF00    //masks only the left most byte
+#define MASKNEGX 0x8000 //masks the first bit of the left most byte
+#define MASKNEGY 0x0080 //masks the first bit of the right most byte
+#define NEG 0x80
+#define EOS 0x0000      //end of data marker
+#define LED2PORT GPIO_PORT_P1   //port information for green LED
+#define LED2PIN GPIO_PIN1       //pin information for red LED
+
+// function prototypes
+void initialize(void);
+uint8_t myData(int16_t, int16_t*);
+void printResult(uint8_t*);
+
+void main(void){
+
+    // Define Variables
+    int16_t s16bData;   //signed 16 bit data are being received and stored in s16bData
+    uint8_t quad1=0, quad2=0, quad3=0, quad4=0, xy=0;   //counter for xy axis, or the 4 quadrants are stored here
+    uint8_t aOut[4];    //array used to store all of the counters
+    int8_t x,y;
+
+    uint16_t sum1x=0, sum2x=0, sum3x=0, sum4x=0;
+    uint16_t sum1y=0, sum2y=0, sum3y=0, sum4y=0;
+
+    float averagex, averagey, averageQuadx[3], averageQuady[3];
+
+    // initialize project
+    initialize();
+
+    // Initialize myData function
+    myData(SEED,&s16bData);
+
+    // Obtain first data element
+    myData(4, &s16bData);   //obtains a 16 bit, signed value
+
+    //while the end of data set is not reached, loop
+    while(s16bData != EOS){
+
+        x = (s16bData & MASKX) >> 8;
+        y = s16bData & MASKY;
+
+        //start of main conditional statement
+        if(((x) != 0x00) && ((y) != 0x00)){       //if the first 8 bits and last 8 bits do not lie on either axis, move on
+
+            //if the first byte is negative and the second byte is negative, increment quad3
+            if((x) < 0 && (y) < 0){
+                quad3++;
+                sum3x = sum3x + x;
+                sum3y = sum3y + y;
+            }
+
+            //if the first byte is positive and the second byte is negative, increment quad1
+            else if((x) > 0 && (y) < 0){
+                quad1++;
+                sum1x = sum1x + x;
+                sum1y = sum1y + y;
+            }
+
+            //if the first byte is positive and the second byte is positive, increment quad4
+            else if((x) > 0 && (y) > 0){
+                quad4++;
+                sum4x = sum4x + x;
+                sum4y = sum4y + y;
+            }
+
+            //if the first byte is negative and the second byte is positive, increment quad2
+            else if((x) < 0 && (y) > 0){
+                quad2++;
+                sum2x = sum2x + x;
+                sum2y = sum2y + y;
+            }
+        } //end of main conditional statement
+
+        //main conditional statement fails, increment xy
+        else{   //if either byte has a zero component, increment the xy counter
+            xy++;
+        }
+
+        //obtain the next signed 16 bit data
+        myData(4,&s16bData);
+    } //end of the while loop
+
+    //place xy, quad1-quad4 in an array
+    aOut[0] = quad1;
+    aOut[1] = quad2;
+    aOut[2] = quad3;
+    aOut[3] = quad4;
+
+    averageQuadx[0] = (float)sum1x/aOut[0];
+    averageQuadx[1] = (float)sum2x/aOut[1];
+    averageQuadx[2] = (float)sum3x/aOut[2];
+    averageQuadx[3] = (float)sum4x/aOut[3];
+
+    //averageQuady[0] = (float)sum1y/aOut[0];
+    //averageQuady[1] = (float)sum2y/aOut[1];
+    //averageQuady[2] = (float)sum3y/aOut[2];
+    //averageQuady[3] = (float)sum4y/aOut[3];
+
+    //averagex = (float)(sum1x+sum2x+sum3x+sum4x)/(aOut[0]+aOut[1]+aOut[2]+aOut[3]);
+    //averagey = (float)(sum1y+sum2y+sum3y+sum4y)/(aOut[0]+aOut[1]+aOut[2]+aOut[3]);
+
+    // Print Results
+    printResult(aOut);
+
+    // Turn on LED to confirm the program ran
+    GPIO_setOutputHighOnPin(LED2PORT, LED2PIN);
+
+    // Spin forever
+    while(1);
+
+
+}
+
+/*
+ *
+ * Function Name: initialize
+ * This function initializes all IO and BCUART channel, holds the watchdog timer, and unlocks IO
+ * Inputs: none
+ * Returns: none
+ * Author: Najeeb Eeso
+ *
+ */
+
+void initialize(void){
+
+        // Halt the WatchDog Timer
+        WDT_A_hold(WDT_A_BASE);
+
+        // initialize UART
+        UART_initGPIO();
+        UART_init();
+
+        // unlock io
+        PMM_unlockLPM5();
+
+        // Configure LED2 and unlock I/O
+        GPIO_setAsOutputPin(LED2PORT, LED2PIN);
+        GPIO_setOutputLowOnPin(LED2PORT, LED2PIN);
+        PMM_unlockLPM5();   // Unlcok I/O
+}
+
+/*
+ *
+ * Function Name: printResult
+ * This function prints the result
+ * Inputs: aOut[]
+ * Returns: none
+ * Author: Najeeb Eeso
+ *
+ */
+
+
+void printResult(uint8_t aOut[]){
+
+    //named variable
+    uint8_t i;  //setup a counter variable to display aOut
+    char buffer[100];   //character array sent to the BCUART
+
+    //display main text
+    sprintf(buffer, "Najeeb Eeso\r\n");
+    UART_transmitString(buffer);
+    sprintf(buffer, "My seed number is 'E'\r\n");
+    UART_transmitString(buffer);
+    sprintf(buffer, "Fall 2021\r\n");
+    UART_transmitString(buffer);
+    sprintf(buffer, "Problem 2C\r\n");
+    UART_transmitString(buffer);
+    sprintf(buffer, "The results are:\r\n");
+    UART_transmitString(buffer);
+
+    //display result of the data
+    for(i=0;i<=3;i++){
+        sprintf(buffer, "aOut[%u] is %u\r\n", i, aOut[i]);
+        UART_transmitString(buffer);
+    }
+}

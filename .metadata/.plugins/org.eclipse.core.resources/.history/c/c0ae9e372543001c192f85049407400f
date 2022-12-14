@@ -1,0 +1,38 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430fr5994.cmd 
+
+OBJ_SRCS += \
+../myDataLibfa20.obj 
+
+C_SRCS += \
+../HAL_UART_4746.c \
+../cpgm3.c 
+
+C_DEPS += \
+./HAL_UART_4746.d \
+./cpgm3.d 
+
+OBJS += \
+./HAL_UART_4746.obj \
+./cpgm3.obj 
+
+OBJS__QUOTED += \
+"HAL_UART_4746.obj" \
+"cpgm3.obj" 
+
+C_DEPS__QUOTED += \
+"HAL_UART_4746.d" \
+"cpgm3.d" 
+
+C_SRCS__QUOTED += \
+"../HAL_UART_4746.c" \
+"../cpgm3.c" 
+
+
