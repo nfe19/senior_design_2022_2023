@@ -1,2 +1,5 @@
 1670773351261	Delete resource 'msp430fr599x_eusci_i2c_standard_master.c'
 1670983644353	Rename resource 'I2CExample'
+1670984424444	Rename resource 'SourceCodes'
+1670984473450	Delete resource 'OPT3001_Example/I2CPro.c'
+1670984514128	Delete resource 'I2C_Top/I2C_OPT3001.c'
