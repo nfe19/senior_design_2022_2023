@@ -16,49 +16,65 @@
 #include <stdbool.h>
 #include "HAL_UART_4746.h"
 #include <HAL_FR5994_OPT3001.h>
+#include <math.h>
 
 void GPIO_init(void);
 void initI2C(void);
 void initializeADC(void);
 void I2C_write_16(uint8_t, uint8_t, uint16_t);
 void I2C_write_8(uint8_t, uint8_t, uint8_t);
+void genCos(uint16_t, uint16_t, uint16_t, double*);
+uint8_t double2ADC(double);
 int16_t I2C_read_16(uint8_t, uint8_t);
 int8_t I2C_read_8(uint8_t, uint8_t);
 uint8_t testADC(void);
 
+
+volatile uint16_t savedSpeakerValues[1000];
+volatile uint16_t ADCCounter = 0;
 const uint8_t SLAVE_ADDRESS = 0x44;   //define the slave address
 
 //  Main Function
 void main(void){
 
-    // Define variables
+    //define ADC variables *FOR COS() SIMULATION ONLY*
+    const uint16_t f = 1000;
+    double answer;
+    const uint16_t fs = 10000;
+    uint16_t counter = 0;
+
+    // Define variables for light sensor
     volatile uint16_t mId = 0;
     volatile uint32_t lightData = 0;
 
     // Halt the WatchDog Timer
     WDT_A_hold(WDT_A_BASE);
 
-    // Activate new port configurations and put all GPIO low (LOW POWER)
+    // Activate new port configurations and put all GPIO low (LOW POWER), pin 1.3 as ADC input
     GPIO_init();
 
     // Initialize I2C port
     initI2C();
 
-    // initialize ADC with 10KHz sampling rate at 8 bits per sample
-    //initializeADC();
+    // initialize ADC with 10KHz sampling rate at 8 bits per sample, start continious conversions
+    initializeADC();
 
     /* Set Default configuration for OPT3001*/
-    I2C_write_16(SLAVE_ADDRESS, CONFIG_REG, DEFAULT_CONFIG_100);    //set breakpoint here to test I2C_write_16
+    //I2C_write_16(SLAVE_ADDRESS, CONFIG_REG, DEFAULT_CONFIG_100);    //set breakpoint here to test I2C_write_16
 
     /*For testing I2C_write_8 only*/
-    I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
+    //I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
 
 
+    //Standard data packs: 700 samples collected, 700 samples will be given through I2C. 700 samples is 70ms worth of data
+    while(counter < 700){
+        genCos(f, fs, counter, &answer);
+        savedSpeakerValues[counter] = double2ADC(answer);
+        counter = counter+1;
+    }
 
     //enable global interrupts
     //__enable_interrupt();   //comment if wanting to test I2C reads, uncomment if wanting to test ADC
-
-
 
     //obtain manufacturing information, obtain light info, blink LED
     while(1){
@@ -82,10 +98,33 @@ __interrupt void ADC12_ISR(void)
 //    volatile uint8_t value = testADC(); //used to functionally test ADC. set breakpoint here to validate output of ADC if testing
 //    GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);    //used to test the frequency of the ADC by toggling a GPIO pin
 
+    if (ADCCounter < 999)
+        savedSpeakerValues[ADCCounter] = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
+        ADCCounter = ADCCounter+1;
+    volatile uint16_t answer = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
     //clear the ADC interrupt
     ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
 }
 
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: Used to test the functionality of the ADC. Reads memory address 0 and returns it.
+*/
+
+void genCos(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
+    double y = 1.65*(cos(2*M_PI*f*sample/fs)+1);
+    *result = y;
+}
+
+
+uint8_t double2ADC(double value){
+    volatile double vDiff = 3.3/255;
+    volatile uint8_t result = floor(value/vDiff+.5);
+    return result;
+}
 
 
 /*
@@ -170,7 +209,7 @@ void initializeADC(void){
         // Microphone input
         ADC12_B_configureMemoryParam input = {0};
         input.memoryBufferControlIndex = ADC12_B_MEMORY_0;
-        input.inputSourceSelect = ADC12_B_INPUT_A12;
+        input.inputSourceSelect = ADC12_B_INPUT_A3;
         input.refVoltageSourceSelect = ADC12_B_VREFPOS_AVCC_VREFNEG_VSS;
         input.endOfSequence = ADC12_B_NOTENDOFSEQUENCE;
         input.windowComparatorSelect = ADC12_B_WINDOW_COMPARATOR_DISABLE;
@@ -181,7 +220,7 @@ void initializeADC(void){
         ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
 
         //Enable memory buffer 0 interrupt
-        //ADC12_B_enableInterrupt(ADC12_B_BASE,ADC12_B_IE0,0,0);
+        ADC12_B_enableInterrupt(ADC12_B_BASE,ADC12_B_IE0,0,0);
 
         // start ADC conversion on repeated mode
         ADC12_B_startConversion(ADC12_B_BASE,ADC12_B_START_AT_ADC12MEM0,ADC12_B_REPEATED_SINGLECHANNEL);
@@ -453,6 +492,9 @@ void GPIO_init(){
 
     GPIO_setAsPeripheralModuleFunctionInputPin(
         GPIO_PORT_P3, GPIO_PIN0, GPIO_TERNARY_MODULE_FUNCTION);
+
+    GPIO_setAsPeripheralModuleFunctionInputPin(
+            GPIO_PORT_P1, GPIO_PIN3, GPIO_TERNARY_MODULE_FUNCTION);
 
     // Disable the GPIO power-on default high-impedance mode
     // to activate previously configured port settings
