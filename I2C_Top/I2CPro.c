@@ -34,18 +34,24 @@ volatile uint16_t savedSpeakerValues[1000];
 volatile uint16_t ADCCounter = 0;
 const uint8_t SLAVE_ADDRESS = 0x44;   //define the slave address
 
+typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d} Tones;
+Tones tone;
+
 //  Main Function
 void main(void){
 
     //define ADC variables *FOR COS() SIMULATION ONLY*
     const uint16_t f = 1000;
-    double answer;
+    volatile double answer;
     const uint16_t fs = 10000;
     uint16_t counter = 0;
+
 
     // Define variables for light sensor
     volatile uint16_t mId = 0;
     volatile uint32_t lightData = 0;
+
+
 
     // Halt the WatchDog Timer
     WDT_A_hold(WDT_A_BASE);
@@ -66,9 +72,9 @@ void main(void){
     //I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
 
 
-    //Standard data packs: 700 samples collected, 700 samples will be given through I2C. 700 samples is 70ms worth of data
-    while(counter < 700){
-        genCos(f, fs, counter, &answer);
+    //Standard data packs: 156 samples collected, 156 samples will be given through I2C.
+    while(counter < 156){
+        genTone(ASTREK, counter, &answer);
         savedSpeakerValues[counter] = double2ADC(answer);
         counter = counter+1;
     }
@@ -111,7 +117,7 @@ __interrupt void ADC12_ISR(void)
     Author: Najeeb Eeso
     Inputs: None
     Outputs: None
-    Description: Used to test the functionality of the ADC. Reads memory address 0 and returns it.
+    Description: Used to generate a single cos, simulating the voltage that the ADC would get.
 */
 
 void genCos(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
@@ -119,7 +125,99 @@ void genCos(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
     *result = y;
 }
 
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: Used to generate a combination of two cos, simulating the voltage that the ADC would get.
+*/
+void genCos2(uint16_t f1, uint16_t f2, uint16_t fs, uint16_t sample, double* result){
+    //rowFreqLUT();
+    double y = .825*(cos(2*M_PI*f1*sample/fs)+cos(2*M_PI*f2*sample/fs)+2);
+    *result = y;
+}
 
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: outputs the row frequency of a dual tone.
+*/
+uint16_t rowFreqLUT(Tones tone){
+    switch(tone){
+        case ONE:
+        case TWO:
+        case THREE:
+        case a:
+            return 697;
+        case FOUR:
+        case FIVE:
+        case SIX:
+        case b:
+            return 770;
+        case SEVEN:
+        case EIGHT:
+        case NINE:
+        case c:
+            return 852;
+        case ASTREK:
+        case ZERO:
+        case POUND:
+        case d:
+            return 941;
+
+    }
+}
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: outputs the col frequency of a dual tone.
+*/
+uint16_t colFreqLUT(Tones tone){
+    switch(tone){
+        case ONE:
+        case FOUR:
+        case SEVEN:
+        case ASTREK:
+            return 1209;
+        case TWO:
+        case FIVE:
+        case EIGHT:
+        case ZERO:
+            return 1336;
+        case THREE:
+        case SIX:
+        case NINE:
+        case POUND:
+            return 1477;
+        case a:
+        case b:
+        case c:
+        case d:
+            return 1633;
+
+    }
+}
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: Used to generate a combination of two cos of a dual tone, simulating the voltage that the ADC would get for each dual tone at the sampling rate.
+*/
+void genTone(Tones tone, uint16_t sample, double* result){
+    uint16_t samplingFreq = 10000;
+    genCos2(colFreqLUT(tone), rowFreqLUT(tone), samplingFreq, sample, result);
+}
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description: Used to simulate an analog voltage going into an ADC, producing an 8 bit value
+*/
 uint8_t double2ADC(double value){
     volatile double vDiff = 3.3/255;
     volatile uint8_t result = floor(value/vDiff+.5);
