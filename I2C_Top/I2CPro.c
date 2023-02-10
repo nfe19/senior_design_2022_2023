@@ -30,9 +30,10 @@ int8_t I2C_read_8(uint8_t, uint8_t);
 uint8_t testADC(void);
 
 
-volatile uint16_t savedSpeakerValues[1000];
+volatile double savedSpeakerValues[15];
 volatile uint16_t ADCCounter = 0;
-const uint8_t SLAVE_ADDRESS = 0x44;   //define the slave address
+uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
+
 
 typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d} Tones;
 Tones tone;
@@ -46,9 +47,9 @@ void main(void){
     const uint16_t fs = 10000;
     uint16_t counter = 0;
 
-
+    volatile uint8_t myRegValues[7] = {0, 0, 0, 0, 0, 0, 0, 0};
     // Define variables for light sensor
-    volatile uint16_t mId = 0;
+    volatile uint8_t mId = 0;
     volatile uint32_t lightData = 0;
 
 
@@ -65,19 +66,97 @@ void main(void){
     // initialize ADC with 10KHz sampling rate at 8 bits per sample, start continious conversions
     initializeADC();
 
-    /* Set Default configuration for OPT3001*/
-    //I2C_write_16(SLAVE_ADDRESS, CONFIG_REG, DEFAULT_CONFIG_100);    //set breakpoint here to test I2C_write_16
+    uint8_t i;
+    volatile int8_t data8;
+    uint8_t readInput4;
 
+    for(i=0;i<=20; i++){
+
+        genToneSin(ONE, i, &answer);
+        data8 = double2ADC(answer);
+        data8 = data8-0x7f;
+
+//        //        /* Set Default configuration for OPT3001*/
+//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
+//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//                //debugReg(myRegValues);
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//                //debugReg(myRegValues);
+               __delay_cycles(1000000);
+    }
+
+//    for(i=0;i<=20; i++){
+//
+//        genCos(1000, 10000, i, &answer);
+//        data8 = double2ADC(answer);
+//
+//        //        /* Set Default configuration for OPT3001*/
+//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
+//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//                //debugReg(myRegValues);
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//                //debugReg(myRegValues);
+//                __delay_cycles(1000000);
+//    }
+
+
+
+
+
+
+
+
+//    uint16_t data1 = 0xFF;
+//    uint16_t data2 = 0xFF;
+//
+//    volatile uint16_t data16 = ((data1)<<8) | (data2);
+//    volatile uint8_t data8 = 0xFF;
     /*For testing I2C_write_8 only*/
     //I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
 
+    //OPT3001_init(0x44);
+//    volatile uint8_t readInput4;
+
+//    while(1){
+//        /* Set Default configuration for OPT3001*/
+//        //while(I2C_read_16(SLAVE_ADDRESS, 0x02) != 0x00);
+//        debugReg(myRegValues);
+//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
+//        while(!(readInput4==0x00));
+//        I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//        debugReg(myRegValues);
+//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//        debugReg(myRegValues);
+//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
+//        while(!(readInput4==0x01));
+//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//        debugReg(myRegValues);
+//        //I2C_write_8(SLAVE_ADDRESS, 0x01,0x01);
+//        //EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,
+//            //EUSCI_B_I2C_TRANSMIT_INTERRUPT0+EUSCI_B_I2C_RECEIVE_INTERRUPT0);
+//        __delay_cycles(10000);
+//        //I2C_read_8(0x3c,0x01);
+//
+//
+//    }
+
 
     //Standard data packs: 156 samples collected, 156 samples will be given through I2C.
-    while(counter < 156){
-        genTone(ASTREK, counter, &answer);
-        savedSpeakerValues[counter] = double2ADC(answer);
-        counter = counter+1;
-    }
+//    while(counter < 156){
+//        genTone(ASTREK, counter, &answer);
+//        savedSpeakerValues[counter] = double2ADC(answer);
+//        counter = counter+1;
+//    }
 
     //enable global interrupts
     //__enable_interrupt();   //comment if wanting to test I2C reads, uncomment if wanting to test ADC
@@ -85,7 +164,7 @@ void main(void){
     //obtain manufacturing information, obtain light info, blink LED
     while(1){
 
-        mId = I2C_read_8(0x44, 0x7E);  //
+        //mId = I2C_read_8(0x44, 0x7E);  //
         //lightData = OPT3001_getLux(0x44);
         __delay_cycles(100000);    //Toggle PIN to indicate data was sent
 //        GPIO_toggleOutputOnPin(GPIO_PORT_P1, GPIO_PIN0);                    //delay
@@ -120,8 +199,22 @@ __interrupt void ADC12_ISR(void)
     Description: Used to generate a single cos, simulating the voltage that the ADC would get.
 */
 
+void debugReg(uint8_t myRegValues[7]){
+    uint8_t i = 0;
+    volatile uint8_t dummy;
+    for(; i<8; i++){
+        dummy = I2C_read_8(SLAVE_ADDRESS, i);
+        myRegValues[i] = dummy;
+    }
+}
+
 void genCos(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
     double y = 1.65*(cos(2*M_PI*f*sample/fs)+1);
+    *result = y;
+}
+
+void genSin(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
+    double y = 1.65*(sin(2*M_PI*f*sample/fs)+1);
     *result = y;
 }
 
@@ -134,6 +227,12 @@ void genCos(uint16_t f, uint16_t fs, uint16_t sample, double* result ){
 void genCos2(uint16_t f1, uint16_t f2, uint16_t fs, uint16_t sample, double* result){
     //rowFreqLUT();
     double y = .825*(cos(2*M_PI*f1*sample/fs)+cos(2*M_PI*f2*sample/fs)+2);
+    *result = y;
+}
+
+void genSin2(uint16_t f1, uint16_t f2, uint16_t fs, uint16_t sample, double* result){
+    //rowFreqLUT();
+    double y = .825*(sin(2*M_PI*f1*sample/fs)+sin(2*M_PI*f2*sample/fs)+2);
     *result = y;
 }
 
@@ -207,9 +306,14 @@ uint16_t colFreqLUT(Tones tone){
     Outputs: None
     Description: Used to generate a combination of two cos of a dual tone, simulating the voltage that the ADC would get for each dual tone at the sampling rate.
 */
-void genTone(Tones tone, uint16_t sample, double* result){
+void genToneCos(Tones tone, uint16_t sample, double* result){
     uint16_t samplingFreq = 10000;
     genCos2(colFreqLUT(tone), rowFreqLUT(tone), samplingFreq, sample, result);
+}
+
+void genToneSin(Tones tone, uint16_t sample, double* result){
+    uint16_t samplingFreq = 10000;
+    genSin2(colFreqLUT(tone), rowFreqLUT(tone), samplingFreq, sample, result);
 }
 
 /*
