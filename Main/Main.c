@@ -21,6 +21,7 @@
 void GPIO_init(void);
 void initI2C(void);
 void initializeADC(void);
+void initializeUART(void);
 void I2C_write_16(uint8_t, uint8_t, uint16_t);
 void I2C_write_8(uint8_t, uint8_t, uint8_t);
 void genCos(uint16_t, uint16_t, uint16_t, double*);
@@ -66,15 +67,20 @@ void main(void){
     // initialize ADC with 10KHz sampling rate at 8 bits per sample, start continious conversions
     initializeADC();
 
-    uint8_t i;
-    volatile int8_t data8;
-    uint8_t readInput4;
+    initializeUART();
 
-    for(i=0;i<=20; i++){
 
-        genToneSin(ONE, i, &answer);
-        data8 = double2ADC(answer);
-        data8 = data8-0x7f;
+//    uint8_t i;
+//    volatile int8_t data8;
+//    uint8_t readInput4;
+//
+//    //code used to generate 20 samples of the 1 tone and transmit it to the FPGA
+//    //and display values in 7 SEGMENT
+//    for(i=0;i<=20; i++){
+//
+//        genToneSin(ONE, i, &answer);
+//        data8 = double2ADC(answer);
+//        data8 = data8-0x7f;
 
 //        //        /* Set Default configuration for OPT3001*/
 //                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
@@ -87,9 +93,11 @@ void main(void){
 //                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
 //                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
 //                //debugReg(myRegValues);
-               __delay_cycles(1000000);
-    }
+               //__delay_cycles(1000000);
+//    }
 
+      //code used to generate 20 samples of a cos wave and transmit it to the FPGA
+      //and display it on the 7 SEGMENT
 //    for(i=0;i<=20; i++){
 //
 //        genCos(1000, 10000, i, &answer);
@@ -110,12 +118,7 @@ void main(void){
 //    }
 
 
-
-
-
-
-
-
+    //code used to transmit data to the FPGA
 //    uint16_t data1 = 0xFF;
 //    uint16_t data2 = 0xFF;
 //
@@ -159,7 +162,7 @@ void main(void){
 //    }
 
     //enable global interrupts
-    //__enable_interrupt();   //comment if wanting to test I2C reads, uncomment if wanting to test ADC
+    __enable_interrupt();   //comment if wanting to test I2C reads, uncomment if wanting to test ADC
 
     //obtain manufacturing information, obtain light info, blink LED
     while(1){
@@ -180,13 +183,19 @@ void main(void){
 #pragma vector=ADC12_VECTOR
 __interrupt void ADC12_ISR(void)
 {
+    char buffer[100];
 //    volatile uint8_t value = testADC(); //used to functionally test ADC. set breakpoint here to validate output of ADC if testing
 //    GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);    //used to test the frequency of the ADC by toggling a GPIO pin
 
     if (ADCCounter < 999)
         savedSpeakerValues[ADCCounter] = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
+        sprintf(buffer,"%u ",ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0));
+            UART_transmitString(buffer);
+
         ADCCounter = ADCCounter+1;
-    volatile uint16_t answer = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
+    //svolatile uint16_t answer = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
+
+
     //clear the ADC interrupt
     ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
 }
@@ -450,7 +459,7 @@ int8_t I2C_read_8(uint8_t slaveAddress, uint8_t regAddress)
     volatile int8_t val = 0,temp;
 
     /* Specify slave address*/
-    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, SLAVE_ADDRESS);
+    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, slaveAddress);
     EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,EUSCI_B_I2C_TRANSMIT_INTERRUPT0 + EUSCI_B_I2C_RECEIVE_INTERRUPT0);
 
 
@@ -504,7 +513,7 @@ int16_t I2C_read_16(uint8_t slaveAddress, uint8_t regAddress)
     volatile int16_t valScratch = 0;
 
     /* Specify slave address*/
-    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, SLAVE_ADDRESS);
+    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, slaveAddress);
     EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,EUSCI_B_I2C_TRANSMIT_INTERRUPT0 + EUSCI_B_I2C_RECEIVE_INTERRUPT0);
 
 
@@ -583,7 +592,7 @@ int16_t I2C_read_16(uint8_t slaveAddress, uint8_t regAddress)
 void I2C_write_8(uint8_t slaveAddress, uint8_t regAddress, uint8_t data)
 {
     /* Specify slave address*/
-    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, SLAVE_ADDRESS);
+    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, slaveAddress);
     EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,EUSCI_B_I2C_TRANSMIT_INTERRUPT0 + EUSCI_B_I2C_RECEIVE_INTERRUPT0);
 
     /* Set master to transmit mode PL */
@@ -622,7 +631,7 @@ void I2C_write_8(uint8_t slaveAddress, uint8_t regAddress, uint8_t data)
 void I2C_write_16(uint8_t slaveAddress, uint8_t regAddress, uint16_t data)
 {
     /* Specify slave address*/
-    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, SLAVE_ADDRESS);
+    EUSCI_B_I2C_setSlaveAddress(EUSCI_B2_BASE, slaveAddress);
     EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,EUSCI_B_I2C_TRANSMIT_INTERRUPT0 + EUSCI_B_I2C_RECEIVE_INTERRUPT0);
 
     /* Set master to transmit mode PL */
@@ -675,6 +684,21 @@ void initI2C( void )
     EUSCI_B_I2C_enable(EUSCI_B2_BASE);  //enable i2c
 
 }
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+void initializeUART( void )
+{
+
+    UART_initGPIO();
+    UART_init();
+
+}
+
 
 /* Initializes GPIO as outputs low*/
 void GPIO_init(){
