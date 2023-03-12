@@ -26,34 +26,46 @@ void I2C_write_16(uint8_t, uint8_t, uint16_t);
 void I2C_write_8(uint8_t, uint8_t, uint8_t);
 void genCos(uint16_t, uint16_t, uint16_t, double*);
 uint8_t double2ADC(double);
-int16_t I2C_read_16(uint8_t, uint8_t);
-int8_t I2C_read_8(uint8_t, uint8_t);
+uint16_t I2C_read_16(uint8_t, uint8_t);
+uint8_t I2C_read_8(uint8_t, uint8_t);
 uint8_t testADC(void);
 
 
-volatile double savedSpeakerValues[15];
 volatile uint16_t ADCCounter = 0;
+uint8_t savedSpeakerValues[8];
 uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 
 
-typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d} Tones;
+typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
 Tones tone;
+
+/*I2C Register Map */
+    const uint8_t SLAVE_REG = 0x00;             // the slave address of the I2C device
+    const uint8_t MANUID_REG = 0x02;            // the manufacturing ID of the I2C device
+    const uint8_t DEVICE_ID_REG = 0x04;         // the device ID of the I2C device
+    const uint8_t COMMAND_REG = 0x06;           // the command register that the msp writes to
+    const uint8_t STATUS_REG = 0x08;            // the status register that the msp reads from
+    const uint8_t RESULTS_REG = 0x0A;           // the register containing value of the result given from the FPGA
+    const uint8_t IN_SAMPLE_REG = 0x0C;         // the register the input sample gets written to
+/* END I2C Register Map */
+
+/*I2C COMMAND_REG Bit Definitions */
+    const uint16_t WAIT_FLAG = 0x0001;          //set: tells FPGA to wait, reset: data is sent and FPGA is ready
+    const uint16_t VALID_FLAG = 0x0002;         //set: data has been read, reset: data has not been read
+/* END COMMAND_REG Bit Definitions */
+
+/*I2C STATUS_REG Bit Definitions */
+    const uint16_t OUT_VALID_FLAG = 0x0001;     //set: output is valid, reset: output is invalid
+    const uint16_t BUSY_FLAG = 0x0002;          //set: FPGA is busy, reset: FPGA is not busy
+    const uint16_t INPUT_MODE_FLAG = 0x0004;    //set: FPGA is in input mode (wants inputs), reset: FPGA in output mode (calculating outputs)
+    const uint16_t INPUT_READY_FLAG = 0x0008;   //set: FPGA wants an input, reset: FPGA does not want an input
+/* END STATUS_REG Bit Definitions */
 
 //  Main Function
 void main(void){
 
-    //define ADC variables *FOR COS() SIMULATION ONLY*
-    const uint16_t f = 1000;
-    volatile double answer;
-    const uint16_t fs = 10000;
-    uint16_t counter = 0;
-
     volatile uint8_t myRegValues[7] = {0, 0, 0, 0, 0, 0, 0, 0};
     // Define variables for light sensor
-    volatile uint8_t mId = 0;
-    volatile uint32_t lightData = 0;
-
-
 
     // Halt the WatchDog Timer
     WDT_A_hold(WDT_A_BASE);
@@ -69,109 +81,42 @@ void main(void){
 
     initializeUART();
 
-
-//    uint8_t i;
-//    volatile int8_t data8;
-//    uint8_t readInput4;
-//
-//    //code used to generate 20 samples of the 1 tone and transmit it to the FPGA
-//    //and display values in 7 SEGMENT
-//    for(i=0;i<=20; i++){
-//
-//        genToneSin(ONE, i, &answer);
-//        data8 = double2ADC(answer);
-//        data8 = data8-0x7f;
-
-//        //        /* Set Default configuration for OPT3001*/
-//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
-//                //debugReg(myRegValues);
-//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
-//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
-//                //debugReg(myRegValues);
-//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
-//                //debugReg(myRegValues);
-//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
-//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
-//                //debugReg(myRegValues);
-               //__delay_cycles(1000000);
-//    }
-
-      //code used to generate 20 samples of a cos wave and transmit it to the FPGA
-      //and display it on the 7 SEGMENT
-//    for(i=0;i<=20; i++){
-//
-//        genCos(1000, 10000, i, &answer);
-//        data8 = double2ADC(answer);
-//
-//        //        /* Set Default configuration for OPT3001*/
-//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
-//                //debugReg(myRegValues);
-//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
-//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
-//                //debugReg(myRegValues);
-//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
-//                //debugReg(myRegValues);
-//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
-//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
-//                //debugReg(myRegValues);
-//                __delay_cycles(1000000);
-//    }
+    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
+    while(1){
+        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+        volatile uint8_t speakerValueList[128];
+        volatile uint16_t speakerValueList16[128];
+        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+        /* end ADC mimic*/
 
 
-    //code used to transmit data to the FPGA
-//    uint16_t data1 = 0xFF;
-//    uint16_t data2 = 0xFF;
-//
-//    volatile uint16_t data16 = ((data1)<<8) | (data2);
-//    volatile uint8_t data8 = 0xFF;
-    /*For testing I2C_write_8 only*/
-    //I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
+        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
+        uint16_t reg_value;
+        uint8_t data_list_index = 0;
 
-    //OPT3001_init(0x44);
-//    volatile uint8_t readInput4;
+        do{
+            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
+            if(((reg_value & INPUT_READY_FLAG) > 0)){
+                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
+                data_list_index++;
+            }
+        } while((reg_value & INPUT_MODE_FLAG) > 0);
 
-//    while(1){
-//        /* Set Default configuration for OPT3001*/
-//        //while(I2C_read_16(SLAVE_ADDRESS, 0x02) != 0x00);
-//        debugReg(myRegValues);
-//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
-//        while(!(readInput4==0x00));
-//        I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
-//        debugReg(myRegValues);
-//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
-//        debugReg(myRegValues);
-//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
-//        while(!(readInput4==0x01));
-//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
-//        debugReg(myRegValues);
-//        //I2C_write_8(SLAVE_ADDRESS, 0x01,0x01);
-//        //EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,
-//            //EUSCI_B_I2C_TRANSMIT_INTERRUPT0+EUSCI_B_I2C_RECEIVE_INTERRUPT0);
-//        __delay_cycles(10000);
-//        //I2C_read_8(0x3c,0x01);
-//
-//
-//    }
+        /*end sending of data*/
 
-
-    //Standard data packs: 156 samples collected, 156 samples will be given through I2C.
-//    while(counter < 156){
-//        genTone(ASTREK, counter, &answer);
-//        savedSpeakerValues[counter] = double2ADC(answer);
-//        counter = counter+1;
-//    }
+        /* wait until valid data is produced by the FPGA and read the result*/
+        uint16_t finalResult;
+        volatile Tones finalTone;
+        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
+        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
+        /* end wait */
+    }
+    /*end main loop*/
 
     //enable global interrupts
-    __enable_interrupt();   //comment if wanting to test I2C reads, uncomment if wanting to test ADC
-
-    //obtain manufacturing information, obtain light info, blink LED
-    while(1){
-
-        //mId = I2C_read_8(0x44, 0x7E);  //
-        //lightData = OPT3001_getLux(0x44);
-        __delay_cycles(100000);    //Toggle PIN to indicate data was sent
-//        GPIO_toggleOutputOnPin(GPIO_PORT_P1, GPIO_PIN0);                    //delay
-    }
+    //__enable_interrupt();
 
 }
 
@@ -200,6 +145,65 @@ __interrupt void ADC12_ISR(void)
     ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
 }
 
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+
+void getMicValues128(Tones tone, uint8_t values[128]){
+    double speakerAnalogValue;
+    uint8_t sample;
+    for(sample=0; sample<128; sample++){
+        genToneSin(tone,sample,&speakerAnalogValue);
+        values[sample] = double2ADC(speakerAnalogValue)-0x7f;
+    }
+}
+
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+
+void listConvert8to16(uint8_t values8[128], uint16_t values16[128]){
+    uint8_t sample;
+    for(sample=0; sample<128; sample++){
+        values16[sample] = (values8[sample] << 8) & (0xFF00);
+    }
+}
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+
+Tones toneDecoder(uint16_t result){
+    switch(result){
+            case 0x0000: return ZERO;
+            case 0x0001: return ONE;
+            case 0x0002: return TWO;
+            case 0x0003: return THREE;
+            case 0x0004: return FOUR;
+            case 0x0005: return FIVE;
+            case 0x0006: return SIX;
+            case 0x0007: return SEVEN;
+            case 0x0008: return EIGHT;
+            case 0x0009: return NINE;
+            case 0x000A: return ASTREK;
+            case 0x000B: return POUND;
+            case 0x000C: return a;
+            case 0x000D: return b;
+            case 0x000E: return c;
+            case 0x000F: return d;
+            default: return NONE;
+        }
+}
 
 /*
     Author: Najeeb Eeso
@@ -316,12 +320,12 @@ uint16_t colFreqLUT(Tones tone){
     Description: Used to generate a combination of two cos of a dual tone, simulating the voltage that the ADC would get for each dual tone at the sampling rate.
 */
 void genToneCos(Tones tone, uint16_t sample, double* result){
-    uint16_t samplingFreq = 10000;
+    uint16_t samplingFreq = 5000;
     genCos2(colFreqLUT(tone), rowFreqLUT(tone), samplingFreq, sample, result);
 }
 
 void genToneSin(Tones tone, uint16_t sample, double* result){
-    uint16_t samplingFreq = 10000;
+    uint16_t samplingFreq = 5000;
     genSin2(colFreqLUT(tone), rowFreqLUT(tone), samplingFreq, sample, result);
 }
 
@@ -454,7 +458,7 @@ void initializeADC(void){
 
 
 */
-int8_t I2C_read_8(uint8_t slaveAddress, uint8_t regAddress)
+uint8_t I2C_read_8(uint8_t slaveAddress, uint8_t regAddress)
 {
     volatile int8_t val = 0,temp;
 
@@ -496,6 +500,26 @@ int8_t I2C_read_8(uint8_t slaveAddress, uint8_t regAddress)
 
 }
 
+
+/*
+    Author: Najeeb Eeso
+    Inputs: slaveAddress: the 8 bit address of the device wanted to be communicated to
+            regAddress: the 8 bit register address wanted to be read from
+    Outputs: None
+    Description: Reads 16 bit data to from a device through I2C. 2 8 bit reads are performed
+    Test:
+
+*/
+uint16_t I2C_read_16(uint8_t slaveAddress, uint8_t regAddress){
+    volatile uint16_t value;
+    volatile uint8_t temp;
+    value = I2C_read_8(slaveAddress, regAddress);
+    temp = I2C_read_8(slaveAddress, regAddress+0x01);
+    value = temp | (value<<8);
+    return value;
+}
+
+
 /*
     Author: Najeeb Eeso
     Inputs: slaveAddress: the 8 bit address of the device wanted to be communicated to
@@ -507,7 +531,7 @@ int8_t I2C_read_8(uint8_t slaveAddress, uint8_t regAddress)
     Test:
                  DOES NOT WORK AT 400k SPEED, ONLY 10K
 */
-int16_t I2C_read_16(uint8_t slaveAddress, uint8_t regAddress)
+int16_t I2C_read_16_bad(uint8_t slaveAddress, uint8_t regAddress)
 {
     volatile int16_t val = 0,temp;
     volatile int16_t valScratch = 0;
@@ -726,3 +750,102 @@ void GPIO_init(){
     // to activate previously configured port settings
     PMM_unlockLPM5();
 }
+
+
+
+//    uint8_t i;
+//    volatile int8_t data8;
+//    uint8_t readInput4;
+//
+//    //code used to generate 20 samples of the 1 tone and transmit it to the FPGA
+//    //and display values in 7 SEGMENT
+//    for(i=0;i<=20; i++){
+//
+//        genToneSin(ONE, i, &answer);
+//        data8 = double2ADC(answer);
+//        data8 = data8-0x7f;
+
+//        //        /* Set Default configuration for OPT3001*/
+//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
+//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//                //debugReg(myRegValues);
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//                //debugReg(myRegValues);
+               //__delay_cycles(1000000);
+//    }
+
+      //code used to generate 20 samples of a cos wave and transmit it to the FPGA
+      //and display it on the 7 SEGMENT
+//    for(i=0;i<=20; i++){
+//
+//        genCos(1000, 10000, i, &answer);
+//        data8 = double2ADC(answer);
+//
+//        //        /* Set Default configuration for OPT3001*/
+//                while(I2C_read_8(SLAVE_ADDRESS, 0x02) != 0x00);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x00));
+//                I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//                //debugReg(myRegValues);
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//                //debugReg(myRegValues);
+//                while(!(I2C_read_8(SLAVE_ADDRESS, 0x04)==0x01));
+//                I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//                //debugReg(myRegValues);
+//                __delay_cycles(1000000);
+//    }
+
+
+    //code used to transmit data to the FPGA
+//    uint16_t data1 = 0xFF;
+//    uint16_t data2 = 0xFF;
+//
+//    volatile uint16_t data16 = ((data1)<<8) | (data2);
+//    volatile uint8_t data8 = 0xFF;
+    /*For testing I2C_write_8 only*/
+    //I2C_write_8(SLAVE_ADDRESS, 0x26, 0x00);   //uncomment and set breakpoint here to test I2C_write_8
+
+    //OPT3001_init(0x44);
+//    volatile uint8_t readInput4;
+
+//    while(1){
+//        /* Set Default configuration for OPT3001*/
+//        //while(I2C_read_16(SLAVE_ADDRESS, 0x02) != 0x00);
+//        debugReg(myRegValues);
+//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
+//        while(!(readInput4==0x00));
+//        I2C_write_8(SLAVE_ADDRESS, 0x01,data8);    //set breakpoint here to test I2C_write_16
+//        debugReg(myRegValues);
+//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x01);
+//        debugReg(myRegValues);
+//        readInput4 = I2C_read_8(SLAVE_ADDRESS, 0x04);
+//        while(!(readInput4==0x01));
+//        I2C_write_8(SLAVE_ADDRESS, 0x02,0x00);
+//        debugReg(myRegValues);
+//        //I2C_write_8(SLAVE_ADDRESS, 0x01,0x01);
+//        //EUSCI_B_I2C_clearInterrupt(EUSCI_B2_BASE,
+//            //EUSCI_B_I2C_TRANSMIT_INTERRUPT0+EUSCI_B_I2C_RECEIVE_INTERRUPT0);
+//        __delay_cycles(10000);
+//        //I2C_read_8(0x3c,0x01);
+//
+//
+//    }
+
+
+    //Standard data packs: 156 samples collected, 156 samples will be given through I2C.
+//    while(counter < 156){
+//        genTone(ASTREK, counter, &answer);
+//        savedSpeakerValues[counter] = double2ADC(answer);
+//        counter = counter+1;
+//    }
+
+
+
+
+//mId = I2C_read_8(0x44, 0x7E);
+//lightData = OPT3001_getLux(0x44);
