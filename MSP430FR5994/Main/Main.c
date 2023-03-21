@@ -32,7 +32,7 @@ uint8_t testADC(void);
 
 
 volatile uint16_t ADCCounter = 0;
-uint8_t savedSpeakerValues[8];
+uint8_t savedSpeakerValues[128];
 uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 
 
@@ -81,42 +81,54 @@ void main(void){
 
     initializeUART();
 
-    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
-    while(1){
-        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-        volatile uint8_t speakerValueList[128];
-        volatile uint16_t speakerValueList16[128];
-        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-        /* end ADC mimic*/
-
-
-        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
-        uint16_t reg_value;
-        uint8_t data_list_index = 0;
-
-        do{
-            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
-            if(((reg_value & INPUT_READY_FLAG) > 0)){
-                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
-                data_list_index++;
-            }
-        } while((reg_value & INPUT_MODE_FLAG) > 0);
-
-        /*end sending of data*/
-
-        /* wait until valid data is produced by the FPGA and read the result*/
-        uint16_t finalResult;
-        volatile Tones finalTone;
-        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
-        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
-        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
-        /* end wait */
-    }
-    /*end main loop*/
+//    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
+//    while(1){
+//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+//        volatile uint8_t speakerValueList[128];
+//        volatile uint16_t speakerValueList16[128];
+//        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+//        /* end ADC mimic*/
+//
+//
+//        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
+//        uint16_t reg_value;
+//        uint8_t data_list_index = 0;
+//
+//        do{
+//            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
+//            if(((reg_value & INPUT_READY_FLAG) > 0)){
+//                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
+//                data_list_index++;
+//            }
+//        } while((reg_value & INPUT_MODE_FLAG) > 0);
+//
+//        /*end sending of data*/
+//
+//        /* wait until valid data is produced by the FPGA and read the result*/
+//        uint16_t finalResult;
+//        volatile Tones finalTone;
+//        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
+//        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+//        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
+//        /* end wait */
+//    }
+//    /*end main loop*/
 
     //enable global interrupts
-    //__enable_interrupt();
+    __enable_interrupt();
+
+    uint8_t i=0;
+    char buffer[100];
+
+    while(1){
+        if(ADCCounter >= 128){
+            for(; i<128; i++){
+                printf("%x00 \n",savedSpeakerValues[i]);
+
+            }
+        }
+    }
 
 }
 
@@ -128,18 +140,19 @@ void main(void){
 #pragma vector=ADC12_VECTOR
 __interrupt void ADC12_ISR(void)
 {
-    char buffer[100];
-//    volatile uint8_t value = testADC(); //used to functionally test ADC. set breakpoint here to validate output of ADC if testing
-//    GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);    //used to test the frequency of the ADC by toggling a GPIO pin
-
-    if (ADCCounter < 999)
+//    char buffer[100];
+////    volatile uint8_t value = testADC(); //used to functionally test ADC. set breakpoint here to validate output of ADC if testing
+////    GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);    //used to test the frequency of the ADC by toggling a GPIO pin
+//
+    if (ADCCounter < 128){
         savedSpeakerValues[ADCCounter] = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
-        sprintf(buffer,"%u ",ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0));
-            UART_transmitString(buffer);
+        ADCCounter++;
+    }
 
-        ADCCounter = ADCCounter+1;
-    //svolatile uint16_t answer = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
 
+//
+//        ADCCounter = ADCCounter+1;
+    //volatile uint16_t answer = ADC12_B_getResults(ADC12_B_BASE, ADC12_B_MEMORY_0);
 
     //clear the ADC interrupt
     ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
@@ -388,8 +401,8 @@ void initializeADC(void){
         ADC12_B_initParam initParam = {0};
         initParam.sampleHoldSignalSourceSelect = ADC12_B_SAMPLEHOLDSOURCE_SC;
         initParam.clockSourceSelect = ADC12_B_CLOCKSOURCE_ADC12OSC;
-        initParam.clockSourceDivider = ADC12_B_CLOCKDIVIDER_8;
-        initParam.clockSourcePredivider = ADC12_B_CLOCKPREDIVIDER__4;
+        initParam.clockSourceDivider = ADC12_B_CLOCKDIVIDER_1;
+        initParam.clockSourcePredivider = ADC12_B_CLOCKPREDIVIDER__64;
         initParam.internalChannelMap = ADC12_B_NOINTCH;
 
         //initialize ADC with above parameters
