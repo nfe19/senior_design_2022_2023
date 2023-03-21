@@ -50,7 +50,7 @@ Tones tone;
 /* END I2C Register Map */
 
 /*I2C COMMAND_REG Bit Definitions */
-    const uint16_t WAIT_FLAG = 0x0001;          //set: tells FPGA to wait, reset: data is sent and FPGA is ready
+    const uint16_t READY_FLAG = 0x0001;          //set: tells FPGA to wait, reset: data is sent and FPGA is ready
     const uint16_t VALID_FLAG = 0x0002;         //set: data has been read, reset: data has not been read
 /* END COMMAND_REG Bit Definitions */
 
@@ -81,39 +81,39 @@ void main(void){
 
     initializeUART();
 
-//    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
-//    while(1){
-//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-//        volatile uint8_t speakerValueList[128];
-//        volatile uint16_t speakerValueList16[128];
-//        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-//        /* end ADC mimic*/
-//
-//
-//        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
-//        uint16_t reg_value;
-//        uint8_t data_list_index = 0;
-//
-//        do{
-//            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
-//            if(((reg_value & INPUT_READY_FLAG) > 0)){
-//                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
-//                data_list_index++;
-//            }
-//        } while((reg_value & INPUT_MODE_FLAG) > 0);
-//
-//        /*end sending of data*/
-//
-//        /* wait until valid data is produced by the FPGA and read the result*/
-//        uint16_t finalResult;
-//        volatile Tones finalTone;
-//        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
-//        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
-//        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
-//        /* end wait */
-//    }
-//    /*end main loop*/
+    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
+    while(1){
+        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+        volatile uint8_t speakerValueList[128];
+        volatile uint16_t speakerValueList16[128];
+        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+        /* end ADC mimic*/
+
+
+        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
+        uint16_t reg_value;
+        uint8_t data_list_index = 0;
+
+        do{
+            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
+            if(((reg_value & INPUT_READY_FLAG) > 0)){
+                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
+                data_list_index++;
+            }
+        } while((reg_value & INPUT_MODE_FLAG) > 0);
+
+        /*end sending of data*/
+
+        /* wait until valid data is produced by the FPGA and read the result*/
+        uint16_t finalResult;
+        volatile Tones finalTone;
+        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
+        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
+        /* end wait */
+    }
+    /*end main loop*/
 
     //enable global interrupts
     __enable_interrupt();
