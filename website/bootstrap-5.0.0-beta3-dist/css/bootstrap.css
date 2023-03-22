@@ -4415,6 +4415,20 @@ textarea.form-control-lg {
   margin-bottom: 0.5rem;
 }
 
+.card-text_own {
+  color: #000;
+  font-family: Helvetica, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  letter-spacing: .08em;
+  line-height: 1.7em;
+
+}
+
+.my-flex-card > div > div.card {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+}
+
 .card-subtitle {
   margin-top: -0.25rem;
   margin-bottom: 0;
