@@ -1,0 +1,10 @@
+
+State Machine - |Control_Module|pState
+Name pState.SDone pState.SFFTOut pState.SFFTWait pState.SFFTIn pState.SWait pState.SEnable pState.SInitial 
+pState.SInitial 0 0 0 0 0 0 0 
+pState.SEnable 0 0 0 0 0 1 1 
+pState.SWait 0 0 0 0 1 0 1 
+pState.SFFTIn 0 0 0 1 0 0 1 
+pState.SFFTWait 0 0 1 0 0 0 1 
+pState.SFFTOut 0 1 0 0 0 0 1 
+pState.SDone 1 0 0 0 0 0 1 

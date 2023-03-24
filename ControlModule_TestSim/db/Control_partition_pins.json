@@ -1,0 +1,141 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "myRegASICStatuslsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegASICStatuslsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegASICStatuslsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegASICStatuslsb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultslsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultslsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultslsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultslsb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultsmsb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultsmsb[5]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultsmsb[6]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegResultsmsb[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "myRegMCUStatuslsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegMCUStatuslsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegMCUStatuslsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[7]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[5]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[6]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[7]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[5]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[6]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
