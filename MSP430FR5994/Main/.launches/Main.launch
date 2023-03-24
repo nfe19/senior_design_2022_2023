@@ -10,7 +10,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.MSP430FR5994.ccxml.TI MSP430 USB1/MSP430" value="${build_artifact:Main}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.MSP430FR5994.ccxml.TI MSP430 USB1/MSP430" value="Main"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:Main}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430FR5994.ccxml.TI MSP430 USB1/MSP430" value="C:\Users\najee\OneDrive - Florida State University\Desktop\OneDrive - Florida State University\Desktop\2022-2023\Senior Design\c_code\MSP430FR5994\Main\Debug\Main.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.MSP430FR5994.ccxml.TI MSP430 USB1/MSP430" value="C:\Users\najee\OneDrive - Florida State University\Desktop\OneDrive - Florida State University\Desktop\2022-2023\Senior Design\senior_design_2022_2023\MSP430FR5994\Main\Debug\Main.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Main"/>
 </listAttribute>

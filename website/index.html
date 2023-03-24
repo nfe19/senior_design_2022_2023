@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+
+<!--intro-->
+
+<head>
+
+    <!--device view-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--search engine help-->
+    <meta name="keywords" content="Final Design">
+    <meta name="description" content="Final Design">
+    <meta name="author" content="Najeeb Eeso">
+
+    <!--CSS links-->
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-utilities.css" rel="stylesheet" />
+    <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.js"></script>
+    <style>
+        .bg-img {
+            /* The image used */
+            background-image: url(asic.jpg);
+
+            min-height: 500px;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            /* Needed to position the navbar */
+            position: relative;
+        }
+    </style>
+    <!--Top Tap Logo-->
+    <link rel="icon" href="logo.png">
+
+    <!--Page Title-->
+    <title>Home</title>
+</head>    
+                                                   
+<body>
+    <div class="bg-img">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg_personal py-2_5">
+            <div class="container-fluid ms-3">
+
+                <!--Buttons and Links-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!--NavBar Buttons-->
+                    <span class="navbar-toggler-icon"></span>
+                </button> <!--NavBar Buttons End-->
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!--Begin NavBar-->
+                    <ul class="navbar-nav container justify-content-center">
+
+                        <!--About Me-->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <!--Projects-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Evidence_Book.html">Evidence Book</a>
+                        </li>
+
+                        <!--Resume-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Final_Project.html">Final Product</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="container pt-personal">
+
+        <!--Start-->
+        <div class="row">
+            <!--row-->
+            <div class="col-sm-7">
+                <!--Paragraph Colomn-->
+                <p class="ownp">
+                    Put words
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <!--Image Colomn-->
+                <p class="ownp pb-5" style="max-width: 90%;">
+                    
+The goal of this project is to create an Application Specific Integrated Circuit (ASIC) that detects dual tones 
+                </p>
+            </div>
+        </div>
+    </div> <!--end Paragraph and Image-->
+
+    <hr class="border_personal">
+
+    <div class="container pt-5">
+
+        <!--Start-->
+        <div class="row">
+            <!--row-->
+            <div class="col-sm-3 text-center">
+                <!--Paragraph Colomn-->
+                <img src="al_mod.jpg" class="img-fluid" alt="...">
+                <figcaption class="text-center ownp_caption mt-2"> Alejandro Chong </figcaption>
+                <figcaption class="text-center ownp_caption2"> Computer Engineer <br> Team Leader and Digital Design Lead </figcaption>
+            </div>            
+            <div class="col-sm-3 text-center">
+                <!--Paragraph Colomn-->
+                <img src="professional_headshot_mod.jpg" class="img-fluid" alt="...">
+                <figcaption class="text-center ownp_caption mt-2"> Najeeb Eeso </figcaption>
+                <figcaption class="text-center ownp_caption2"> Electrical Engineer <br> Analog Design Lead </figcaption>
+
+            </div>
+
+            <div class="col-sm-3 text-center">
+                <!--Paragraph Colomn-->
+                <img src="evan_mod.png" class="img-fluid" alt="...">
+                <figcaption class="text-center ownp_caption mt-2"> Evan Charles </figcaption>
+                <figcaption class="text-center ownp_caption2"> Computer Engineer <br> Digital Design/Analog Design </figcaption>
+
+            </div>                
+            <div class="col-sm-3 text-center">
+                <!--Paragraph Colomn-->
+                <img src="ad_mod.jpg" class="img-fluid" alt="...">
+                <figcaption class="text-center ownp_caption mt-2"> Adorah Allard </figcaption>
+                <figcaption class="text-center ownp_caption2 pb-6"> Computer Engineer <br> Analog Design/Test </figcaption>
+
+            </div>
+
+        </div>
+    </div> <!--end Paragraph and Image-->
+
+    <div style="background-color: black; height: 2rem;"></div>
+
+    <div style="background-color: #595858;">
+        <div class="col-sm-12 text-center">
+            <p class="ownp_title">Abstract</p>
+        </div>
+
+        
+        
+        <div class="container">
+
+            <!--Start-->
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 text-center">
+                    <p class="ownp_general_para text-break">
+                        
+                        Application-specific integrated circuits (ASICs) are electronic devices designed to perform a specific computing task. They help engineers design computer systems for complex applications such as Bitcoin mining. In 2022, the United States Government set aside $280 billion for research and workforce development in ASICs within the US. The FAMU-FSU College of Engineering wants to contribute to this field of knowledge by providing ASIC training to its students. This project is the next step in that process. <br><br>
+                
+                        For this demonstration project, the team designs an ASIC that detects the tones generated by each key on a phone’s keypad. First, a small computer records sound coming from its surroundings. Then, it converts the sound into data that the ASIC can understand and sends this data to the ASIC. Finally, the job of the ASIC is to analyze the sound data; therefore, recognizing the key that the user pressed. The design blocks background noise, such as conversations, since it may cause the analysis of the sound data to fail. <br><br>
+                        
+                        The team implements a prototype of the ASIC design in a real-world environment using a special programmable computer. The system determines which keys on a keypad the user pressed. Lastly, the system opens an electric door lock after the user entered the correct combination of keys. The team translates the prototype design into the format used in the fabrication of an ASIC. Fabrication can require between 3 to 6 months to complete, so the ASIC will be tested by a future team of students.
+                    </p>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div> <!--end Paragraph and Image-->
+
+
+
+
+
+        <div class="col-sm-12 text-center embed-responsive embed-responsive-16by9">
+            <video controls width="50%" class="embed-responsive-item" src="2023 01 21 18 07 14 000 2023 01 22T11 37 25 783.mp4" allowfullscreen></iframe>
+          </div>
+    </div>
+
+</body>
+</html>
+
+<!--Start of Footer-->
+<footer class="mt-3"> <!--Footer-->
+    <div class="container pt-5">
+        <hr />
+
+        <div class="col-12 text-center"> <!--Pictures Row-->
+            <!--Linkedin Picture-->
+            <a href="https://www.linkedin.com/in/najeeb-eeso-1951241b9" target="_blank"><img src="linkedin.svg" class="d-inline-block mt-5 me-1" width="24" height="28" /></a>
+            <!--Email Picture-->
+            <a href="mailto:najeebeeso201@yahoo.com"> <img src="envelope-fill.svg" width="24" height="28" class="d-inline-block mt-5 me-1" /></a>
+        </div>
+
+        <div class="col-12 mt-5"> <!--Links Row-->
+            <ul class="nav justify-content-center">
+                <li class="nav-item"> <!--About Me Link-->
+                    <a class="nav-link fs-4" href="#">Home</a>
+                </li>
+                <li class="nav-item"> <!--C++ Link-->
+                    <a class="nav-link fs-4" href="Evidence_Book.html">Evidence Book</a>
+                </li>
+                <li class="nav-item"> <!--Circuits Link-->
+                    <a class="nav-link fs-4" href="Final_Design.html">Final Design</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Ending Documentation-->
+        <div class="col-12 mt-3">
+            <!-- <p class="text-center">	Najeeb Eeso &#183 Alejandro Chong &#183 Evan Charles &#183 Adorah Allard</p> Rights -->
+            <p class="text-center mt-0" style="font-size:12pt">FAMU-FSU College of Engineering</p>
+            <p class="text-center mt-0" style="font-size:10pt">Created using &copyBootstrap Standard Library</p> <!--Credits-->
+        </div>
+    </div>
+</footer> <!--End Footer-->
