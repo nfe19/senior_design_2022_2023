@@ -81,54 +81,89 @@ void main(void){
 
     initializeUART();
 
-    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
-    while(1){
-        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-        volatile uint8_t speakerValueList[128];
-        volatile uint16_t speakerValueList16[128];
-        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-        /* end ADC mimic*/
-
-
-        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
-        uint16_t reg_value;
-        uint8_t data_list_index = 0;
-
-        do{
-            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
-            if(((reg_value & INPUT_READY_FLAG) > 0)){
-                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
-                data_list_index++;
-            }
-        } while((reg_value & INPUT_MODE_FLAG) > 0);
-
-        /*end sending of data*/
-
-        /* wait until valid data is produced by the FPGA and read the result*/
-        uint16_t finalResult;
-        volatile Tones finalTone;
-        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
-        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
-        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
-        /* end wait */
-    }
-    /*end main loop*/
+//    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
+//    while(1){
+//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+//        volatile uint8_t speakerValueList[128];
+//        volatile uint16_t speakerValueList16[128];
+//        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+//        /* end ADC mimic*/
+//
+//
+//        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
+//        uint16_t reg_value;
+//        uint8_t data_list_index = 0;
+//
+//        do{
+//            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
+//            if(((reg_value & INPUT_READY_FLAG) > 0)){
+//                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
+//                data_list_index++;
+//            }
+//        } while((reg_value & INPUT_MODE_FLAG) > 0);
+//
+//        /*end sending of data*/
+//
+//        /* wait until valid data is produced by the FPGA and read the result*/
+//        uint16_t finalResult;
+//        volatile Tones finalTone;
+//        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
+//        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+//        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
+//        /* end wait */
+//    }
+//    /*end main loop*/
 
     //enable global interrupts
     __enable_interrupt();
 
-    uint8_t i=0;
-    char buffer[100];
+    //set both pushbuttons as inputs with pull up resistors
+    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
+    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN2);   //PBS2
+
+    uint8_t PBS1;
+    uint8_t PBS2;
 
     while(1){
-        if(ADCCounter >= 128){
-            for(; i<128; i++){
-                printf("%x00 \n",savedSpeakerValues[i]);
-
-            }
+        PBS1 = GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3);
+        PBS2 = GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN2);
+        if(PBS1 == GPIO_INPUT_PIN_LOW){
+            GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN0);
+            GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN2);
+        }
+        else if(PBS2 == GPIO_INPUT_PIN_LOW){
+            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN0);
+            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
         }
     }
+
+
+//    uint8_t i=0;
+//    char buffer[100];
+//
+//    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
+//    uint8_t PBS1;
+//    while(1){
+//        PBS1 = GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3);
+//        if(PBS1 == GPIO_INPUT_PIN_LOW){
+//            __delay_cycles(10000000);
+//            ADCCounter = 0;
+//            i=0;
+//        }
+//        else if(ADCCounter >= 128){
+//            for(; i<128; i++){
+//                sprintf(buffer,"%x00 \r\n",savedSpeakerValues[i]);
+//                            UART_transmitString(buffer);
+//
+//            }
+//            if (i==128) {
+//                sprintf(buffer,"\r\n\r\n\r\n");
+//                                        UART_transmitString(buffer);
+//                i++;
+//            }
+//        }
+//    }
 
 }
 
