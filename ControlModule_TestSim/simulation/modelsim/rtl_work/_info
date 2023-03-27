@@ -1,0 +1,355 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/aleja/Desktop/ControlModule_TestSim/simulation/modelsim
+vbimpy
+Z1 !s110 1679947917
+!i10b 1
+!s100 7>OmhZ2BaTOoIlPP54UJ=1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IZbnXPVBafo]g_fBhA<?5I2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1676485994
+8C:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v
+!i122 0
+L0 55 74
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1679947917.000000
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim
+Z8 tCvgOpt 0
+vbitreverse
+R1
+!i10b 1
+!s100 j>MzJRP^PiL51?VUgV^fU2
+R2
+Iz71]h52afe=?LhGI7KKPS1
+R3
+R0
+w1676486021
+8C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v
+!i122 1
+L0 47 183
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v|
+!i113 1
+R6
+R7
+R8
+vbutterfly
+Z9 !s110 1679947918
+!i10b 1
+!s100 ^P0:Xa3BT_Jge[B4:0R1R0
+R2
+IbUb]RgYZCSAYaL:3F[MYX1
+R3
+R0
+w1676486067
+8C:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v
+!i122 2
+L0 107 1134
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v|
+!i113 1
+R6
+R7
+R8
+vControl_Module
+Z10 !s110 1679947919
+!i10b 1
+!s100 8J34mfV6W[4PHQCFaF2nc1
+R2
+ICiY9Fmi=4oZjn[d8G>dVb1
+R3
+R0
+w1679891050
+8C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v
+!i122 10
+L0 1 164
+R4
+r1
+!s85 0
+31
+Z11 !s108 1679947919.000000
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v|
+!i113 1
+R6
+R7
+R8
+n@control_@module
+vControl_ModuleTB
+DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+R10
+!i10b 1
+!s100 6LDUo4lo>_eRK4ONKeXja1
+R2
+IIB1eziX2I?m:FaSNEQ8G92
+R3
+S1
+R0
+w1679947905
+8C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv
+FC:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv
+!i122 13
+L0 2 131
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv|
+!i113 1
+o-sv -work work
+!s92 -sv -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim
+R8
+n@control_@module@t@b
+vconvround
+R9
+!i10b 1
+!s100 Y6E`OG1GBRIN`U`lT[0Z32
+R2
+I8HVdBVo5DEAHj8;W_:PWf1
+R3
+R0
+w1676486215
+8C:/Users/aleja/Desktop/ControlModule_TestSim/convround.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/convround.v
+!i122 3
+L0 49 88
+R4
+r1
+!s85 0
+31
+Z12 !s108 1679947918.000000
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/convround.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/convround.v|
+!i113 1
+R6
+R7
+R8
+vFFT_Module
+R10
+!i10b 1
+!s100 Lo`56<YR8O?TgcdffJPS63
+R2
+IGTATNlGI?Eh6>X6S_0Z_21
+R3
+R0
+w1678834761
+8C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v
+!i122 8
+L0 78 233
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v|
+!i113 1
+R6
+R7
+R8
+n@f@f@t_@module
+vfftstage
+R9
+!i10b 1
+!s100 `FEBS2mnLiIl>hfGb5WS^3
+R2
+IZNZX<zRUK3f6EDQiIaC9n1
+R3
+R0
+w1676486299
+8C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v
+!i122 4
+L0 65 499
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v|
+!i113 1
+R6
+R7
+R8
+vlaststage
+R9
+!i10b 1
+!s100 0@Ad4RBFheaJ>gI3N^UJ82
+R2
+IgN;MnnFOBTP3gdUOKjH8g3
+R3
+R0
+w1676486332
+8C:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v
+!i122 5
+L0 46 199
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v|
+!i113 1
+R6
+R7
+R8
+vlongbimpy
+R9
+!i10b 1
+!s100 e:7U9HB;el[5hS27zF3:n1
+R2
+Id6UJkeKSDO_DgMU53o;LN0
+R3
+R0
+w1676486350
+8C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v
+!i122 6
+L0 52 427
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v|
+!i113 1
+R6
+R7
+R8
+vMagnitude
+R10
+!i10b 1
+!s100 EB9RThSSSG:N919E8DC^l1
+R2
+IO^m392;i_bdh[]XZ94zAc0
+R3
+R0
+w1679882074
+8C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v
+!i122 12
+L0 1 40
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v|
+!i113 1
+R6
+R7
+R8
+n@magnitude
+vqtrstage
+R9
+!i10b 1
+!s100 ffeVhhiO21R:8^kRWF^ZZ0
+R2
+Il]7_QA`gG>CIh5k[WQD0=0
+R3
+R0
+w1676486372
+8C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v
+!i122 7
+L0 73 288
+R4
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v|
+!i113 1
+R6
+R7
+R8
+vToneDetector_Module
+R10
+!i10b 1
+!s100 ;g2i>OK@>SAMGhH2EBTae3
+R2
+IO56f4W?dY[29;M02LJ<A03
+R3
+R0
+w1679942764
+8C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v
+!i122 9
+L0 1 76
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v|
+!i113 1
+R6
+R7
+R8
+n@tone@detector_@module
+vToneLUT
+R10
+!i10b 1
+!s100 GJ6A^i;8Ad[EF6NTcYVzF2
+R2
+I_XG?dL2>ZCeeh>gBPG>Mk0
+R3
+R0
+w1679947769
+8C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v
+FC:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v
+!i122 11
+L0 1 99
+R4
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim|C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v|
+!i113 1
+R6
+R7
+R8
+n@tone@l@u@t

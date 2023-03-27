@@ -21,8 +21,8 @@ module Magnitude(clock, reset_n, enable, addr_real, addr_cplx, mag);
 	
 		if(!reset_n) begin
 			
-			data_real <= 0;
-			data_cplx <= 0;
+			data_real <= 16'bXX;
+			data_cplx <= 16'bXX;
 			
 		end else begin
 			

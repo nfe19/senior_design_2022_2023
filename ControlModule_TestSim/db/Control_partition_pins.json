@@ -36,19 +36,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "myRegResultsmsb[4]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegResultsmsb[5]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegResultsmsb[6]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegResultsmsb[7]",
+					"name" : "myRegResultslsb[4]",
 					"strict" : false
 				},
 				{
@@ -60,11 +48,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "myRegMCUStatuslsb[4]",
+					"strict" : false
+				},
+				{
 					"name" : "myRegMCUStatuslsb[2]",
 					"strict" : false
 				},
 				{
-					"name" : "myRegMCUStatuslsb[1]",
+					"name" : "myRegMCUStatuslsb[3]",
 					"strict" : false
 				},
 				{
@@ -72,15 +64,47 @@
 					"strict" : false
 				},
 				{
-					"name" : "myRegSampleInlsb[7]",
+					"name" : "myRegMCUStatuslsb[1]",
 					"strict" : false
 				},
 				{
-					"name" : "myRegSampleInlsb[1]",
+					"name" : "myRegSampleInmsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[5]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[6]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInmsb[7]",
 					"strict" : false
 				},
 				{
 					"name" : "myRegSampleInlsb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "myRegSampleInlsb[1]",
 					"strict" : false
 				},
 				{
@@ -104,35 +128,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "myRegSampleInmsb[7]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[1]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[0]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[2]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[3]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[4]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[5]",
-					"strict" : false
-				},
-				{
-					"name" : "myRegSampleInmsb[6]",
+					"name" : "myRegSampleInlsb[7]",
 					"strict" : false
 				}
 			]

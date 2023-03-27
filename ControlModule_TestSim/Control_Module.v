@@ -10,7 +10,6 @@ module Control_Module(input clk, reset_n,
 	//Tone detector stuff
 	reg i_ce; 
 	reg TDenable;
-	reg [15:0] bins;
 	wire done;
 	wire [15:0] Tone;
 	
@@ -49,97 +48,114 @@ module Control_Module(input clk, reset_n,
 		if(!reset_n) begin
 			myRegASICStatusmsb <= 8'h00;
 			myRegASICStatuslsb <= 8'h00;
-			myRegResultslsb <= 8'h00;
-			myRegResultsmsb <= 8'h00;
+			myRegResultslsb <= 8'hXX;
+			myRegResultsmsb <= 8'hXX;
 			FFT_rst <= 1'b1; // FFT reset is active high
 			TD_rst <= 1'b0; 
 			TDenable <= 1'b0;
-			i_sample <= 16'h0000;
-			bins <= 16'h0000;
+			i_sample <= 16'hXXXX;
 			CEflag <= 1'b0;
 			pState <= SInitial;
 		end else begin
 			case(pState) 
 				SInitial:	begin
+				
 									myRegASICStatusmsb <= 8'h00;
 									myRegASICStatuslsb <= 8'h00;
-									myRegResultslsb <= 8'h00;
-									myRegResultsmsb <= 8'h00;
+									myRegResultslsb <= 8'hXX;
+									myRegResultsmsb <= 8'hXX;
 									FFT_rst <= 1'b1;
 									TD_rst <= 1'b0;
 									TDenable <= 1'b0;
-									i_sample <= 16'h0000;
-									bins <= 16'h0000;
+									i_sample <= 16'hXXXX;
 									CEflag <= 1'b0;
+									samplecount <= 0;
+									clkcount <= 0;
 									if(myRegMCUStatuslsb[2]==1'b1) pState <= SEnable; // Enable register (start)
+									
 								end
 								
 				SEnable:		begin
+				
 									FFT_rst <= 1'b0;
 									TD_rst <= 1'b1;
 									pState <= SWait;
+									
 								end
 							
 				SWait:		begin
-									myRegASICStatuslsb[0] <= 1'b0;
-									myRegASICStatuslsb[1] <= 1'b0;
-									myRegASICStatuslsb[2] <= 1'b1;
+				
 									myRegASICStatuslsb[3] <= 1'b1;
-									samplecount <= 0;
-									clkcount <= 0;
-									CEflag <= 1'b0;
-									if(myRegMCUStatuslsb[0]==1'b1) pState <= SFFTIn;
+									
+									if(myRegMCUStatuslsb[3]==1'b1) pState <= SFFTIn;
+									
 								end
 						
 				SFFTIn:		begin
-									//myRegASICStatuslsb[3] <= 1'b1;
-									i_sample <= {myRegSampleInmsb, myRegSampleInlsb};
-									samplecount <= samplecount + 1;
-									clkcount <= 0;
-									CEflag <= 1'b1;
-									pState <= SFFTWait;
+				
+									myRegASICStatuslsb[3] <= 1'b1;
+									
+									if(myRegMCUStatuslsb[0]==1'b1) begin
+										i_sample <= {myRegSampleInmsb, myRegSampleInlsb};
+										samplecount <= samplecount + 1;
+										clkcount <= 0;
+										CEflag <= 1'b1;
+										pState <= SFFTWait;
+									end
+									
 								end
 						
 				SFFTWait:	begin
+				
 									myRegASICStatuslsb[3] <= 1'b0;
 									CEflag <= 0;
-									if(clkcount<4) begin
+									
+									if(clkcount<2) 
 										clkcount <= clkcount + 1;
-									end else if(myRegMCUStatuslsb[0]==1'b1 && samplecount<128) begin 
+									else if(myRegMCUStatuslsb[4]==1'b0 && samplecount<128) 
 										pState <= SFFTIn;
-										myRegASICStatuslsb[3] <= 1'b1;//added
-									end else if(samplecount==128) begin
-										samplecount <= 0;
+									else if(samplecount==128) begin
+										myRegASICStatuslsb[2] <= 1'b1;
+										clkcount <= 0;
+										CEflag <= 1'b1;
 										pState <= SFFTOut;
 									end
+									
+									// Sample error? Less than 128 samples sent, etc
+									
 								end
 						
 				SFFTOut:  	begin
+				
 									myRegASICStatuslsb[1] <= 1'b1;
-									myRegASICStatuslsb[2] <= 1'b0;
-									//myRegASICStatuslsb[3] <= 1'b0;
+									CEflag <= 0;
+									
 									if(clkcount==0) begin
-										CEflag <= 1'b1;
-									end else if(clkcount<4) begin
-										CEflag <= 1'b0;
+										clkcount <= clkcount+1;
+									end else if(clkcount<2) begin
+										clkcount <= clkcount+1;
 									end else begin
 										clkcount <= 0;
 										CEflag <= 1'b1;
 									end
-									clkcount <= clkcount + 1;
 									
 									if(o_sync) TDenable <= 1'b1;
 									
+									// Timeout error? osync never goes high
+									
 									if(done) begin
-										{myRegResultsmsb,myRegResultslsb} <= Tone;
 										myRegASICStatuslsb[0] <= 1'b1;
 										myRegASICStatuslsb[1] <= 1'b0;
+										{myRegResultsmsb,myRegResultslsb} <= Tone;
 										pState <= SDone;
 									end
+									
 								end
 							
 				SDone: 		begin
+				
 									if(myRegMCUStatuslsb[1]==1'b1) pState <= SInitial;
+									
 								end			 
 			endcase
 		end	

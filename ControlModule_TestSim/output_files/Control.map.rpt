@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Control
-Fri Mar 24 11:47:14 2023
+Mon Mar 27 16:10:22 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -21,123 +21,122 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  13. Inverted Register Statistics
  14. Registers Packed Into Inferred Megafunctions
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_v6e1:auto_generated
- 17. Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1|altsyncram_v6e1:auto_generated
- 18. Source assignments for FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0|altsyncram_k3q1:auto_generated
- 19. Source assignments for FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0|altsyncram_msp1:auto_generated
- 20. Source assignments for FFT_Module:uFFT|fftstage:stage_8|altsyncram:omem_rtl_0|altsyncram_msp1:auto_generated
- 21. Source assignments for FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
- 22. Source assignments for FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0|altsyncram_0tp1:auto_generated
- 23. Source assignments for FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0|altsyncram_0tp1:auto_generated
- 24. Source assignments for FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
- 25. Source assignments for FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0|altsyncram_00q1:auto_generated
- 26. Source assignments for FFT_Module:uFFT|fftstage:stage_32|altsyncram:omem_rtl_0|altsyncram_00q1:auto_generated
- 27. Source assignments for FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
- 28. Source assignments for FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0|altsyncram_uvp1:auto_generated
- 29. Source assignments for FFT_Module:uFFT|fftstage:stage_64|altsyncram:omem_rtl_0|altsyncram_uvp1:auto_generated
- 30. Source assignments for FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
- 31. Source assignments for FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0|altsyncram_a0q1:auto_generated
- 32. Source assignments for FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0|altsyncram_a0q1:auto_generated
- 33. Source assignments for FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
- 34. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128
- 35. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly
- 36. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
- 37. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
- 38. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
- 39. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
- 40. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
- 41. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
- 42. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
- 43. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
- 44. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
- 45. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
- 46. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64
- 47. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly
- 48. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
- 49. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
- 50. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
- 51. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
- 52. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
- 53. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
- 54. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
- 55. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
- 56. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
- 57. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
- 58. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32
- 59. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly
- 60. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
- 61. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
- 62. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
- 63. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
- 64. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
- 65. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
- 66. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
- 67. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
- 68. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
- 69. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
- 70. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16
- 71. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly
- 72. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
- 73. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
- 74. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
- 75. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
- 76. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
- 77. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
- 78. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
- 79. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
- 80. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
- 81. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
- 82. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8
- 83. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly
- 84. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
- 85. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
- 86. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
- 87. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
- 88. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
- 89. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
- 90. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
- 91. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
- 92. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
- 93. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
- 94. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4
- 95. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r
- 96. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_i
- 97. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_r
- 98. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_i
- 99. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2
-100. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2|convround:do_rnd_r
-101. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2|convround:do_rnd_i
-102. Parameter Settings for User Entity Instance: FFT_Module:uFFT|bitreverse:revstage
-103. Parameter Settings for User Entity Instance: ToneDetector_Module:uTD|Magnitude:u0
-104. Parameter Settings for Inferred Entity Instance: ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0
-105. Parameter Settings for Inferred Entity Instance: ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1
-106. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0
-107. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0
-108. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|altsyncram:omem_rtl_0
-109. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
-110. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0
-111. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0
-112. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
-113. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0
-114. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|altsyncram:omem_rtl_0
-115. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
-116. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0
-117. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|altsyncram:omem_rtl_0
-118. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
-119. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0
-120. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0
-121. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
-122. altsyncram Parameter Settings by Entity Instance
-123. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_i"
-124. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r"
-125. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy"
-126. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy"
-127. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy"
-128. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1"
-129. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0"
-130. Post-Synthesis Netlist Statistics for Top Partition
-131. Elapsed Time Per Partition
-132. Analysis & Synthesis Messages
+ 16. Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_9o22:auto_generated
+ 17. Source assignments for FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0|altsyncram_k3q1:auto_generated
+ 18. Source assignments for FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0|altsyncram_msp1:auto_generated
+ 19. Source assignments for FFT_Module:uFFT|fftstage:stage_8|altsyncram:omem_rtl_0|altsyncram_msp1:auto_generated
+ 20. Source assignments for FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
+ 21. Source assignments for FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0|altsyncram_0tp1:auto_generated
+ 22. Source assignments for FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0|altsyncram_0tp1:auto_generated
+ 23. Source assignments for FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
+ 24. Source assignments for FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0|altsyncram_00q1:auto_generated
+ 25. Source assignments for FFT_Module:uFFT|fftstage:stage_32|altsyncram:omem_rtl_0|altsyncram_00q1:auto_generated
+ 26. Source assignments for FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
+ 27. Source assignments for FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0|altsyncram_uvp1:auto_generated
+ 28. Source assignments for FFT_Module:uFFT|fftstage:stage_64|altsyncram:omem_rtl_0|altsyncram_uvp1:auto_generated
+ 29. Source assignments for FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
+ 30. Source assignments for FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0|altsyncram_a0q1:auto_generated
+ 31. Source assignments for FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0|altsyncram_a0q1:auto_generated
+ 32. Source assignments for FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated
+ 33. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128
+ 34. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly
+ 35. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
+ 36. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
+ 37. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
+ 38. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
+ 39. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
+ 40. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
+ 41. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
+ 42. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
+ 43. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
+ 44. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
+ 45. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64
+ 46. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly
+ 47. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
+ 48. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
+ 49. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
+ 50. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
+ 51. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
+ 52. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
+ 53. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
+ 54. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
+ 55. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
+ 56. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
+ 57. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32
+ 58. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly
+ 59. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
+ 60. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
+ 61. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
+ 62. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
+ 63. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
+ 64. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
+ 65. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
+ 66. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
+ 67. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
+ 68. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
+ 69. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16
+ 70. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly
+ 71. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
+ 72. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
+ 73. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
+ 74. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
+ 75. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
+ 76. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
+ 77. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
+ 78. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
+ 79. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
+ 80. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
+ 81. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8
+ 82. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly
+ 83. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy
+ 84. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0
+ 85. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1
+ 86. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy
+ 87. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy
+ 88. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy
+ 89. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_left_r
+ 90. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_left_i
+ 91. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_right_r
+ 92. Parameter Settings for User Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|convround:do_rnd_right_i
+ 93. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4
+ 94. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r
+ 95. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_i
+ 96. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_r
+ 97. Parameter Settings for User Entity Instance: FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_i
+ 98. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2
+ 99. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2|convround:do_rnd_r
+100. Parameter Settings for User Entity Instance: FFT_Module:uFFT|laststage:stage_2|convround:do_rnd_i
+101. Parameter Settings for User Entity Instance: FFT_Module:uFFT|bitreverse:revstage
+102. Parameter Settings for User Entity Instance: ToneDetector_Module:uTD|Magnitude:u0
+103. Parameter Settings for Inferred Entity Instance: ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0
+104. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0
+105. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0
+106. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|altsyncram:omem_rtl_0
+107. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
+108. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0
+109. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0
+110. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
+111. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0
+112. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|altsyncram:omem_rtl_0
+113. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
+114. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0
+115. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|altsyncram:omem_rtl_0
+116. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
+117. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0
+118. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0
+119. Parameter Settings for Inferred Entity Instance: FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0
+120. altsyncram Parameter Settings by Entity Instance
+121. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_i"
+122. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r"
+123. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy"
+124. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy"
+125. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[0].genmpy"
+126. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1"
+127. Port Connectivity Checks: "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0"
+128. Post-Synthesis Netlist Statistics for Top Partition
+129. Elapsed Time Per Partition
+130. Analysis & Synthesis Messages
+131. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -164,16 +163,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar 24 11:47:14 2023       ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 27 16:10:22 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Control                                     ;
 ; Top-level Entity Name           ; Control_Module                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 3784                                        ;
+; Total registers                 ; 3755                                        ;
 ; Total pins                      ; 66                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 16,976                                      ;
+; Total block memory bits         ; 12,880                                      ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -279,7 +278,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -289,8 +288,8 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
-;     Processor 7            ;   0.1%      ;
-;     Processor 8            ;   0.1%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -308,11 +307,11 @@ https://fpgasoftware.intel.com/eula.
 ; longbimpy.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v                                ;         ;
 ; Magnitude.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v                                ;         ;
 ; qtrstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v                                 ;         ;
-; ToneLUT.sv                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv                                 ;         ;
 ; MagLUT.hex                                 ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/aleja/Desktop/ControlModule_TestSim/MagLUT.hex                                 ;         ;
 ; FFT_Module.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v                               ;         ;
 ; ToneDetector_Module.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v                      ;         ;
 ; Control_Module.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v                           ;         ;
+; ToneLUT.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v                                  ;         ;
 ; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                   ;         ;
 ; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc            ;         ;
 ; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                      ;         ;
@@ -322,8 +321,8 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                       ;         ;
 ; altram.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                       ;         ;
 ; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                     ;         ;
-; db/altsyncram_v6e1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_v6e1.tdf                     ;         ;
-; db/Control.ram0_Magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/Control.ram0_Magnitude_4e04d15e.hdl.mif ;         ;
+; db/altsyncram_9o22.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_9o22.tdf                     ;         ;
+; db/control.ram0_magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/control.ram0_magnitude_4e04d15e.hdl.mif ;         ;
 ; db/altsyncram_k3q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_k3q1.tdf                     ;         ;
 ; db/altsyncram_msp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_msp1.tdf                     ;         ;
 ; db/altsyncram_4tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_4tp1.tdf                     ;         ;
@@ -339,26 +338,26 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2002      ;
+; Estimate of Logic utilization (ALMs needed) ; 1987      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2415      ;
+; Combinational ALUT usage for logic          ; 2388      ;
 ;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 84        ;
-;     -- 5 input functions                    ; 340       ;
-;     -- 4 input functions                    ; 130       ;
-;     -- <=3 input functions                  ; 1860      ;
+;     -- 6 input functions                    ; 74        ;
+;     -- 5 input functions                    ; 366       ;
+;     -- 4 input functions                    ; 134       ;
+;     -- <=3 input functions                  ; 1813      ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 3784      ;
+; Dedicated logic registers                   ; 3755      ;
 ;                                             ;           ;
 ; I/O pins                                    ; 66        ;
 ; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 16976     ;
+; Total block memory bits                     ; 12880     ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 3954      ;
-; Total fan-out                               ; 23387     ;
+; Total fan-out                               ; 23160     ;
 ; Average fan-out                             ; 3.53      ;
 +---------------------------------------------+-----------+
 
@@ -368,17 +367,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Control_Module                                 ; 2415 (129)          ; 3784 (101)                ; 16976             ; 0          ; 66   ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
+; |Control_Module                                 ; 2388 (141)          ; 3755 (101)                ; 12880             ; 0          ; 66   ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
 ;    |FFT_Module:uFFT|                            ; 2169 (3)            ; 3587 (18)                 ; 8784              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT                                                                                                    ; FFT_Module          ; work         ;
 ;       |bitreverse:revstage|                     ; 16 (16)             ; 10 (10)                   ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage                                                                                ; bitreverse          ; work         ;
 ;          |altsyncram:brmem_rtl_0|               ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0                                                         ; altsyncram          ; work         ;
 ;             |altsyncram_k3q1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0|altsyncram_k3q1:auto_generated                          ; altsyncram_k3q1     ; work         ;
-;       |fftstage:stage_128|                      ; 425 (49)            ; 700 (78)                  ; 2192              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128                                                                                 ; fftstage            ; work         ;
+;       |fftstage:stage_128|                      ; 426 (49)            ; 700 (78)                  ; 2192              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128                                                                                 ; fftstage            ; work         ;
 ;          |altsyncram:imem_rtl_0|                ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0                                                           ; altsyncram          ; work         ;
 ;             |altsyncram_a0q1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0|altsyncram_a0q1:auto_generated                            ; altsyncram_a0q1     ; work         ;
 ;          |altsyncram:omem_rtl_0|                ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0                                                           ; altsyncram          ; work         ;
 ;             |altsyncram_a0q1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|altsyncram:omem_rtl_0|altsyncram_a0q1:auto_generated                            ; altsyncram_a0q1     ; work         ;
-;          |butterfly:FWBFLY.bfly|                ; 376 (124)           ; 622 (349)                 ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly                                                           ; butterfly           ; work         ;
+;          |butterfly:FWBFLY.bfly|                ; 377 (125)           ; 622 (349)                 ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly                                                           ; butterfly           ; work         ;
 ;             |altsyncram:fifo_left_rtl_0|        ; 0 (0)               ; 0 (0)                     ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0                                ; altsyncram          ; work         ;
 ;                |altsyncram_4tp1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated ; altsyncram_4tp1     ; work         ;
 ;             |convround:do_rnd_left_i|           ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_i                                   ; convround           ; work         ;
@@ -391,12 +390,12 @@ https://fpgasoftware.intel.com/eula.
 ;                |bimpy:GENSTAGES[2].genmpy|      ; 19 (19)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy       ; bimpy               ; work         ;
 ;                |bimpy:lmpy_0|                   ; 26 (26)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0                    ; bimpy               ; work         ;
 ;                |bimpy:lmpy_1|                   ; 16 (16)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_1                    ; bimpy               ; work         ;
-;       |fftstage:stage_16|                       ; 387 (35)            ; 644 (64)                  ; 400               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16                                                                                  ; fftstage            ; work         ;
+;       |fftstage:stage_16|                       ; 386 (35)            ; 644 (64)                  ; 400               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16                                                                                  ; fftstage            ; work         ;
 ;          |altsyncram:imem_rtl_0|                ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_0tp1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0|altsyncram_0tp1:auto_generated                             ; altsyncram_0tp1     ; work         ;
 ;          |altsyncram:omem_rtl_0|                ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_0tp1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|altsyncram:omem_rtl_0|altsyncram_0tp1:auto_generated                             ; altsyncram_0tp1     ; work         ;
-;          |butterfly:FWBFLY.bfly|                ; 352 (118)           ; 580 (321)                 ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly                                                            ; butterfly           ; work         ;
+;          |butterfly:FWBFLY.bfly|                ; 351 (117)           ; 580 (321)                 ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly                                                            ; butterfly           ; work         ;
 ;             |altsyncram:fifo_left_rtl_0|        ; 0 (0)               ; 0 (0)                     ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0                                 ; altsyncram          ; work         ;
 ;                |altsyncram_4tp1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 144               ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated  ; altsyncram_4tp1     ; work         ;
 ;             |convround:do_rnd_left_i|           ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|convround:do_rnd_left_i                                    ; convround           ; work         ;
@@ -471,13 +470,11 @@ https://fpgasoftware.intel.com/eula.
 ;          |convround:do_rnd_diff_r|              ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_r                                                           ; convround           ; work         ;
 ;          |convround:do_rnd_sum_i|               ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_i                                                            ; convround           ; work         ;
 ;          |convround:do_rnd_sum_r|               ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r                                                            ; convround           ; work         ;
-;    |ToneDetector_Module:uTD|                    ; 117 (80)            ; 96 (88)                   ; 8192              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD                                                                                            ; ToneDetector_Module ; work         ;
-;       |Magnitude:u0|                            ; 16 (16)             ; 2 (2)                     ; 8192              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0                                                                               ; Magnitude           ; work         ;
+;    |ToneDetector_Module:uTD|                    ; 78 (46)             ; 67 (61)                   ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD                                                                                            ; ToneDetector_Module ; work         ;
+;       |Magnitude:u0|                            ; 16 (16)             ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0                                                                               ; Magnitude           ; work         ;
 ;          |altsyncram:rom_rtl_0|                 ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0                                                          ; altsyncram          ; work         ;
-;             |altsyncram_v6e1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_v6e1:auto_generated                           ; altsyncram_v6e1     ; work         ;
-;          |altsyncram:rom_rtl_1|                 ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1                                                          ; altsyncram          ; work         ;
-;             |altsyncram_v6e1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1|altsyncram_v6e1:auto_generated                           ; altsyncram_v6e1     ; work         ;
-;       |ToneLUT:u1|                              ; 21 (21)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|ToneLUT:u1                                                                                 ; ToneLUT             ; work         ;
+;             |altsyncram_9o22:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_9o22:auto_generated                           ; altsyncram_9o22     ; work         ;
+;       |ToneLUT:u1|                              ; 16 (16)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|ToneLUT:u1                                                                                 ; ToneLUT             ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -503,8 +500,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0|altsyncram_msp1:auto_generated|ALTSYNCRAM                              ; AUTO ; Simple Dual Port ; 4            ; 16           ; 4            ; 16           ; 64   ; None                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|altsyncram:omem_rtl_0|altsyncram_msp1:auto_generated|ALTSYNCRAM                              ; AUTO ; Simple Dual Port ; 4            ; 16           ; 4            ; 16           ; 64   ; None                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0|altsyncram_4tp1:auto_generated|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 8            ; 18           ; 8            ; 18           ; 144  ; None                                       ;
-; ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_v6e1:auto_generated|ALTSYNCRAM                           ; AUTO ; ROM              ; 256          ; 16           ; --           ; --           ; 4096 ; db/Control.ram0_Magnitude_4e04d15e.hdl.mif ;
-; ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1|altsyncram_v6e1:auto_generated|ALTSYNCRAM                           ; AUTO ; ROM              ; 256          ; 16           ; --           ; --           ; 4096 ; db/Control.ram0_Magnitude_4e04d15e.hdl.mif ;
+; ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_9o22:auto_generated|ALTSYNCRAM                           ; AUTO ; True Dual Port   ; 256          ; 16           ; 256          ; 16           ; 4096 ; db/Control.ram0_Magnitude_4e04d15e.hdl.mif ;
 +-------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
 
 
@@ -568,6 +564,7 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|acc[0][22]                            ; Stuck at GND due to stuck port data_in                                                       ;
 ; ToneDetector_Module:uTD|maxLow[16..31]                                                                                   ; Stuck at GND due to stuck port data_in                                                       ;
 ; ToneDetector_Module:uTD|maxHigh[16..31]                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
+; ToneDetector_Module:uTD|ToneLUT:u1|Tone[5..15]                                                                           ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_two[19]                                           ; Lost fanout                                                                                  ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_two[19]                                            ; Lost fanout                                                                                  ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_two[20]                                           ; Lost fanout                                                                                  ;
@@ -788,6 +785,17 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|r_b[2][11]                            ; Lost fanout                                                                                  ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|r_b[2][12]                            ; Lost fanout                                                                                  ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[1].genmpy|o_r[13,14]  ; Lost fanout                                                                                  ;
+; myRegResultslsb[6]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultslsb[7]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[0]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[1]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[2]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[3]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[4]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[5]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[6]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; myRegResultsmsb[7]~reg0                                                                                                  ; Merged with myRegResultslsb[5]~reg0                                                          ;
+; ToneDetector_Module:uTD|lowReady                                                                                         ; Merged with ToneDetector_Module:uTD|highReady                                                ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|fifo_addr[0]                                                     ; Merged with FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|fifo_addr[0]            ;
 ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|fifo_addr[0]                                                     ; Merged with FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|fifo_addr[0]            ;
 ; FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|fifo_addr[0]                                                     ; Merged with FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|fifo_addr[0]            ;
@@ -815,9 +823,9 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_8|ib_c[0,1,4,6,7,9,12,13]                                                                 ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[0,1,4,6,7,9,12,13]                                         ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[0,1,4,6,7,9,12,13]                                       ; Stuck at GND due to stuck port data_in                                                       ;
+; myRegResultslsb[5]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[0,1,13,14,26,27]                           ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|ib_c[0,7,12]                                                                           ; Stuck at GND due to stuck port data_in                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[4..11]                                                                           ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef[0,7,12]                                                   ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef_2[0,7,12]                                                 ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|u_b[0]                                  ; Stuck at GND due to stuck port data_in                                                       ;
@@ -875,14 +883,6 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|acc[2][0]                              ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:GENSTAGES[2].genmpy|o_r[0]       ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|acc[3][0]                              ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultslsb[4]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultslsb[5]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultslsb[6]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultslsb[7]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultsmsb[0]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultsmsb[1]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultsmsb[2]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
-; myRegResultsmsb[3]~reg0                                                                                                  ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|o_r[0]                                 ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[0]                                          ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[0]                                            ; Stuck at GND due to stuck port data_in                                                       ;
@@ -892,15 +892,13 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_two[0]                                           ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|mpy_i[0,1]                                                        ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|mpy_i[0]                                                         ; Stuck at GND due to stuck port data_in                                                       ;
+; ToneDetector_Module:uTD|tempLowBin[5]                                                                                    ; Stuck at GND due to stuck port data_in                                                       ;
+; ToneDetector_Module:uTD|low_bin[5]                                                                                       ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_128|wait_for_sync                                                                         ; Lost fanout                                                                                  ;
 ; pState~11                                                                                                                ; Lost fanout                                                                                  ;
 ; pState~12                                                                                                                ; Lost fanout                                                                                  ;
 ; pState~13                                                                                                                ; Lost fanout                                                                                  ;
 ; pState~14                                                                                                                ; Lost fanout                                                                                  ;
-; myRegResultslsb[1]~reg0                                                                                                  ; Merged with myRegResultslsb[0]~reg0                                                          ;
-; myRegResultslsb[2]~reg0                                                                                                  ; Merged with myRegResultslsb[0]~reg0                                                          ;
-; myRegResultslsb[3]~reg0                                                                                                  ; Merged with myRegResultslsb[0]~reg0                                                          ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[1..3]                                                                            ; Merged with ToneDetector_Module:uTD|ToneLUT:u1|Tone[0]                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[2,3,5,8]                                                 ; Merged with FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[14]              ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[17,20,23]                                                ; Merged with FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[15]              ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[18,19,21]                                                ; Merged with FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[16]              ;
@@ -936,7 +934,7 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_128|ib_c[11]                                                                              ; Merged with FFT_Module:uFFT|fftstage:stage_128|ib_c[10]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[2]                                         ; Stuck at GND due to stuck port data_in                                                       ;
 ; FFT_Module:uFFT|qtrstage:stage_4|iaddr[3..6]                                                                             ; Lost fanout                                                                                  ;
-; Total Number of Removed Registers = 531                                                                                  ;                                                                                              ;
+; Total Number of Removed Registers = 534                                                                                  ;                                                                                              ;
 +--------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 
@@ -1078,6 +1076,9 @@ Encoding Type:  One-Hot
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|r_b[0][1],                           ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|r_b[1][1],                           ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|r_b[2][1]                            ;
+; FFT_Module:uFFT|fftstage:stage_16|ib_c[0]                                                     ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef[0],                                                    ;
+;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef_2[0],                                                  ;
+;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[13]                                    ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_two[19]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_two[19],                                        ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|o_r[19],                             ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|acc[3][19]                           ;
@@ -1138,37 +1139,36 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_two[22]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_two[22],                                      ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|o_r[22],                           ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|acc[3][22]                         ;
-; FFT_Module:uFFT|fftstage:stage_8|ib_c[0]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[0],                                                     ;
-;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[0],                                                   ;
-;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[13]                                     ;
 ; FFT_Module:uFFT|fftstage:stage_8|ib_c[1]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[1],                                                     ;
 ;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[1],                                                   ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[14]                                     ;
+; FFT_Module:uFFT|fftstage:stage_8|ib_c[0]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[0],                                                     ;
+;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[0],                                                   ;
+;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[13]                                     ;
 ; FFT_Module:uFFT|qtrstage:stage_4|iaddr[6]                                                     ; Lost Fanouts              ; FFT_Module:uFFT|qtrstage:stage_4|iaddr[5],                                                                            ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|qtrstage:stage_4|iaddr[4],                                                                            ;
 ;                                                                                               ;                           ; FFT_Module:uFFT|qtrstage:stage_4|iaddr[3]                                                                             ;
-; FFT_Module:uFFT|fftstage:stage_16|ib_c[0]                                                     ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef[0],                                                    ;
-;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef_2[0],                                                  ;
-;                                                                                               ;                           ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[13]                                    ;
-; FFT_Module:uFFT|fftstage:stage_8|ib_c[4]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[4],                                                     ;
-;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[4]                                                    ;
-; FFT_Module:uFFT|fftstage:stage_8|ib_c[6]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[6],                                                     ;
-;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[6]                                                    ;
-; FFT_Module:uFFT|fftstage:stage_8|ib_c[7]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[7],                                                     ;
-;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[7]                                                    ;
 ; FFT_Module:uFFT|fftstage:stage_8|ib_c[9]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[9],                                                     ;
 ;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[9]                                                    ;
 ; FFT_Module:uFFT|fftstage:stage_16|ib_c[7]                                                     ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef[7],                                                    ;
 ;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|r_coef_2[7]                                                   ;
+; FFT_Module:uFFT|fftstage:stage_8|ib_c[6]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[6],                                                     ;
+;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[6]                                                    ;
+; FFT_Module:uFFT|fftstage:stage_8|ib_c[4]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[4],                                                     ;
+;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[4]                                                    ;
+; FFT_Module:uFFT|fftstage:stage_8|ib_c[7]                                                      ; Stuck at GND              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef[7],                                                     ;
+;                                                                                               ; due to stuck port data_in ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|r_coef_2[7]                                                    ;
+; ToneDetector_Module:uTD|ToneLUT:u1|Tone[5]                                                    ; Stuck at GND              ; myRegResultslsb[5]~reg0                                                                                               ;
+;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                         ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                         ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                         ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                         ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                       ;
 ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[20]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[20]                                       ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                       ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                       ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                        ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                        ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                        ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                        ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                      ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[20]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[20]                                      ;
+; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                        ;
+; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                        ;
+; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[20]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[20]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                      ;
@@ -1182,40 +1182,26 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                       ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                       ;
-; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                       ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                      ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                       ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]            ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                     ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[20]            ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[20]                                     ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]            ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                     ;
-; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                        ;
-; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                        ;
-; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                      ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                         ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                         ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                         ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]                ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                         ;
-; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                        ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                      ;
-; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                      ;
-; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                        ;
-; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[19]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[19]                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[4]                                                    ; Stuck at GND              ; myRegResultslsb[4]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[5]                                                    ; Stuck at GND              ; myRegResultslsb[5]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[6]                                                    ; Stuck at GND              ; myRegResultslsb[6]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[7]                                                    ; Stuck at GND              ; myRegResultslsb[7]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[8]                                                    ; Stuck at GND              ; myRegResultsmsb[0]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[9]                                                    ; Stuck at GND              ; myRegResultsmsb[1]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[10]                                                   ; Stuck at GND              ; myRegResultsmsb[2]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
-; ToneDetector_Module:uTD|ToneLUT:u1|Tone[11]                                                   ; Stuck at GND              ; myRegResultsmsb[3]~reg0                                                                                               ;
-;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
 ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]            ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                     ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[22]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[22]                                        ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                        ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                      ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[20]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[20]                                      ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]             ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                      ;
+; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                        ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                        ;
+; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[19]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[19]                                        ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[22]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[22]                                       ;
+; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp2_three[21]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_three[21]                                       ;
+; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[20]               ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[20]                                        ;
+; ToneDetector_Module:uTD|tempLowBin[5]                                                         ; Stuck at GND              ; ToneDetector_Module:uTD|low_bin[5]                                                                                    ;
+;                                                                                               ; due to stuck port data_in ;                                                                                                                       ;
+; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp3_one[21]              ; Lost Fanouts              ; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.rp_one[21]                                       ;
 +-----------------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1224,12 +1210,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3784  ;
-; Number of registers using Synchronous Clear  ; 310   ;
+; Total registers                              ; 3755  ;
+; Number of registers using Synchronous Clear  ; 278   ;
 ; Number of registers using Synchronous Load   ; 634   ;
-; Number of registers using Asynchronous Clear ; 115   ;
+; Number of registers using Asynchronous Clear ; 66    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3745  ;
+; Number of registers using Clock Enable       ; 3710  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1244,8 +1230,8 @@ Encoding Type:  One-Hot
 ; FFT_Module:uFFT|qtrstage:stage_4|wait_for_sync                                   ; 2       ;
 ; FFT_Module:uFFT|laststage:stage_2|wait_for_sync                                  ; 2       ;
 ; FFT_Module:uFFT|fftstage:stage_8|wait_for_sync                                   ; 2       ;
-; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[0] ; 6       ;
-; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[1] ; 8       ;
+; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[0] ; 10      ;
+; FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[1] ; 12      ;
 ; FFT_Module:uFFT|fftstage:stage_16|wait_for_sync                                  ; 2       ;
 ; FFT_Module:uFFT|fftstage:stage_32|wait_for_sync                                  ; 2       ;
 ; FFT_Module:uFFT|fftstage:stage_64|wait_for_sync                                  ; 2       ;
@@ -1259,7 +1245,7 @@ Encoding Type:  One-Hot
 ; Register Name                                                             ; Megafunction                                                             ; Type ;
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------+------+
 ; ToneDetector_Module:uTD|Magnitude:u0|data_real[0..15]                     ; ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_0                           ; RAM  ;
-; ToneDetector_Module:uTD|Magnitude:u0|data_cplx[0..15]                     ; ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_1                           ; RAM  ;
+; ToneDetector_Module:uTD|Magnitude:u0|data_cplx[0..15]                     ; ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_0                           ; RAM  ;
 ; FFT_Module:uFFT|bitreverse:revstage|o_out[0..15]                          ; FFT_Module:uFFT|bitreverse:revstage|brmem_rtl_0                          ; RAM  ;
 ; FFT_Module:uFFT|fftstage:stage_8|ib_a[0..15]                              ; FFT_Module:uFFT|fftstage:stage_8|imem_rtl_0                              ; RAM  ;
 ; FFT_Module:uFFT|fftstage:stage_8|pre_ovalue[0..15]                        ; FFT_Module:uFFT|fftstage:stage_8|omem_rtl_0                              ; RAM  ;
@@ -1284,41 +1270,32 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
-; 3:1                ; 53 bits   ; 106 LEs       ; 0 LEs                ; 106 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|aux_pipeline[0]            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Control_Module|i_sample[9]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; Yes        ; |Control_Module|myRegResultslsb[4]~reg0                                                            ;
+; 3:1                ; 53 bits   ; 106 LEs       ; 0 LEs                ; 106 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|aux_pipeline[2]           ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|wraddr[7]                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|iaddr[2]                                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|iaddr[1]                                          ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|oaddr[1]                                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|iaddr[2]                                         ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|oaddr[3]                                         ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|iaddr[4]                                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|iaddr[3]                                         ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|oaddr[0]                                         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|iaddr[4]                                         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|oaddr[3]                                         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|iaddr[0]                                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|oaddr[5]                                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|iaddr[0]                                          ;
-; 3:1                ; 112 bits  ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_d[1] ;
-; 3:1                ; 219 bits  ; 438 LEs       ; 0 LEs                ; 438 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_d[11] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|iaddr[0]                                         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|oaddr[2]                                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|iaddr[3]                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|oaddr[6]                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|iaddr[2]                                          ;
+; 3:1                ; 112 bits  ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[8]  ;
+; 3:1                ; 219 bits  ; 438 LEs       ; 0 LEs                ; 438 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[18] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[22]  ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |Control_Module|clkcount[13]                                                                       ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |Control_Module|samplecount[16]                                                                    ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |Control_Module|clkcount[29]                                                                       ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[0]   ;
-; 13:1               ; 5 bits    ; 40 LEs        ; 25 LEs               ; 15 LEs                 ; No         ; |Control_Module|Selector40                                                                         ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |Control_Module|Selector44                                                                         ;
+; 15:1               ; 7 bits    ; 70 LEs        ; 42 LEs               ; 28 LEs                 ; No         ; |Control_Module|Selector108                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_v6e1:auto_generated ;
-+---------------------------------+--------------------+------+---------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                ;
-+---------------------------------+--------------------+------+---------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
-+---------------------------------+--------------------+------+---------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1|altsyncram_v6e1:auto_generated ;
+; Source assignments for ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0|altsyncram_9o22:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                ;
 +---------------------------------+--------------------+------+---------------------------------------------------+
@@ -2387,7 +2364,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE             ;
 ; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE           ;
 ; WIDTH_BYTEENA                      ; 1                                          ; Untyped                  ;
-; OPERATION_MODE                     ; ROM                                        ; Untyped                  ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT                            ; Untyped                  ;
 ; WIDTH_A                            ; 16                                         ; Untyped                  ;
 ; WIDTHAD_A                          ; 8                                          ; Untyped                  ;
 ; NUMWORDS_A                         ; 256                                        ; Untyped                  ;
@@ -2397,13 +2374,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                  ;
 ; INDATA_ACLR_A                      ; NONE                                       ; Untyped                  ;
 ; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                  ;
-; WIDTH_B                            ; 1                                          ; Untyped                  ;
-; WIDTHAD_B                          ; 1                                          ; Untyped                  ;
-; NUMWORDS_B                         ; 1                                          ; Untyped                  ;
-; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                  ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                  ;
-; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                  ;
-; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                  ;
+; WIDTH_B                            ; 16                                         ; Untyped                  ;
+; WIDTHAD_B                          ; 8                                          ; Untyped                  ;
+; NUMWORDS_B                         ; 256                                        ; Untyped                  ;
+; INDATA_REG_B                       ; CLOCK0                                     ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0                                     ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK0                                     ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK0                                     ; Untyped                  ;
 ; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                  ;
 ; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                  ;
 ; INDATA_ACLR_B                      ; NONE                                       ; Untyped                  ;
@@ -2432,68 +2409,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                  ;
 ; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                  ;
 ; DEVICE_FAMILY                      ; Cyclone V                                  ; Untyped                  ;
-; CBXI_PARAMETER                     ; altsyncram_v6e1                            ; Untyped                  ;
-+------------------------------------+--------------------------------------------+--------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1 ;
-+------------------------------------+--------------------------------------------+--------------------------+
-; Parameter Name                     ; Value                                      ; Type                     ;
-+------------------------------------+--------------------------------------------+--------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped                  ;
-; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY               ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY             ;
-; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE             ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE           ;
-; WIDTH_BYTEENA                      ; 1                                          ; Untyped                  ;
-; OPERATION_MODE                     ; ROM                                        ; Untyped                  ;
-; WIDTH_A                            ; 16                                         ; Untyped                  ;
-; WIDTHAD_A                          ; 8                                          ; Untyped                  ;
-; NUMWORDS_A                         ; 256                                        ; Untyped                  ;
-; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped                  ;
-; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped                  ;
-; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped                  ;
-; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped                  ;
-; INDATA_ACLR_A                      ; NONE                                       ; Untyped                  ;
-; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped                  ;
-; WIDTH_B                            ; 1                                          ; Untyped                  ;
-; WIDTHAD_B                          ; 1                                          ; Untyped                  ;
-; NUMWORDS_B                         ; 1                                          ; Untyped                  ;
-; INDATA_REG_B                       ; CLOCK1                                     ; Untyped                  ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped                  ;
-; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped                  ;
-; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped                  ;
-; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped                  ;
-; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped                  ;
-; INDATA_ACLR_B                      ; NONE                                       ; Untyped                  ;
-; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped                  ;
-; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped                  ;
-; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped                  ;
-; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped                  ;
-; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped                  ;
-; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped                  ;
-; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped                  ;
-; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped                  ;
-; BYTE_SIZE                          ; 8                                          ; Untyped                  ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped                  ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped                  ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped                  ;
-; INIT_FILE                          ; db/Control.ram0_Magnitude_4e04d15e.hdl.mif ; Untyped                  ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped                  ;
-; MAXIMUM_DEPTH                      ; 0                                          ; Untyped                  ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped                  ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped                  ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped                  ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped                  ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped                  ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped                  ;
-; ENABLE_ECC                         ; FALSE                                      ; Untyped                  ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped                  ;
-; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped                  ;
-; DEVICE_FAMILY                      ; Cyclone V                                  ; Untyped                  ;
-; CBXI_PARAMETER                     ; altsyncram_v6e1                            ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_9o22                            ; Untyped                  ;
 +------------------------------------+--------------------------------------------+--------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -3479,26 +3395,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------------------+
 ; Name                                      ; Value                                                                               ;
 +-------------------------------------------+-------------------------------------------------------------------------------------+
-; Number of entity instances                ; 18                                                                                  ;
+; Number of entity instances                ; 17                                                                                  ;
 ; Entity Instance                           ; ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0                           ;
-;     -- OPERATION_MODE                     ; ROM                                                                                 ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                                     ;
 ;     -- WIDTH_A                            ; 16                                                                                  ;
 ;     -- NUMWORDS_A                         ; 256                                                                                 ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                        ;
-;     -- WIDTH_B                            ; 1                                                                                   ;
-;     -- NUMWORDS_B                         ; 1                                                                                   ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                              ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                        ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                           ;
-; Entity Instance                           ; ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_1                           ;
-;     -- OPERATION_MODE                     ; ROM                                                                                 ;
-;     -- WIDTH_A                            ; 16                                                                                  ;
-;     -- NUMWORDS_A                         ; 256                                                                                 ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                        ;
-;     -- WIDTH_B                            ; 1                                                                                   ;
-;     -- NUMWORDS_B                         ; 1                                                                                   ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                                              ;
+;     -- WIDTH_B                            ; 16                                                                                  ;
+;     -- NUMWORDS_B                         ; 256                                                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                              ;
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                        ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                           ;
@@ -3749,40 +3654,40 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 3784                        ;
-;     CLR               ; 11                          ;
-;     ENA               ; 2716                        ;
-;     ENA CLR           ; 104                         ;
-;     ENA SCLR          ; 292                         ;
+; arriav_ff             ; 3755                        ;
+;     CLR               ; 17                          ;
+;     ENA               ; 2768                        ;
+;     ENA CLR           ; 49                          ;
+;     ENA SCLR          ; 260                         ;
 ;     ENA SLD           ; 633                         ;
 ;     SCLR              ; 17                          ;
 ;     SCLR SLD          ; 1                           ;
 ;     plain             ; 10                          ;
-; arriav_lcell_comb     ; 2415                        ;
-;     arith             ; 1359                        ;
+; arriav_lcell_comb     ; 2388                        ;
+;     arith             ; 1328                        ;
 ;         0 data inputs ; 30                          ;
-;         1 data inputs ; 432                         ;
-;         2 data inputs ; 612                         ;
-;         4 data inputs ; 20                          ;
+;         1 data inputs ; 402                         ;
+;         2 data inputs ; 627                         ;
+;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 265                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 677                         ;
+;     normal            ; 681                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 17                          ;
-;         2 data inputs ; 353                         ;
-;         3 data inputs ; 37                          ;
-;         4 data inputs ; 110                         ;
-;         5 data inputs ; 75                          ;
-;         6 data inputs ; 84                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 317                         ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 130                         ;
+;         5 data inputs ; 101                         ;
+;         6 data inputs ; 74                          ;
 ;     shared            ; 378                         ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 367                         ;
 ; boundary_port         ; 66                          ;
-; stratixv_ram_block    ; 298                         ;
+; stratixv_ram_block    ; 282                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.40                        ;
+; Max LUT depth         ; 5.70                        ;
 ; Average LUT depth     ; 1.70                        ;
 +-----------------------+-----------------------------+
 
@@ -3802,7 +3707,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Mar 24 11:47:03 2023
+    Info: Processing started: Mon Mar 27 16:10:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Control -c Control
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -3827,19 +3732,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file magnitu
     Info (12023): Found entity 1: Magnitude File: C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file qtrstage.v
     Info (12023): Found entity 1: qtrstage File: C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v Line: 73
-Info (12021): Found 1 design units, including 1 entities, in source file tonelut.sv
-    Info (12023): Found entity 1: ToneLUT File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fft_module.v
     Info (12023): Found entity 1: FFT_Module File: C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v Line: 78
-Warning (10463): Verilog HDL Declaration warning at ToneDetector_Module.v(4): "bins" is SystemVerilog-2005 keyword File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file tonedetector_module.v
     Info (12023): Found entity 1: ToneDetector_Module File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at Control_Module.v(13): "bins" is SystemVerilog-2005 keyword File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file control_module.v
     Info (12023): Found entity 1: Control_Module File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tonelut.v
+    Info (12023): Found entity 1: ToneLUT File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v Line: 1
 Info (12127): Elaborating entity "Control_Module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Control_Module.v(13): object "bins" assigned a value but never read File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 13
-Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 35
+Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 34
 Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_128" File: C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v Line: 123
 Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
 Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
@@ -3876,64 +3778,40 @@ Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|qtrs
 Info (12128): Elaborating entity "laststage" for hierarchy "FFT_Module:uFFT|laststage:stage_2" File: C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v Line: 267
 Info (12128): Elaborating entity "bitreverse" for hierarchy "FFT_Module:uFFT|bitreverse:revstage" File: C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v Line: 294
 Warning (10230): Verilog HDL assignment warning at bitreverse.v(99): truncated value with size 32 to match size of target (8) File: C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v Line: 99
-Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 37
-Warning (10230): Verilog HDL assignment warning at ToneDetector_Module.v(39): truncated value with size 32 to match size of target (6) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 39
-Warning (10230): Verilog HDL assignment warning at ToneDetector_Module.v(49): truncated value with size 32 to match size of target (6) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 49
-Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 16
+Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 36
+Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 18
 Warning (10030): Net "rom.data_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v Line: 11
 Warning (10030): Net "rom.waddr_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v Line: 11
 Warning (10030): Net "rom.we_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v Line: 11
-Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 17
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(13): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 13
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(14): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 14
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(15): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 15
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(16): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 16
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(17): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 17
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(18): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 18
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(19): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 19
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(20): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 20
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(21): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 21
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(22): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(23): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 23
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(24): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 24
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(25): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 25
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(26): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 26
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(27): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 27
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(28): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 28
-Warning (10230): Verilog HDL assignment warning at ToneLUT.sv(29): truncated value with size 16 to match size of target (4) File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 29
-Warning (10030): Net "keypad.data_a" at ToneLUT.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 9
-Warning (10030): Net "keypad.waddr_a" at ToneLUT.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 9
-Warning (10030): Net "keypad.we_a" at ToneLUT.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 9
+Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v Line: 19
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "keypad" into its bus
 Info (286030): Timing-Driven Synthesis is running
-Info (276014): Found 6 instances of uninferred RAM logic
-    Info (276004): RAM logic "ToneDetector_Module:uTD|ToneLUT:u1|keypad" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.sv Line: 9
+Info (276014): Found 5 instances of uninferred RAM logic
     Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_8|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
     Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_16|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
     Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_32|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
     Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_64|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
     Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_128|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v Line: 127
-Info (19000): Inferred 18 megafunctions from design logic
+Info (19000): Inferred 17 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTH_B set to 16
         Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter WIDTHAD_B set to 8
         Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter NUMWORDS_B set to 256
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/Control.ram0_Magnitude_4e04d15e.hdl.mif
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_1" 
-        Info (286033): Parameter OPERATION_MODE set to ROM
-        Info (286033): Parameter WIDTH_A set to 16
-        Info (286033): Parameter WIDTHAD_A set to 8
-        Info (286033): Parameter NUMWORDS_A set to 256
-        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
         Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
         Info (286033): Parameter INIT_FILE set to db/Control.ram0_Magnitude_4e04d15e.hdl.mif
     Info (276029): Inferred altsyncram megafunction from the following design logic: "FFT_Module:uFFT|bitreverse:revstage|brmem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -4209,18 +4087,27 @@ Info (19000): Inferred 18 megafunctions from design logic
         Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
 Info (12130): Elaborated megafunction instantiation "ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0"
 Info (12133): Instantiated megafunction "ToneDetector_Module:uTD|Magnitude:u0|altsyncram:rom_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
     Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "16"
     Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
     Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
     Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/Control.ram0_Magnitude_4e04d15e.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v6e1.tdf
-    Info (12023): Found entity 1: altsyncram_v6e1 File: C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_v6e1.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9o22.tdf
+    Info (12023): Found entity 1: altsyncram_9o22 File: C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_9o22.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4362,32 +4249,34 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_128|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a0q1.tdf
     Info (12023): Found entity 1: altsyncram_a0q1 File: C:/Users/aleja/Desktop/ControlModule_TestSim/db/altsyncram_a0q1.tdf Line: 28
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "myRegASICStatuslsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatuslsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatuslsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatuslsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[0]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[1]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[2]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[3]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegASICStatusmsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultslsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultslsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultslsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultslsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultsmsb[0]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultsmsb[1]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultsmsb[2]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
-    Warning (13410): Pin "myRegResultsmsb[3]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 62
+    Warning (13410): Pin "myRegASICStatuslsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatuslsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatuslsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatuslsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[0]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[1]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[2]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[3]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegASICStatusmsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultslsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultslsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultslsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[0]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[1]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[2]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[3]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[4]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[5]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[6]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
+    Warning (13410): Pin "myRegResultsmsb[7]" is stuck at GND File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 60
 Info (17049): 229 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/aleja/Desktop/ControlModule_TestSim/output_files/Control.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "myRegMCUStatuslsb[3]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
-    Warning (15610): No output dependent on input pin "myRegMCUStatuslsb[4]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "myRegMCUStatuslsb[5]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
     Warning (15610): No output dependent on input pin "myRegMCUStatuslsb[6]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
     Warning (15610): No output dependent on input pin "myRegMCUStatuslsb[7]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
@@ -4399,15 +4288,21 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "myRegMCUStatusmsb[5]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
     Warning (15610): No output dependent on input pin "myRegMCUStatusmsb[6]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
     Warning (15610): No output dependent on input pin "myRegMCUStatusmsb[7]" File: C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v Line: 2
-Info (21057): Implemented 4671 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4645 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 34 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 4307 logic cells
-    Info (21064): Implemented 298 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
-    Info: Peak virtual memory: 4921 megabytes
-    Info: Processing ended: Fri Mar 24 11:47:14 2023
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21061): Implemented 4297 logic cells
+    Info (21064): Implemented 282 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 4918 megabytes
+    Info: Processing ended: Mon Mar 27 16:10:22 2023
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:18
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/aleja/Desktop/ControlModule_TestSim/output_files/Control.map.smsg.
 
 
