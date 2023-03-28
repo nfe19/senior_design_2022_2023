@@ -82,7 +82,7 @@ void main(void){
     initializeUART();
 
 
-    uint16_t command_reg_data = 0x0000;
+    volatile uint16_t command_reg_data = 0x0000;
     uint8_t data_index = 0x00;
 
     //initialize msp status register
@@ -101,58 +101,61 @@ void main(void){
         /* end ADC mimic*/
 
         //set myRegMCUStatusLSB bit 3 to 1, MCU has collected the samples
-        command_reg_data = command_reg_data = command_reg_data | 0x0008;
+        set1Bit(command_reg_data,3);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         //poll asic status 0, while there is no valid tone, do the loop
-        while(!((I2C_read_16(SLAVE_ADDRESS, STATUS_REG)) & 0x0001)){
+        while(!readBit(STATUS_REG,0)){
 
             //perform loop if the samples have not all been transmitted
-            while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG)) & 0x0002)){
+
+            while(!readBit(STATUS_REG,1)){
 
                 //if asic is ready for input, send input
-                if((I2C_read_16(SLAVE_ADDRESS, STATUS_REG)) & 0x0004)){
+                if(readBit(STATUS_REG,2)){
                     I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, speakerValueList16[data_index]); //send the input
-                    command_reg_data = command_reg_data | 0x0001 | 0x0010;                      // set bits 0 and 4
-                    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);                 //send the new register
-                    data_index++;
 
+                    set2Bits(&command_reg_data, 0, 4);                                          // set bits 0 and 4
+                    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);                 //send the new register data
+
+                    data_index++;                                                               //increment data index
                 }
 
 
-
             }
-
 
 
         }
 
-
-
-
-
-        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
-        uint16_t reg_value;
-        uint8_t data_list_index = 0;
-
-        do{
-            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
-            if(((reg_value & INPUT_READY_FLAG) > 0)){
-                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
-                data_list_index++;
-            }
-        } while((reg_value & INPUT_MODE_FLAG) > 0);
-
-        /*end sending of data*/
-
-        /* wait until valid data is produced by the FPGA and read the result*/
-        uint16_t finalResult;
-        volatile Tones finalTone;
-        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
-        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
-        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
-        /* end wait */
     }
+}
+//
+//
+//
+//
+//
+//        /*if the FPGA is in input mode, and is read for an input, send an input through I2C, until FPGA is in output mode*/
+//        uint16_t reg_value;
+//        uint8_t data_list_index = 0;
+//
+//        do{
+//            reg_value = I2C_read_16(SLAVE_ADDRESS, STATUS_REG);
+//            if(((reg_value & INPUT_READY_FLAG) > 0)){
+//                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, speakerValueList16[data_list_index]);
+//                data_list_index++;
+//            }
+//        } while((reg_value & INPUT_MODE_FLAG) > 0);
+//
+//        /*end sending of data*/
+//
+//        /* wait until valid data is produced by the FPGA and read the result*/
+//        uint16_t finalResult;
+//        volatile Tones finalTone;
+//        while(!(I2C_read_16(SLAVE_ADDRESS, STATUS_REG) & OUT_VALID_FLAG));
+//        finalResult = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+//        finalTone = toneDecoder(finalResult);   //make sure decoder matches FPGA
+        /* end wait */
+//}
     /*end main loop*/
 
     //enable global interrupts
@@ -205,7 +208,7 @@ void main(void){
 //        }
 //    }
 
-}
+//}
 
 
 /*
@@ -231,6 +234,52 @@ __interrupt void ADC12_ISR(void)
 
     //clear the ADC interrupt
     ADC12_B_clearInterrupt(ADC12_B_BASE,0,ADC12_B_IFG0);
+}
+
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+
+bool readBit(uint16_t registerAddress, uint16_t bitPosition){
+    uint16_t bitSelecter = 0x0001 << bitPosition;
+    uint16_t readValue = I2C_read_16(SLAVE_ADDRESS, registerAddress) & bitSelecter;
+    if (readValue > 0) return true;
+    else return false;
+}
+
+
+void set1Bit(uint16_t *registerValue, uint8_t bitPosition){
+    uint16_t bitSelecter = 0x0001 << bitPosition;
+    *registerValue |= bitSelecter;
+}
+
+void set2Bits(uint16_t *registerValue, uint8_t bitPosition1, uint8_t bitPosition2){
+    uint16_t bitSelecter = (0x0001 << bitPosition1) | (0x0001 << bitPosition2);
+    *registerValue |= bitSelecter;
+}
+
+void set3Bits(uint16_t *registerValue, uint8_t bitPosition1, uint8_t bitPosition2, uint8_t bitPosition3){
+    uint16_t bitSelecter = (0x0001 << bitPosition1) | (0x0001 << bitPosition2) | (0x0001 << bitPosition3);
+    *registerValue |= bitSelecter;
+}
+
+void reset1Bit(uint16_t *registerValue, uint8_t bitPosition){
+    uint16_t bitSelecter = 0x0001 << bitPosition;
+    *registerValue &= ~bitSelecter;
+}
+
+void reset2Bits(uint16_t *registerValue, uint8_t bitPosition1, uint8_t bitPosition2){
+    uint16_t bitSelecter = (0x0001 << bitPosition1) | (0x0001 << bitPosition2);
+    *registerValue &= ~bitSelecter;
+}
+
+void reset3Bits(uint16_t *registerValue, uint8_t bitPosition1, uint8_t bitPosition2, uint8_t bitPosition3){
+    uint16_t bitSelecter = (0x0001 << bitPosition1) | (0x0001 << bitPosition2) | (0x0001 << bitPosition3);
+    *registerValue &= ~bitSelecter;
 }
 
 /*
@@ -442,17 +491,6 @@ uint8_t testADC(void){
 
 }
 
-/*
-    Author: Najeeb Eeso
-    Inputs: None
-    Outputs: None
-    Description: Used to test the functionality of the ADC. Reads memory address 0 and returns it.
-*/
-
-//uint8_t setBit(void){
-//    return (uint8_t)(ADC12_B_getResults(ADC12_B_BASE,ADC12_B_MEMORY_0));
-//
-//}
 
 
 /*
