@@ -1,0 +1,190 @@
+# Reading pref.tcl
+# do Control_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:57 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/bimpy.v 
+# -- Compiling module bimpy
+# 
+# Top level modules:
+# 	bimpy
+# End time: 16:11:57 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:57 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/bitreverse.v 
+# -- Compiling module bitreverse
+# 
+# Top level modules:
+# 	bitreverse
+# End time: 16:11:57 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:57 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/butterfly.v 
+# -- Compiling module butterfly
+# 
+# Top level modules:
+# 	butterfly
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/convround.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/convround.v 
+# -- Compiling module convround
+# 
+# Top level modules:
+# 	convround
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/fftstage.v 
+# -- Compiling module fftstage
+# 
+# Top level modules:
+# 	fftstage
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/laststage.v 
+# -- Compiling module laststage
+# 
+# Top level modules:
+# 	laststage
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/longbimpy.v 
+# -- Compiling module longbimpy
+# 
+# Top level modules:
+# 	longbimpy
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/qtrstage.v 
+# -- Compiling module qtrstage
+# 
+# Top level modules:
+# 	qtrstage
+# End time: 16:11:58 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:58 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/FFT_Module.v 
+# -- Compiling module FFT_Module
+# 
+# Top level modules:
+# 	FFT_Module
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:59 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/ToneDetector_Module.v 
+# -- Compiling module ToneDetector_Module
+# 
+# Top level modules:
+# 	ToneDetector_Module
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:59 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/Control_Module.v 
+# -- Compiling module Control_Module
+# 
+# Top level modules:
+# 	Control_Module
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:59 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/ToneLUT.v 
+# -- Compiling module ToneLUT
+# 
+# Top level modules:
+# 	ToneLUT
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:59 on Mar 27,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/Magnitude.v 
+# -- Compiling module Magnitude
+# 
+# Top level modules:
+# 	Magnitude
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/aleja/Desktop/ControlModule_TestSim {C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:11:59 on Mar 27,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/aleja/Desktop/ControlModule_TestSim" C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv 
+# -- Compiling module Control_ModuleTB
+# 
+# Top level modules:
+# 	Control_ModuleTB
+# End time: 16:11:59 on Mar 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  Control_ModuleTB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" Control_ModuleTB 
+# Start time: 16:11:59 on Mar 27,2023
+# Loading sv_std.std
+# Loading work.Control_ModuleTB
+# Loading work.Control_Module
+# Loading work.FFT_Module
+# Loading work.fftstage
+# Loading work.qtrstage
+# Loading work.convround
+# Loading work.laststage
+# Loading work.bitreverse
+# Loading work.ToneDetector_Module
+# Loading work.Magnitude
+# Loading work.ToneLUT
+# Loading work.butterfly
+# Loading work.longbimpy
+# Loading work.bimpy
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aleja  Hostname: ALEJANDROS-LAPT  ProcessID: 19276
+#           Attempting to use alternate WLF file "./wlftjgc006".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjgc006
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Welcome!
+# ** Note: $stop    : C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv(128)
+#    Time: 13831685 ns  Iteration: 0  Instance: /Control_ModuleTB
+# Break in Module Control_ModuleTB at C:/Users/aleja/Desktop/ControlModule_TestSim/Control_ModuleTB.sv line 128
+# End time: 16:23:31 on Mar 27,2023, Elapsed time: 0:11:32
+# Errors: 0, Warnings: 2

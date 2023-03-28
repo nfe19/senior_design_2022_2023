@@ -18,6 +18,9 @@
 #include <HAL_FR5994_OPT3001.h>
 #include <math.h>
 
+typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
+Tones tone;
+
 void GPIO_init(void);
 void initI2C(void);
 void initializeADC(void);
@@ -36,8 +39,7 @@ uint8_t savedSpeakerValues[128];
 uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 
 
-typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
-Tones tone;
+
 
 /*I2C Register Map */
     const uint8_t SLAVE_REG = 0x00;             // the slave address of the I2C device
@@ -81,53 +83,28 @@ void main(void){
 
     initializeUART();
 
+    /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+    volatile uint8_t speakerValueList[128];
+    volatile uint16_t speakerValueList16[128];
+    getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+    listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+    /* end ADC mimic*/
 
-    volatile uint16_t command_reg_data = 0x0000;
-    uint8_t data_index = 0x00;
-
-    //initialize msp status register
-    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
-
-    //initialize sample in status register
-    I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, 0x0000);
-
-    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
-    while(1){
-        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-        volatile uint8_t speakerValueList[128];
-        volatile uint16_t speakerValueList16[128];
-        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-        /* end ADC mimic*/
-
-        //set myRegMCUStatusLSB bit 3 to 1, MCU has collected the samples
-        set1Bit(command_reg_data,3);
-        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
-
-        //poll asic status 0, while there is no valid tone, do the loop
-        while(!readBit(STATUS_REG,0)){
-
-            //perform loop if the samples have not all been transmitted
-
-            while(!readBit(STATUS_REG,1)){
-
-                //if asic is ready for input, send input
-                if(readBit(STATUS_REG,2)){
-                    I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, speakerValueList16[data_index]); //send the input
-
-                    set2Bits(&command_reg_data, 0, 4);                                          // set bits 0 and 4
-                    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);                 //send the new register data
-
-                    data_index++;                                                               //increment data index
-                }
+    Tones toneResult = NONE;
 
 
-            }
+    toneResult = asicDecode(speakerValueList16);
+
+    tonePrinter(toneResult);
+
+    while(1);
 
 
-        }
 
-    }
+
+
+
+
 }
 //
 //
@@ -237,6 +214,87 @@ __interrupt void ADC12_ISR(void)
 }
 
 
+
+
+Tones asicDecode(uint16_t samples[128]){
+
+//    const uint8_t SLAVE_REG = 0x00;             // the slave address of the I2C device
+//    const uint8_t MANUID_REG = 0x02;            // the manufacturing ID of the I2C device
+//    const uint8_t DEVICE_ID_REG = 0x04;         // the device ID of the I2C device
+//    const uint8_t COMMAND_REG = 0x06;           // the command register that the msp writes to
+//    const uint8_t STATUS_REG = 0x08;            // the status register that the msp reads from
+//    const uint8_t RESULTS_REG = 0x0A;           // the register containing value of the result given from the FPGA
+//    const uint8_t IN_SAMPLE_REG = 0x0C;         // the register the input sample gets written to
+
+        Tones outputTone = NONE;
+
+        volatile uint16_t command_reg_data = 0x0000;
+        uint8_t sampleIndex = 0x00;
+
+        //initialize msp status register
+        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+
+        //initialize sample in status register
+        I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, 0x0000);
+
+        //
+        set2Bits(command_reg_data, 0, 1);
+        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+
+        //poll ASIC to see when enters input mode, if input mode, move on
+        while(!readBit(STATUS_REG,2));
+
+
+        uint16_t FPGASampleCounter, MCUSampleCounter = 0x00;
+
+        //send the data to the ASIC when it is ready
+        for(sampleIndex=0x00;sampleIndex<128;sampleIndex++){
+
+            I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, samples[sampleIndex]);   //send 1 peice of data
+
+            if(sampleIndex<127){
+
+                //wait for FPGA to be ready for next sample
+                do{
+
+                    FPGASampleCounter = (I2C_read_16(SLAVE_ADDRESS, STATUS_REG) >> 8);  //this is supposed to sample MSB[6..0]
+                    MCUSampleCounter = (command_reg_data >> 8);     //this never gets updated in loop, think about removing
+
+                }while(FPGASampleCounter != (MCUSampleCounter+1));
+
+                //increment MSB bits [6..0] for MCU status
+                MCUSampleCounter = MCUSampleCounter + 1;
+                command_reg_data &= ~(0xff00);
+                command_reg_data = (MCUSampleCounter << 8) | command_reg_data;
+
+
+
+            }
+
+        }
+
+        //MCU status is that it is not longer in input mode
+        reset1Bit(command_reg_data, 1);
+        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+
+        //wait for tone detector to finish
+        while(!readBit(STATUS_REG,0));
+
+        //read off the output and store it
+        outputTone = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
+
+        //tell the FPGA that the output has been read, and the FPGA can reset
+        set1Bit(command_reg_data, 2);
+        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+
+        return outputTone;
+
+}
+
+
+
+
+
 /*
     Author: Najeeb Eeso
     Inputs: None
@@ -250,7 +308,6 @@ bool readBit(uint16_t registerAddress, uint16_t bitPosition){
     if (readValue > 0) return true;
     else return false;
 }
-
 
 void set1Bit(uint16_t *registerValue, uint8_t bitPosition){
     uint16_t bitSelecter = 0x0001 << bitPosition;
@@ -341,6 +398,72 @@ Tones toneDecoder(uint16_t result){
             default: return NONE;
         }
 }
+
+/*
+    Author: Najeeb Eeso
+    Inputs: None
+    Outputs: None
+    Description:
+*/
+
+void tonePrinter(Tones tone){
+    uint8_t buffer[100];
+
+    switch(tone){
+    case ONE:
+        sprintf(buffer,"%s","Tone is ONE");
+                    UART_transmitString(buffer);
+    case TWO:
+        sprintf(buffer,"%s","Tone is TWO");
+                    UART_transmitString(buffer);
+    case THREE:
+        sprintf(buffer,"%s","Tone is THREE");
+                    UART_transmitString(buffer);
+    case a:
+        sprintf(buffer,"%s","Tone is A");
+                    UART_transmitString(buffer);
+    case FOUR:
+        sprintf(buffer,"%s","Tone is FOUR");
+                    UART_transmitString(buffer);
+    case FIVE:
+        sprintf(buffer,"%s","Tone is FIVE");
+                    UART_transmitString(buffer);
+    case SIX:
+        sprintf(buffer,"%s","Tone is SIX");
+                    UART_transmitString(buffer);
+    case b:
+        sprintf(buffer,"%s","Tone is B");
+                    UART_transmitString(buffer);
+    case SEVEN:
+        sprintf(buffer,"%s","Tone is SEVEN");
+                    UART_transmitString(buffer);
+    case EIGHT:
+        sprintf(buffer,"%s","Tone is EIGHT");
+                    UART_transmitString(buffer);
+    case NINE:
+        sprintf(buffer,"%s","Tone is NINE");
+                    UART_transmitString(buffer);
+    case c:
+        sprintf(buffer,"%s","Tone is C");
+                    UART_transmitString(buffer);
+    case ASTREK:
+        sprintf(buffer,"%s","Tone is *");
+                    UART_transmitString(buffer);
+    case ZERO:
+        sprintf(buffer,"%s","Tone is ZERO");
+                    UART_transmitString(buffer);
+    case POUND:
+        sprintf(buffer,"%s","Tone is #");
+                    UART_transmitString(buffer);
+    case d:
+        sprintf(buffer,"%s","Tone is D");
+                    UART_transmitString(buffer);
+    case NONE:
+        sprintf(buffer,"%s","Tone is NONE");
+                    UART_transmitString(buffer);
+        }
+}
+
 
 /*
     Author: Najeeb Eeso
@@ -987,3 +1110,62 @@ void GPIO_init(){
 
 //mId = I2C_read_8(0x44, 0x7E);
 //lightData = OPT3001_getLux(0x44);
+
+
+
+
+
+
+
+
+
+
+
+/*ALEJANDRO CODE START*/
+//    volatile uint16_t command_reg_data = 0x0000;
+//    uint8_t data_index = 0x00;
+//
+//    //initialize msp status register
+//    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+//
+//    //initialize sample in status register
+//    I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, 0x0000);
+//
+//    /*main loop: collect 128 samples, send through I2C, wait until valid results are produced, read off the result register*/
+//    while(1){
+//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+//        volatile uint8_t speakerValueList[128];
+//        volatile uint16_t speakerValueList16[128];
+//        getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+//        /* end ADC mimic*/
+//
+//        //set myRegMCUStatusLSB bit 3 to 1, MCU has collected the samples
+//        set1Bit(command_reg_data,3);
+//        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+//
+//        //poll asic status 0, while there is no valid tone, do the loop
+//        while(!readBit(STATUS_REG,0)){
+//
+//            //perform loop if the samples have not all been transmitted
+//
+//            while(!readBit(STATUS_REG,1)){
+//
+//                //if asic is ready for input, send input
+//                if(readBit(STATUS_REG,2)){
+//                    I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, speakerValueList16[data_index]); //send the input
+//
+//                    set2Bits(&command_reg_data, 0, 4);                                          // set bits 0 and 4
+//                    I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);                 //send the new register data
+//
+//                    data_index++;                                                               //increment data index
+//                }
+//
+//
+//            }
+//
+//
+//        }
+//
+//    }
+/*ALEJANDRO CODE END*/
