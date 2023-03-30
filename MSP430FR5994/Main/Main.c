@@ -15,7 +15,6 @@
 // files for BCUART functions
 #include <stdbool.h>
 #include "HAL_UART_4746.h"
-#include <HAL_FR5994_OPT3001.h>
 #include <math.h>
 
 typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
@@ -64,6 +63,7 @@ uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 /* END STATUS_REG Bit Definitions */
 
 //  Main Function
+
 void main(void){
 
     volatile uint8_t myRegValues[7] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -82,21 +82,32 @@ void main(void){
     initializeADC();
 
     initializeUART();
+    Tones incrementer = ONE;
 
-    /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-    volatile uint8_t speakerValueList[128];
-    volatile uint16_t speakerValueList16[128];
-    getMicValues128(ONE, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-    listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-    /* end ADC mimic*/
+    while(incrementer < NONE){
+        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+        volatile uint8_t speakerValueList[128];
+        volatile uint16_t speakerValueList16[128];
+        getMicValues128(incrementer, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+        /* end ADC mimic*/
+        volatile uint8_t value;
+        volatile uint8_t counter = 0x11;
 
-    Tones toneResult = NONE;
 
 
-    toneResult = asicDecode(speakerValueList16);
 
-    tonePrinter(toneResult);
+        volatile Tones toneResult = NONE;
 
+        //I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, 0x5688);
+        //I2C_read_16(0x44,0x7E);
+        //I2C_read_8(SLAVE_ADDRESS,COMMAND_REG);
+
+        toneResult = asicDecode(speakerValueList16);
+
+        tonePrinter(toneResult);
+        incrementer++;
+    }
     while(1);
 
 
@@ -225,7 +236,11 @@ Tones asicDecode(uint16_t samples[128]){
 //    const uint8_t STATUS_REG = 0x08;            // the status register that the msp reads from
 //    const uint8_t RESULTS_REG = 0x0A;           // the register containing value of the result given from the FPGA
 //    const uint8_t IN_SAMPLE_REG = 0x0C;         // the register the input sample gets written to
-
+        volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
+        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         Tones outputTone = NONE;
 
         volatile uint16_t command_reg_data = 0x0000;
@@ -233,13 +248,23 @@ Tones asicDecode(uint16_t samples[128]){
 
         //initialize msp status register
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
-
+        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         //initialize sample in status register
         I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, 0x0000);
-
+        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         //
-        set2Bits(command_reg_data, 0, 1);
+        set2Bits(&command_reg_data, 0, 1);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
 
         //poll ASIC to see when enters input mode, if input mode, move on
         while(!readBit(STATUS_REG,2));
@@ -266,7 +291,7 @@ Tones asicDecode(uint16_t samples[128]){
                 MCUSampleCounter = MCUSampleCounter + 1;
                 command_reg_data &= ~(0xff00);
                 command_reg_data = (MCUSampleCounter << 8) | command_reg_data;
-
+                I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
 
             }
@@ -274,7 +299,7 @@ Tones asicDecode(uint16_t samples[128]){
         }
 
         //MCU status is that it is not longer in input mode
-        reset1Bit(command_reg_data, 1);
+        reset1Bit(&command_reg_data, 1);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         //wait for tone detector to finish
@@ -283,8 +308,12 @@ Tones asicDecode(uint16_t samples[128]){
         //read off the output and store it
         outputTone = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
 
+        //reset all MSP register to initial state of 0x0000
+        command_reg_data = 0x0000;
+        I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
+
         //tell the FPGA that the output has been read, and the FPGA can reset
-        set1Bit(command_reg_data, 2);
+        set1Bit(&command_reg_data, 2);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         return outputTone;
@@ -292,7 +321,12 @@ Tones asicDecode(uint16_t samples[128]){
 }
 
 
-
+void statusRead(uint8_t *myRegASICStatusmsb, uint8_t *myRegASICStatuslsb,uint8_t *myRegMCUStatusmsb,uint8_t *myRegMCUStatuslsb){
+    *myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+    *myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+    *myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+    *myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+}
 
 
 /*
@@ -412,55 +446,55 @@ void tonePrinter(Tones tone){
     switch(tone){
     case ONE:
         sprintf(buffer,"%s","Tone is ONE");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case TWO:
         sprintf(buffer,"%s","Tone is TWO");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case THREE:
         sprintf(buffer,"%s","Tone is THREE");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case a:
         sprintf(buffer,"%s","Tone is A");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case FOUR:
         sprintf(buffer,"%s","Tone is FOUR");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case FIVE:
         sprintf(buffer,"%s","Tone is FIVE");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case SIX:
         sprintf(buffer,"%s","Tone is SIX");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case b:
         sprintf(buffer,"%s","Tone is B");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case SEVEN:
         sprintf(buffer,"%s","Tone is SEVEN");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case EIGHT:
         sprintf(buffer,"%s","Tone is EIGHT");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case NINE:
         sprintf(buffer,"%s","Tone is NINE");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case c:
         sprintf(buffer,"%s","Tone is C");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case ASTREK:
         sprintf(buffer,"%s","Tone is *");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case ZERO:
         sprintf(buffer,"%s","Tone is ZERO");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case POUND:
         sprintf(buffer,"%s","Tone is #");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case d:
         sprintf(buffer,"%s","Tone is D");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
     case NONE:
         sprintf(buffer,"%s","Tone is NONE");
-                    UART_transmitString(buffer);
+                    UART_transmitString(buffer); break;
         }
 }
 
@@ -949,7 +983,7 @@ void I2C_write_16(uint8_t slaveAddress, uint8_t regAddress, uint16_t data)
 void initI2C( void )
 {
 
-    CS_initClockSignal(CS_SMCLK, CS_MODOSC_SELECT, CS_CLOCK_DIVIDER_1);
+    //CS_initClockSignal(CS_SMCLK, CS_MODOSC_SELECT, CS_CLOCK_DIVIDER_2);
 
     //Set 7.1 and 7.0 as I2C output peripherals
     GPIO_setAsPeripheralModuleFunctionOutputPin(GPIO_PORT_P7, GPIO_PIN0, GPIO_PRIMARY_MODULE_FUNCTION);
@@ -958,9 +992,10 @@ void initI2C( void )
 
     EUSCI_B_I2C_initMasterParam i2cParameters =
     {
-         EUSCI_B_I2C_CLOCKSOURCE_SMCLK,          // SMCLK Clock Source
-         5000000,                               // SMCLK = 1.00MHzMHz
-         EUSCI_B_I2C_SET_DATA_RATE_400KBPS,      // Desired I2C Clock of 400khz
+     EUSCI_B_I2C_CLOCKSOURCE_SMCLK,          // SMCLK Clock Source
+     14000000,                               // SMCLK = 1.00MHzMHz
+     EUSCI_B_I2C_SET_DATA_RATE_400KBPS,      // Desired I2C Clock of 100khz
+
     };
 
     //disable I2C, initialize with parameters set above, enable I2C

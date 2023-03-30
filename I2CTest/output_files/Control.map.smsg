@@ -1,3 +1,0 @@
-Warning (10273): Verilog HDL warning at Magnitude.v(24): extended using "x" or "z" File: C:/Users/najee/OneDrive - Florida State University/Desktop/control_copy/Magnitude.v Line: 24
-Warning (10273): Verilog HDL warning at Magnitude.v(25): extended using "x" or "z" File: C:/Users/najee/OneDrive - Florida State University/Desktop/control_copy/Magnitude.v Line: 25
-Warning (10268): Verilog HDL information at ToneDetector_Module.v(21): always construct contains both blocking and non-blocking assignments File: C:/Users/najee/OneDrive - Florida State University/Desktop/control_copy/ToneDetector_Module.v Line: 21
