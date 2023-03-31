@@ -1,0 +1,31 @@
+
+TASK LIST
+
+Everybody
+-Post Adviser Meeting 3
+-Engineering Design Day - Poster - for Review
+-Presentation
+-talk to perry about the reset pin
+
+Alejandro
+-top level: incorporating blocks
+-work on password for msp implementation (with Najeeb)
+-Attach door lock to door and put everything together (with Najeeb)
+
+
+Evan
+-Test actual implementation - mic gets values sound and send to FPGA (with Najeeb)
+-figure out all the resets
+
+Najeeb
+-Test no tone												
+-Test ADC sampling rate - 5K										DONE - ADC samples at 5K
+-Test actual implementation - mic gets values sound and send to FPGA (with Evan)			Wrote the MSP code, just need to meet and test
+-add a bit to MSP to reset FPGA 									bit is added - need FPGA code and testing in order to finish
+-work on password for msp implementation (with Alejandro)
+-Attach door lock to door and put everything together (with Alejandro)
+-implement pushbutton door implementation
+-clean up MSP code
+
+Adorah
+-Work on the digital filter

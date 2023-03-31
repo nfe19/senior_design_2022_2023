@@ -52,8 +52,9 @@ uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 /* END I2C Register Map */
 
 /*I2C COMMAND_REG Bit Definitions */
-    const uint16_t READY_FLAG = 0x0001;          //set: tells FPGA to wait, reset: data is sent and FPGA is ready
+    const uint16_t READY_FLAG = 0x0001;         //set: tells FPGA to wait, reset: data is sent and FPGA is ready
     const uint16_t VALID_FLAG = 0x0002;         //set: data has been read, reset: data has not been read
+    const uint16_t RESET_FPGA = 0x0004;         //set: resets the FPGA, reset: enables the FPGA
 /* END COMMAND_REG Bit Definitions */
 
 /*I2C STATUS_REG Bit Definitions */
@@ -112,33 +113,24 @@ void main(void){
 //        tonePrinter(toneResult);
 //        incrementer++;
 //    }
+
+    volatile Tones toneResult = NONE;
+    volatile uint16_t speakerValueList16[128];
     __enable_interrupt();
-        uint8_t i=0;
-        char buffer[100];
+    while(1){
 
-        GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
-        uint8_t PBS1;
-        while(1){
-            PBS1 = GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3);
-            if(PBS1 == GPIO_INPUT_PIN_LOW){
-                __delay_cycles(10000000);
-                ADCCounter = 0;
-                i=0;
-            }
-            else if(ADCCounter >= 128){
-                for(; i<128; i++){
-                    sprintf(buffer,"%x00 \r\n",savedSpeakerValues[i]);
-                                UART_transmitString(buffer);
-
-                }
-                if (i==128) {
-                    sprintf(buffer,"\r\n\r\n\r\n");
-                                            UART_transmitString(buffer);
-                    i++;
-                }
-            }
+        //when 128 samples are picked up by ADC ISR, disable the ISR, convert the 128 list to 16 bits, adding 0's to the imagionary part, perform asicDecode, print the tone result,
+        //reset sample counter, and re-enable ADC ISR
+        if (ADCCounter > 127){
+            __disable_interrupt();
+            listConvert8to16(savedSpeakerValues, speakerValueList16);
+            toneResult = asicDecode(speakerValueList16);
+            tonePrinter(toneResult);
+            ADCCounter = 0;
+            __enable_interrupt();
         }
-    while(1);
+
+    }
 
 
 
