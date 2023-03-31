@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Control
-Wed Mar 29 18:25:47 2023
+Thu Mar 30 13:21:41 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -166,7 +166,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 29 18:25:47 2023       ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 30 13:21:41 2023       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; Control                                     ;
 ; Top-level Entity Name           ; Control_Module                              ;
@@ -295,48 +295,48 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                     ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                              ; Library ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; bimpy.v                                    ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/bimpy.v                                    ;         ;
-; bitreverse.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/bitreverse.v                               ;         ;
-; butterfly.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/butterfly.v                                ;         ;
-; convround.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/convround.v                                ;         ;
-; fftstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v                                 ;         ;
-; laststage.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/laststage.v                                ;         ;
-; longbimpy.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v                                ;         ;
-; Magnitude.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Magnitude.v                                ;         ;
-; qtrstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/qtrstage.v                                 ;         ;
-; MagLUT.hex                                 ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/MagLUT.hex                                 ;         ;
-; FFT_Module.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v                               ;         ;
-; ToneDetector_Module.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneDetector_Module.v                      ;         ;
-; Control_Module.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v                           ;         ;
-; ToneLUT.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneLUT.v                                  ;         ;
-; i2c_module.v                               ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/i2c_module.v                               ;         ;
-; i2cmodule_defines.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/i2cmodule_defines.v                        ;         ;
-; registerinterface.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/registerinterface.v                        ;         ;
-; serialinterface.v                          ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/serialinterface.v                          ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                     ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                              ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                        ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                     ;         ;
-; aglobal211.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                                                                     ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                      ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc                                                                         ;         ;
-; altram.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                                                         ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                                                       ;         ;
-; db/altsyncram_9o22.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_9o22.tdf                     ;         ;
-; db/control.ram0_magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/control.ram0_magnitude_4e04d15e.hdl.mif ;         ;
-; db/altsyncram_k3q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_k3q1.tdf                     ;         ;
-; db/altsyncram_msp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_msp1.tdf                     ;         ;
-; db/altsyncram_4tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_4tp1.tdf                     ;         ;
-; db/altsyncram_0tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_0tp1.tdf                     ;         ;
-; db/altsyncram_00q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_00q1.tdf                     ;         ;
-; db/altsyncram_uvp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_uvp1.tdf                     ;         ;
-; db/altsyncram_a0q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_a0q1.tdf                     ;         ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                ;
++--------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                                         ; Library ;
++--------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; bimpy.v                                    ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/bimpy.v                                    ;         ;
+; bitreverse.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/bitreverse.v                               ;         ;
+; butterfly.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/butterfly.v                                ;         ;
+; convround.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/convround.v                                ;         ;
+; fftstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v                                 ;         ;
+; laststage.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/laststage.v                                ;         ;
+; longbimpy.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v                                ;         ;
+; Magnitude.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Magnitude.v                                ;         ;
+; qtrstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/qtrstage.v                                 ;         ;
+; MagLUT.hex                                 ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/MagLUT.hex                                 ;         ;
+; FFT_Module.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v                               ;         ;
+; ToneDetector_Module.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneDetector_Module.v                      ;         ;
+; Control_Module.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v                           ;         ;
+; ToneLUT.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneLUT.v                                  ;         ;
+; i2c_module.v                               ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/i2c_module.v                               ;         ;
+; i2cmodule_defines.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/i2cmodule_defines.v                        ;         ;
+; registerinterface.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/registerinterface.v                        ;         ;
+; serialinterface.v                          ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/serialinterface.v                          ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                                ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                         ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                                   ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                                ;         ;
+; aglobal211.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc                                                                                ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                 ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altrom.inc                                                                                    ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altram.inc                                                                                    ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/altdpram.inc                                                                                  ;         ;
+; db/altsyncram_9o22.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_9o22.tdf                     ;         ;
+; db/control.ram0_magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/control.ram0_magnitude_4e04d15e.hdl.mif ;         ;
+; db/altsyncram_k3q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_k3q1.tdf                     ;         ;
+; db/altsyncram_msp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_msp1.tdf                     ;         ;
+; db/altsyncram_4tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_4tp1.tdf                     ;         ;
+; db/altsyncram_0tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_0tp1.tdf                     ;         ;
+; db/altsyncram_00q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_00q1.tdf                     ;         ;
+; db/altsyncram_uvp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_uvp1.tdf                     ;         ;
+; db/altsyncram_a0q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_a0q1.tdf                     ;         ;
++--------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -344,14 +344,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2105      ;
+; Estimate of Logic utilization (ALMs needed) ; 2106      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2581      ;
-;     -- 7 input functions                    ; 6         ;
-;     -- 6 input functions                    ; 104       ;
-;     -- 5 input functions                    ; 380       ;
-;     -- 4 input functions                    ; 223       ;
-;     -- <=3 input functions                  ; 1868      ;
+; Combinational ALUT usage for logic          ; 2580      ;
+;     -- 7 input functions                    ; 7         ;
+;     -- 6 input functions                    ; 134       ;
+;     -- 5 input functions                    ; 382       ;
+;     -- 4 input functions                    ; 191       ;
+;     -- <=3 input functions                  ; 1866      ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 3908      ;
 ;                                             ;           ;
@@ -363,8 +363,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 4109      ;
-; Total fan-out                               ; 24286     ;
-; Average fan-out                             ; 3.58      ;
+; Total fan-out                               ; 24351     ;
+; Average fan-out                             ; 3.59      ;
 +---------------------------------------------+-----------+
 
 
@@ -373,7 +373,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Control_Module                                 ; 2581 (194)          ; 3908 (111)                ; 12880             ; 0          ; 5    ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
+; |Control_Module                                 ; 2580 (194)          ; 3908 (111)                ; 12880             ; 0          ; 5    ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
 ;    |FFT_Module:uFFT|                            ; 2169 (3)            ; 3587 (18)                 ; 8784              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT                                                                                                    ; FFT_Module          ; work         ;
 ;       |bitreverse:revstage|                     ; 16 (16)             ; 10 (10)                   ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage                                                                                ; bitreverse          ; work         ;
 ;          |altsyncram:brmem_rtl_0|               ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0                                                         ; altsyncram          ; work         ;
@@ -476,8 +476,8 @@ https://fpgasoftware.intel.com/eula.
 ;          |convround:do_rnd_diff_r|              ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_diff_r                                                           ; convround           ; work         ;
 ;          |convround:do_rnd_sum_i|               ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_i                                                            ; convround           ; work         ;
 ;          |convround:do_rnd_sum_r|               ; 9 (9)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r                                                            ; convround           ; work         ;
-;    |I2C_Module:uI2C|                            ; 139 (10)            ; 145 (39)                  ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|I2C_Module:uI2C                                                                                                    ; I2C_Module          ; work         ;
-;       |registerInterface:u_registerInterface|   ; 46 (46)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|I2C_Module:uI2C|registerInterface:u_registerInterface                                                              ; registerInterface   ; work         ;
+;    |I2C_Module:uI2C|                            ; 138 (10)            ; 145 (39)                  ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|I2C_Module:uI2C                                                                                                    ; I2C_Module          ; work         ;
+;       |registerInterface:u_registerInterface|   ; 45 (45)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|I2C_Module:uI2C|registerInterface:u_registerInterface                                                              ; registerInterface   ; work         ;
 ;       |serialInterface:u_serialInterface|       ; 83 (83)             ; 58 (58)                   ; 0                 ; 0          ; 0    ; 0            ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface                                                                  ; serialInterface     ; work         ;
 ;    |ToneDetector_Module:uTD|                    ; 79 (47)             ; 65 (59)                   ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD                                                                                            ; ToneDetector_Module ; work         ;
 ;       |Magnitude:u0|                            ; 16 (16)             ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|ToneDetector_Module:uTD|Magnitude:u0                                                                               ; Magnitude           ; work         ;
@@ -514,20 +514,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Control_Module|pState                                                                                                               ;
-+-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-----------------+
-; Name            ; pState.SError ; pState.SDone ; pState.SFFTOut ; pState.SFFTWait ; pState.SFFTIn ; pState.SStart ; pState.SEnable ; pState.SInitial ;
-+-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-----------------+
-; pState.SInitial ; 0             ; 0            ; 0              ; 0               ; 0             ; 0             ; 0              ; 0               ;
-; pState.SEnable  ; 0             ; 0            ; 0              ; 0               ; 0             ; 0             ; 1              ; 1               ;
-; pState.SStart   ; 0             ; 0            ; 0              ; 0               ; 0             ; 1             ; 0              ; 1               ;
-; pState.SFFTIn   ; 0             ; 0            ; 0              ; 0               ; 1             ; 0             ; 0              ; 1               ;
-; pState.SFFTWait ; 0             ; 0            ; 0              ; 1               ; 0             ; 0             ; 0              ; 1               ;
-; pState.SFFTOut  ; 0             ; 0            ; 1              ; 0               ; 0             ; 0             ; 0              ; 1               ;
-; pState.SDone    ; 0             ; 1            ; 0              ; 0               ; 0             ; 0             ; 0              ; 1               ;
-; pState.SError   ; 1             ; 0            ; 0              ; 0               ; 0             ; 0             ; 0              ; 1               ;
-+-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Control_Module|pState                                                                                                           ;
++-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-------------+
+; Name            ; pState.SError ; pState.SDone ; pState.SFFTOut ; pState.SFFTWait ; pState.SFFTIn ; pState.SStart ; pState.SEnable ; pState.0000 ;
++-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-------------+
+; pState.0000     ; 0             ; 0            ; 0              ; 0               ; 0             ; 0             ; 0              ; 0           ;
+; pState.SEnable  ; 0             ; 0            ; 0              ; 0               ; 0             ; 0             ; 1              ; 1           ;
+; pState.SStart   ; 0             ; 0            ; 0              ; 0               ; 0             ; 1             ; 0              ; 1           ;
+; pState.SFFTIn   ; 0             ; 0            ; 0              ; 0               ; 1             ; 0             ; 0              ; 1           ;
+; pState.SFFTWait ; 0             ; 0            ; 0              ; 1               ; 0             ; 0             ; 0              ; 1           ;
+; pState.SFFTOut  ; 0             ; 0            ; 1              ; 0               ; 0             ; 0             ; 0              ; 1           ;
+; pState.SDone    ; 0             ; 1            ; 0              ; 0               ; 0             ; 0             ; 0              ; 1           ;
+; pState.SError   ; 1             ; 0            ; 0              ; 0               ; 0             ; 0             ; 0              ; 1           ;
++-----------------+---------------+--------------+----------------+-----------------+---------------+---------------+----------------+-------------+
 
 
 Encoding Type:  One-Hot
@@ -1315,28 +1315,28 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Control_Module|i_sample[0]                                                                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Control_Module|i_sample[1]                                                                        ;
 ; 3:1                ; 53 bits   ; 106 LEs       ; 0 LEs                ; 106 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|aux_pipeline[4]            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|wraddr[0]                                      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|iaddr[2]                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|wraddr[5]                                      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|iaddr[1]                                          ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|oaddr[0]                                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|iaddr[1]                                         ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|oaddr[0]                                         ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|iaddr[4]                                         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|oaddr[2]                                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|iaddr[3]                                         ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_32|oaddr[3]                                         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|iaddr[1]                                         ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|oaddr[5]                                         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|iaddr[5]                                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|oaddr[4]                                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|iaddr[4]                                          ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|iaddr[0]                                         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_64|oaddr[0]                                         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|iaddr[6]                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|oaddr[1]                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|qtrstage:stage_4|iaddr[6]                                          ;
 ; 3:1                ; 112 bits  ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[6]  ;
 ; 3:1                ; 219 bits  ; 438 LEs       ; 0 LEs                ; 438 LEs                ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_16|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[24] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|CKPCE_THREE.mpy_pipe_c[17]  ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Control_Module|I2C_Module:uI2C|startStopDetState[1]                                               ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|regAddr[2]                       ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|txData[5]                        ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |Control_Module|clkcount[3]                                                                        ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|rxData[1]                        ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|regAddr[4]                       ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|txData[4]                        ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |Control_Module|clkcount[2]                                                                        ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|rxData[3]                        ;
 ; 14:1               ; 3 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|bitCnt[2]                        ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Control_Module|FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|CKPCE_THREE.ce_phase[0]   ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Control_Module|nextsample                                                                         ;
@@ -3734,23 +3734,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 1                           ;
 ;     plain             ; 69                          ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 2581                        ;
+; arriav_lcell_comb     ; 2580                        ;
 ;     arith             ; 1344                        ;
 ;         0 data inputs ; 31                          ;
 ;         1 data inputs ; 417                         ;
 ;         2 data inputs ; 627                         ;
 ;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 265                         ;
-;     extend            ; 6                           ;
-;         7 data inputs ; 6                           ;
-;     normal            ; 853                         ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 851                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 17                          ;
-;         2 data inputs ; 343                         ;
+;         2 data inputs ; 341                         ;
 ;         3 data inputs ; 54                          ;
-;         4 data inputs ; 219                         ;
-;         5 data inputs ; 115                         ;
-;         6 data inputs ; 104                         ;
+;         4 data inputs ; 187                         ;
+;         5 data inputs ; 117                         ;
+;         6 data inputs ; 134                         ;
 ;     shared            ; 378                         ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 3                           ;
@@ -3778,104 +3778,104 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Mar 29 18:25:34 2023
+    Info: Processing started: Thu Mar 30 13:21:28 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Control -c Control
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bimpy.v
-    Info (12023): Found entity 1: bimpy File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/bimpy.v Line: 55
+    Info (12023): Found entity 1: bimpy File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/bimpy.v Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file bitreverse.v
-    Info (12023): Found entity 1: bitreverse File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/bitreverse.v Line: 47
+    Info (12023): Found entity 1: bitreverse File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/bitreverse.v Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file butterfly.v
-    Info (12023): Found entity 1: butterfly File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/butterfly.v Line: 107
+    Info (12023): Found entity 1: butterfly File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/butterfly.v Line: 107
 Info (12021): Found 1 design units, including 1 entities, in source file convround.v
-    Info (12023): Found entity 1: convround File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/convround.v Line: 49
+    Info (12023): Found entity 1: convround File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/convround.v Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file fftstage.v
-    Info (12023): Found entity 1: fftstage File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 65
-Warning (10335): Unrecognized synthesis attribute "use_dsp48" at hwbfly.v(120) File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/hwbfly.v Line: 120
+    Info (12023): Found entity 1: fftstage File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 65
+Warning (10335): Unrecognized synthesis attribute "use_dsp48" at hwbfly.v(120) File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/hwbfly.v Line: 120
 Info (12021): Found 1 design units, including 1 entities, in source file hwbfly.v
-    Info (12023): Found entity 1: hwbfly File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/hwbfly.v Line: 69
+    Info (12023): Found entity 1: hwbfly File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/hwbfly.v Line: 69
 Info (12021): Found 1 design units, including 1 entities, in source file laststage.v
-    Info (12023): Found entity 1: laststage File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/laststage.v Line: 46
+    Info (12023): Found entity 1: laststage File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/laststage.v Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file longbimpy.v
-    Info (12023): Found entity 1: longbimpy File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 52
+    Info (12023): Found entity 1: longbimpy File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 52
 Info (12021): Found 1 design units, including 1 entities, in source file magnitude.v
-    Info (12023): Found entity 1: Magnitude File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Magnitude.v Line: 1
+    Info (12023): Found entity 1: Magnitude File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Magnitude.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file qtrstage.v
-    Info (12023): Found entity 1: qtrstage File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/qtrstage.v Line: 73
+    Info (12023): Found entity 1: qtrstage File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/qtrstage.v Line: 73
 Info (12021): Found 1 design units, including 1 entities, in source file fft_module.v
-    Info (12023): Found entity 1: FFT_Module File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 78
+    Info (12023): Found entity 1: FFT_Module File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file tonedetector_module.v
-    Info (12023): Found entity 1: ToneDetector_Module File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneDetector_Module.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at Control_Module.v(52): "bins" is SystemVerilog-2005 keyword File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 52
+    Info (12023): Found entity 1: ToneDetector_Module File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneDetector_Module.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at Control_Module.v(52): "bins" is SystemVerilog-2005 keyword File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 52
 Info (12021): Found 1 design units, including 1 entities, in source file control_module.v
-    Info (12023): Found entity 1: Control_Module File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 22
+    Info (12023): Found entity 1: Control_Module File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file tonelut.v
-    Info (12023): Found entity 1: ToneLUT File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneLUT.v Line: 1
+    Info (12023): Found entity 1: ToneLUT File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneLUT.v Line: 1
 Info (12127): Elaborating entity "Control_Module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Control_Module.v(52): object "bins" assigned a value but never read File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 52
-Warning (10230): Verilog HDL assignment warning at Control_Module.v(174): truncated value with size 32 to match size of target (7) File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 174
+Warning (10036): Verilog HDL or VHDL warning at Control_Module.v(52): object "bins" assigned a value but never read File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 52
+Warning (10230): Verilog HDL assignment warning at Control_Module.v(175): truncated value with size 32 to match size of target (7) File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 175
 Warning (12125): Using design file i2c_module.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: I2C_Module File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/i2c_module.v Line: 48
-Info (12128): Elaborating entity "I2C_Module" for hierarchy "I2C_Module:uI2C" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 77
+    Info (12023): Found entity 1: I2C_Module File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/i2c_module.v Line: 48
+Info (12128): Elaborating entity "I2C_Module" for hierarchy "I2C_Module:uI2C" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 78
 Warning (12125): Using design file registerinterface.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: registerInterface File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/registerinterface.v Line: 51
-Info (12128): Elaborating entity "registerInterface" for hierarchy "I2C_Module:uI2C|registerInterface:u_registerInterface" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/i2c_module.v Line: 212
+    Info (12023): Found entity 1: registerInterface File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/registerinterface.v Line: 51
+Info (12128): Elaborating entity "registerInterface" for hierarchy "I2C_Module:uI2C|registerInterface:u_registerInterface" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/i2c_module.v Line: 212
 Warning (12125): Using design file serialinterface.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: serialInterface File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/serialinterface.v Line: 58
-Info (12128): Elaborating entity "serialInterface" for hierarchy "I2C_Module:uI2C|serialInterface:u_serialInterface" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/i2c_module.v Line: 226
-Info (10264): Verilog HDL Case Statement information at serialinterface.v(250): all case item expressions in this case statement are onehot File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/serialinterface.v Line: 250
-Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 80
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_128" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 123
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Info (12128): Elaborating entity "butterfly" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 294
-Warning (10230): Verilog HDL assignment warning at butterfly.v(303): truncated value with size 32 to match size of target (3) File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/butterfly.v Line: 303
-Info (12128): Elaborating entity "longbimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/butterfly.v Line: 692
-Warning (10855): Verilog HDL warning at longbimpy.v(159): initial value for variable r_a should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 159
-Warning (10855): Verilog HDL warning at longbimpy.v(160): initial value for variable r_b should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 160
-Warning (10855): Verilog HDL warning at longbimpy.v(172): initial value for variable acc should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 172
-Warning (10855): Verilog HDL warning at longbimpy.v(185): initial value for variable r_a should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 185
-Warning (10855): Verilog HDL warning at longbimpy.v(186): initial value for variable r_b should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 186
-Warning (10855): Verilog HDL warning at longbimpy.v(209): initial value for variable acc should be constant File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 209
-Info (12128): Elaborating entity "bimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/longbimpy.v Line: 153
-Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/butterfly.v Line: 878
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_64" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 149
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_32" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 174
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_16" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 199
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_8" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 224
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-Info (12128): Elaborating entity "qtrstage" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 246
-Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/qtrstage.v Line: 110
-Info (12128): Elaborating entity "laststage" for hierarchy "FFT_Module:uFFT|laststage:stage_2" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 267
-Info (12128): Elaborating entity "bitreverse" for hierarchy "FFT_Module:uFFT|bitreverse:revstage" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/FFT_Module.v Line: 294
-Warning (10230): Verilog HDL assignment warning at bitreverse.v(99): truncated value with size 32 to match size of target (8) File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/bitreverse.v Line: 99
-Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Control_Module.v Line: 82
-Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneDetector_Module.v Line: 18
-Warning (10030): Net "rom.data_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Magnitude.v Line: 11
-Warning (10030): Net "rom.waddr_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Magnitude.v Line: 11
-Warning (10030): Net "rom.we_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/Magnitude.v Line: 11
-Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/ToneDetector_Module.v Line: 19
+    Info (12023): Found entity 1: serialInterface File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/serialinterface.v Line: 58
+Info (12128): Elaborating entity "serialInterface" for hierarchy "I2C_Module:uI2C|serialInterface:u_serialInterface" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/i2c_module.v Line: 226
+Info (10264): Verilog HDL Case Statement information at serialinterface.v(250): all case item expressions in this case statement are onehot File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/serialinterface.v Line: 250
+Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 81
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_128" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 123
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "butterfly" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 294
+Warning (10230): Verilog HDL assignment warning at butterfly.v(303): truncated value with size 32 to match size of target (3) File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/butterfly.v Line: 303
+Info (12128): Elaborating entity "longbimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/butterfly.v Line: 692
+Warning (10855): Verilog HDL warning at longbimpy.v(159): initial value for variable r_a should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 159
+Warning (10855): Verilog HDL warning at longbimpy.v(160): initial value for variable r_b should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 160
+Warning (10855): Verilog HDL warning at longbimpy.v(172): initial value for variable acc should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 172
+Warning (10855): Verilog HDL warning at longbimpy.v(185): initial value for variable r_a should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 185
+Warning (10855): Verilog HDL warning at longbimpy.v(186): initial value for variable r_b should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 186
+Warning (10855): Verilog HDL warning at longbimpy.v(209): initial value for variable acc should be constant File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 209
+Info (12128): Elaborating entity "bimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/longbimpy.v Line: 153
+Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/butterfly.v Line: 878
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_64" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 149
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_32" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 174
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_16" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 199
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_8" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 224
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "qtrstage" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 246
+Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/qtrstage.v Line: 110
+Info (12128): Elaborating entity "laststage" for hierarchy "FFT_Module:uFFT|laststage:stage_2" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 267
+Info (12128): Elaborating entity "bitreverse" for hierarchy "FFT_Module:uFFT|bitreverse:revstage" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/FFT_Module.v Line: 294
+Warning (10230): Verilog HDL assignment warning at bitreverse.v(99): truncated value with size 32 to match size of target (8) File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/bitreverse.v Line: 99
+Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Control_Module.v Line: 83
+Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneDetector_Module.v Line: 18
+Warning (10030): Net "rom.data_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Magnitude.v Line: 11
+Warning (10030): Net "rom.waddr_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Magnitude.v Line: 11
+Warning (10030): Net "rom.we_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/Magnitude.v Line: 11
+Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/ToneDetector_Module.v Line: 19
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "keypad" into its bus
 Info (286030): Timing-Driven Synthesis is running
 Info (276014): Found 5 instances of uninferred RAM logic
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_8|cmem" is uninferred due to inappropriate RAM size File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_16|cmem" is uninferred due to inappropriate RAM size File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_32|cmem" is uninferred due to inappropriate RAM size File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_64|cmem" is uninferred due to inappropriate RAM size File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_128|cmem" is uninferred due to inappropriate RAM size File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_8|cmem" is uninferred due to inappropriate RAM size File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_16|cmem" is uninferred due to inappropriate RAM size File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_32|cmem" is uninferred due to inappropriate RAM size File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_64|cmem" is uninferred due to inappropriate RAM size File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_128|cmem" is uninferred due to inappropriate RAM size File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/fftstage.v Line: 127
 Info (19000): Inferred 17 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
@@ -4191,7 +4191,7 @@ Info (12133): Instantiated megafunction "ToneDetector_Module:uTD|Magnitude:u0|al
     Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/Control.ram0_Magnitude_4e04d15e.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9o22.tdf
-    Info (12023): Found entity 1: altsyncram_9o22 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_9o22.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_9o22 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_9o22.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4211,7 +4211,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|bitreverse:revstage|alt
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k3q1.tdf
-    Info (12023): Found entity 1: altsyncram_k3q1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_k3q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_k3q1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_k3q1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4231,7 +4231,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|altsyn
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_msp1.tdf
-    Info (12023): Found entity 1: altsyncram_msp1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_msp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_msp1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_msp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4251,7 +4251,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|butter
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4tp1.tdf
-    Info (12023): Found entity 1: altsyncram_4tp1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_4tp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_4tp1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_4tp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4271,7 +4271,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_16|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0tp1.tdf
-    Info (12023): Found entity 1: altsyncram_0tp1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_0tp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_0tp1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_0tp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4291,7 +4291,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_32|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_00q1.tdf
-    Info (12023): Found entity 1: altsyncram_00q1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_00q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_00q1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_00q1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4311,7 +4311,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_64|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uvp1.tdf
-    Info (12023): Found entity 1: altsyncram_uvp1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_uvp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_uvp1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_uvp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4331,27 +4331,27 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_128|alts
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a0q1.tdf
-    Info (12023): Found entity 1: altsyncram_a0q1 File: C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/db/altsyncram_a0q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_a0q1 File: C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/db/altsyncram_a0q1.tdf Line: 28
 Info (17049): 235 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/output_files/Control.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/output_files/Control.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4854 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4853 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 4567 logic cells
+    Info (21061): Implemented 4566 logic cells
     Info (21064): Implemented 282 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 4979 megabytes
-    Info: Processing ended: Wed Mar 29 18:25:47 2023
+    Info: Peak virtual memory: 4981 megabytes
+    Info: Processing ended: Thu Mar 30 13:21:41 2023
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/nfe19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/I2CTest/output_files/Control.map.smsg.
+The suppressed messages can be found in C:/Users/edc19/Downloads/senior_design_2022_2023-master/senior_design_2022_2023-master/EvanCurrentWorking/output_files/Control.map.smsg.
 
 

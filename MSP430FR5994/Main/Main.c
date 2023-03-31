@@ -17,7 +17,8 @@
 #include "HAL_UART_4746.h"
 #include <math.h>
 
-typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
+//typedef enum {ONE,TWO,THREE,a,FOUR,FIVE,SIX,b,SEVEN,EIGHT,NINE,c,ASTREK,ZERO,POUND,d,NONE} Tones;
+typedef enum {ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, a, b, c, d, ASTREK, POUND, NONE} Tones;
 Tones tone;
 
 void GPIO_init(void);
@@ -82,33 +83,63 @@ void main(void){
     initializeADC();
 
     initializeUART();
-    Tones incrementer = ONE;
+//    Tones incrementer = ONE;
+//    uint16_t speakerValueListMod[128] = {0x0000, 0x7100, 0x4500, 0xE000, 0xDC00, 0x0100, 0xDD00, 0xBB00, 0x1100, 0x7900, 0x4700, 0xBD00, 0xA300, 0xF700, 0x1700, 0xF500, 0x1000, 0x5700, 0x2F00, 0xA900, 0x8B00, 0x0200, 0x5400, 0x2500, 0xF800, 0x1800, 0x1100, 0xB500, 0x9C00, 0x1600, 0x7A00, 0x3B00, 0xD000, 0xD200, 0xFF00, 0xE300, 0xCA00, 0x2000, 0x7800, 0x3400, 0xAA00, 0xA100, 0x0200, 0x2400, 0xFF00, 0x1400, 0x4E00, 0x1C00, 0x9D00, 0x9400, 0x1600, 0x6000, 0x2300, 0xEF00, 0x0B00, 0x0500, 0xB400, 0xAC00, 0x2A00, 0x7E00, 0x2D00, 0xBF00, 0xCB00, 0x0100, 0xEC00, 0xD900, 0x2C00, 0x7300, 0x1F00, 0x9A00, 0xA400, 0x1100, 0x3100, 0x0500, 0x1300, 0x4200, 0x0900, 0x9500, 0xA100, 0x2B00, 0x6900, 0x1D00, 0xE300, 0x0000, 0xFD00, 0xB700, 0xBE00, 0x3C00, 0x7E00, 0x1B00, 0xAE00, 0xC700, 0x0700, 0xF700, 0xE700, 0x3400, 0x6900, 0x0900, 0x8E00, 0xAB00, 0x2200, 0x3D00, 0x0800, 0x0E00, 0x3400, 0xF900, 0x9200, 0xB200, 0x4000, 0x6E00, 0x1200, 0xD500, 0xF600, 0xF900, 0xBE00, 0xD100, 0x4B00, 0x7900, 0x0700, 0x9F00, 0xC700, 0x1000, 0x0300, 0xF300, 0x3700, 0x5C00, 0xF400, 0x8500, };
+//
+//    while(incrementer < NONE){
+//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
+//        volatile uint8_t speakerValueList[128];
+//        volatile uint16_t speakerValueList16[128];
+//        getMicValues128(incrementer, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
+//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
+//        uint8_t counter = 0;
+//
+//        /* end ADC mimic*/
+//        volatile uint8_t value;
+//
+//
+//
+//
+//        volatile Tones toneResult = NONE;
+//        volatile uint16_t toneHex;
+//
+//        //I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, 0x5688);
+//        //I2C_read_16(0x44,0x7E);
+//        //I2C_read_8(SLAVE_ADDRESS,COMMAND_REG);
+//
+//        toneResult = asicDecode(speakerValueList16);
+//
+//        tonePrinter(toneResult);
+//        incrementer++;
+//    }
+    __enable_interrupt();
+        uint8_t i=0;
+        char buffer[100];
 
-    while(incrementer < NONE){
-        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-        volatile uint8_t speakerValueList[128];
-        volatile uint16_t speakerValueList16[128];
-        getMicValues128(incrementer, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-        /* end ADC mimic*/
-        volatile uint8_t value;
-        volatile uint8_t counter = 0x11;
+        GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
+        uint8_t PBS1;
+        while(1){
+            PBS1 = GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3);
+            if(PBS1 == GPIO_INPUT_PIN_LOW){
+                __delay_cycles(10000000);
+                ADCCounter = 0;
+                i=0;
+            }
+            else if(ADCCounter >= 128){
+                for(; i<128; i++){
+                    sprintf(buffer,"%x00 \r\n",savedSpeakerValues[i]);
+                                UART_transmitString(buffer);
 
-
-
-
-        volatile Tones toneResult = NONE;
-
-        //I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, 0x5688);
-        //I2C_read_16(0x44,0x7E);
-        //I2C_read_8(SLAVE_ADDRESS,COMMAND_REG);
-
-        toneResult = asicDecode(speakerValueList16);
-
-        tonePrinter(toneResult);
-        incrementer++;
-    }
+                }
+                if (i==128) {
+                    sprintf(buffer,"\r\n\r\n\r\n");
+                                            UART_transmitString(buffer);
+                    i++;
+                }
+            }
+        }
     while(1);
+
 
 
 
@@ -445,55 +476,55 @@ void tonePrinter(Tones tone){
 
     switch(tone){
     case ONE:
-        sprintf(buffer,"%s","Tone is ONE");
+        sprintf(buffer,"%s","Tone is ONE\r\n");
                     UART_transmitString(buffer); break;
     case TWO:
-        sprintf(buffer,"%s","Tone is TWO");
+        sprintf(buffer,"%s","Tone is TWO\r\n");
                     UART_transmitString(buffer); break;
     case THREE:
-        sprintf(buffer,"%s","Tone is THREE");
+        sprintf(buffer,"%s","Tone is THREE\r\n");
                     UART_transmitString(buffer); break;
     case a:
-        sprintf(buffer,"%s","Tone is A");
+        sprintf(buffer,"%s","Tone is A\r\n");
                     UART_transmitString(buffer); break;
     case FOUR:
-        sprintf(buffer,"%s","Tone is FOUR");
+        sprintf(buffer,"%s","Tone is FOUR\r\n");
                     UART_transmitString(buffer); break;
     case FIVE:
-        sprintf(buffer,"%s","Tone is FIVE");
+        sprintf(buffer,"%s","Tone is FIVE\r\n");
                     UART_transmitString(buffer); break;
     case SIX:
-        sprintf(buffer,"%s","Tone is SIX");
+        sprintf(buffer,"%s","Tone is SIX\r\n");
                     UART_transmitString(buffer); break;
     case b:
-        sprintf(buffer,"%s","Tone is B");
+        sprintf(buffer,"%s","Tone is B\r\n");
                     UART_transmitString(buffer); break;
     case SEVEN:
-        sprintf(buffer,"%s","Tone is SEVEN");
+        sprintf(buffer,"%s","Tone is SEVEN\r\n");
                     UART_transmitString(buffer); break;
     case EIGHT:
-        sprintf(buffer,"%s","Tone is EIGHT");
+        sprintf(buffer,"%s","Tone is EIGHT\r\n");
                     UART_transmitString(buffer); break;
     case NINE:
-        sprintf(buffer,"%s","Tone is NINE");
+        sprintf(buffer,"%s","Tone is NINE\r\n");
                     UART_transmitString(buffer); break;
     case c:
-        sprintf(buffer,"%s","Tone is C");
+        sprintf(buffer,"%s","Tone is C\r\n");
                     UART_transmitString(buffer); break;
     case ASTREK:
-        sprintf(buffer,"%s","Tone is *");
+        sprintf(buffer,"%s","Tone is *\r\n");
                     UART_transmitString(buffer); break;
     case ZERO:
-        sprintf(buffer,"%s","Tone is ZERO");
+        sprintf(buffer,"%s","Tone is ZERO\r\n");
                     UART_transmitString(buffer); break;
     case POUND:
-        sprintf(buffer,"%s","Tone is #");
+        sprintf(buffer,"%s","Tone is #\r\n");
                     UART_transmitString(buffer); break;
     case d:
-        sprintf(buffer,"%s","Tone is D");
+        sprintf(buffer,"%s","Tone is D\r\n");
                     UART_transmitString(buffer); break;
     case NONE:
-        sprintf(buffer,"%s","Tone is NONE");
+        sprintf(buffer,"%s","Tone is NONE\r\n");
                     UART_transmitString(buffer); break;
         }
 }

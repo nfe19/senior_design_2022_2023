@@ -60,7 +60,8 @@ output writeEnOut //writeEnOut is an I2c signal
 	integer clkcount;
 	integer nextsample = 0;
 	
-	reg [3:0] pState;
+	//starts in initial
+	reg [3:0] pState=0;
 	
 	localparam [3:0] 
 		SInitial = 4'd0,
@@ -167,9 +168,9 @@ output writeEnOut //writeEnOut is an I2c signal
 				SFFTWait:	begin
 									myRegASICStatuslsb[6:3] <= pState; //used for debug
 									CEflag <= 0;
-									if(clkcount<4) begin
+									if(clkcount<3) begin
 										clkcount <= clkcount + 1;
-										if(clkcount==3) begin //fpga is ready for next sample
+										if(clkcount==2) begin //fpga is ready for next sample
 											nextsample<=nextsample+1;
 											myRegASICStatusmsb[6:0] <= nextsample+1;
 										end
@@ -201,7 +202,7 @@ output writeEnOut //writeEnOut is an I2c signal
 									//handle chip enable properly
 									if(clkcount==0) begin
 										clkcount <= clkcount+1;
-									end else if(clkcount<4) begin
+									end else if(clkcount<3) begin
 										clkcount <= clkcount+1;
 									end else begin
 										clkcount <= 0;

@@ -1,7 +1,7 @@
 
 State Machine - |Control_Module|pState
-Name pState.SError pState.SDone pState.SFFTOut pState.SFFTWait pState.SFFTIn pState.SStart pState.SEnable pState.SInitial 
-pState.SInitial 0 0 0 0 0 0 0 0 
+Name pState.SError pState.SDone pState.SFFTOut pState.SFFTWait pState.SFFTIn pState.SStart pState.SEnable pState.0000 
+pState.0000 0 0 0 0 0 0 0 0 
 pState.SEnable 0 0 0 0 0 0 1 1 
 pState.SStart 0 0 0 0 0 1 0 1 
 pState.SFFTIn 0 0 0 0 1 0 0 1 
