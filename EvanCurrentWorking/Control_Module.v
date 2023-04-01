@@ -71,7 +71,8 @@ output writeEnOut //writeEnOut is an I2c signal
 		SFFTWait = 4'd4,
 		SFFTOut = 4'd5,
 		SDone = 4'd6,
-		SError = 4'd7;
+		SError = 4'd7,
+		SRInitial = 4'd8;
 		
 	I2C_Module uI2C(clk,I2C_rst,sda,scl,myRegDevAddressmsb,myRegDevAddresslsb,myRegManIDmsb,myRegManIDlsb,myRegDevIDmsb,myRegDevIDlsb,
 		myRegMCUStatusmsb,myRegMCUStatuslsb,myRegSampleInmsb,myRegSampleInlsb,myRegASICStatusmsb,myRegASICStatuslsb,
@@ -98,18 +99,23 @@ output writeEnOut //writeEnOut is an I2c signal
 			myRegASICStatuslsb <= 8'h00;
 			myRegResultslsb <= 8'h00;
 			myRegResultsmsb <= 8'h00;
-			//I2C_rst <= 1'b0; //active low								//temp comment, this needs to be reset
-			I2C_rst <= 1'b1;
+			I2C_rst <= 1'b0; //active low								//temp comment, this needs to be reset
+			//I2C_rst <= 1'b1;
 			FFT_rst <= 1'b1; // FFT reset is active high
 			TD_rst <= 1'b0; 
 			TDenable <= 1'b0;
 			i_sample <= 16'hXXXX;
 			bins <= 16'hXXXX;
 			CEflag <= 1'b0;
-			pState <= SInitial;
+			pState <= SRInitial;
 		end else begin
 			case(pState) 
-				//starting state, reset all modules (except I2c)
+				//After coming out of reset, wait for MCu to reset its registers
+				SRInitial: 	begin
+									if((myRegMCUStatuslsb==0)&&(myRegMCUStatusmsb==0)) pState <= SInitial;
+									I2C_rst<=1'b1;
+								end
+				//starting state, reset all modules
 				SInitial:	begin
 									myRegASICStatuslsb[6:3] <= pState; //used for debug
 									myRegASICStatusmsb <= 8'h00;

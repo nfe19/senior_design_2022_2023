@@ -123,9 +123,15 @@ void main(void){
         //reset sample counter, and re-enable ADC ISR
         if (ADCCounter > 127){
             __disable_interrupt();
+            volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
+                    myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+                    myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+                    myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+                    myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
             listConvert8to16(savedSpeakerValues, speakerValueList16);
             toneResult = asicDecode(speakerValueList16);
             tonePrinter(toneResult);
+            //GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);
             ADCCounter = 0;
             __enable_interrupt();
         }
@@ -264,6 +270,7 @@ Tones asicDecode(uint16_t samples[128]){
         myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
         myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
         myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+
         Tones outputTone = NONE;
 
         volatile uint16_t command_reg_data = 0x0000;
