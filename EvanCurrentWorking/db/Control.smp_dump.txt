@@ -1,14 +1,15 @@
 
 State Machine - |Control_Module|pState
-Name pState.SError pState.SDone pState.SFFTOut pState.SFFTWait pState.SFFTIn pState.SStart pState.SEnable pState.0000 
-pState.0000 0 0 0 0 0 0 0 0 
-pState.SEnable 0 0 0 0 0 0 1 1 
-pState.SStart 0 0 0 0 0 1 0 1 
-pState.SFFTIn 0 0 0 0 1 0 0 1 
-pState.SFFTWait 0 0 0 1 0 0 0 1 
-pState.SFFTOut 0 0 1 0 0 0 0 1 
-pState.SDone 0 1 0 0 0 0 0 1 
-pState.SError 1 0 0 0 0 0 0 1 
+Name pState.0000 pState.SError pState.SDone pState.SFFTOut pState.SFFTWait pState.SFFTIn pState.SStart pState.SEnable pState.SRInitial 
+pState.SRInitial 0 0 0 0 0 0 0 0 0 
+pState.SEnable 0 0 0 0 0 0 0 1 1 
+pState.SStart 0 0 0 0 0 0 1 0 1 
+pState.SFFTIn 0 0 0 0 0 1 0 0 1 
+pState.SFFTWait 0 0 0 0 1 0 0 0 1 
+pState.SFFTOut 0 0 0 1 0 0 0 0 1 
+pState.SDone 0 0 1 0 0 0 0 0 1 
+pState.SError 0 1 0 0 0 0 0 0 1 
+pState.0000 1 0 0 0 0 0 0 0 1 
 
 State Machine - |Control_Module|I2C_Module:uI2C|serialInterface:u_serialInterface|streamSt
 Name streamSt.11 streamSt.10 streamSt.01 streamSt.00 

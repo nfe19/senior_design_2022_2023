@@ -9,6 +9,7 @@ module ToneDetector_Module(clock, reset_n, enable, dataIn, done, Tone);
 	wire [15:0] bins_mag;
 	reg [5:0] low_bin, high_bin, tempLowBin, tempHighBin, counter = 6'h00;
 	integer maxLow = 0, maxHigh = 0;
+	integer magThreshold = 500;
 	
 	reg lowReady, highReady;
 	
@@ -40,7 +41,7 @@ module ToneDetector_Module(clock, reset_n, enable, dataIn, done, Tone);
 				
 				if(counter > 18 && counter < 26) begin
 				
-					if(bins_mag > maxLow) begin
+					if((bins_mag > maxLow) && (bins_mag > magThreshold)) begin
 						
 						tempLowBin <= counter;
 						maxLow <= bins_mag;
@@ -50,7 +51,7 @@ module ToneDetector_Module(clock, reset_n, enable, dataIn, done, Tone);
 				end
 				else if(counter > 31 && counter < 44) begin
 				
-					if(bins_mag > maxHigh) begin
+					if((bins_mag > maxHigh) && (bins_mag > magThreshold)) begin
 						
 						tempHighBin <= counter;
 						maxHigh <= bins_mag;

@@ -1,6 +1,6 @@
 Flow report for Control
-Thu Mar 30 13:23:50 2023
-Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Sat Apr  1 16:49:55 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -38,29 +38,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Mar 30 13:23:50 2023       ;
-; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name                   ; Control                                     ;
-; Top-level Entity Name           ; Control_Module                              ;
-; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CSEMA5F31C6                                ;
-; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,648 / 32,070 ( 5 % )                      ;
-; Total registers                 ; 3837                                        ;
-; Total pins                      ; 5 / 457 ( 1 % )                             ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 12,880 / 4,065,280 ( < 1 % )                ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++---------------------------------+------------------------------------------------+
+; Flow Status                     ; Successful - Sat Apr  1 16:49:55 2023          ;
+; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                   ; Control                                        ;
+; Top-level Entity Name           ; Control_Module                                 ;
+; Family                          ; Cyclone V                                      ;
+; Device                          ; 5CSEMA5F31C6                                   ;
+; Timing Models                   ; Final                                          ;
+; Logic utilization (in ALMs)     ; 1,674 / 32,070 ( 5 % )                         ;
+; Total registers                 ; 3848                                           ;
+; Total pins                      ; 5 / 457 ( 1 % )                                ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 12,880 / 4,065,280 ( < 1 % )                   ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
++---------------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2023 13:21:29 ;
+; Start date & time ; 04/01/2023 16:47:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Control             ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name    ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 9423239714870.168019688821736          ; --            ; --             ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 53447166498182.168038204704952         ; --            ; --             ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --             ; Control_ModuleTB                  ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --             ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --             ; eda_board_design_boundary_scan    ;
@@ -110,12 +110,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4981 MB             ; 00:00:15                           ;
-; Fitter               ; 00:01:53     ; 1.1                     ; 7429 MB             ; 00:09:27                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4907 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:05     ; 2.6                     ; 5345 MB             ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4785 MB             ; 00:00:01                           ;
-; Total                ; 00:02:16     ; --                      ; --                  ; 00:09:57                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4896 MB             ; 00:00:30                           ;
+; Fitter               ; 00:01:37     ; 1.2                     ; 6552 MB             ; 00:03:02                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4890 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:12     ; 1.9                     ; 5241 MB             ; 00:00:18                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4770 MB             ; 00:00:03                           ;
+; Total                ; 00:02:20     ; --                      ; --                  ; 00:04:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,11 +124,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; ENG-A205-51      ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; ENG-A205-51      ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; ENG-A205-51      ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; ENG-A205-51      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; ENG-A205-51      ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-ICORDBR  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-ICORDBR  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-ICORDBR  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-ICORDBR  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-ICORDBR  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

@@ -5,7 +5,7 @@ reset_n => CEflag.ACLR
 reset_n => TDenable.ACLR
 reset_n => TD_rst.ACLR
 reset_n => FFT_rst.PRESET
-reset_n => I2C_rst.PRESET
+reset_n => I2C_rst.ACLR
 reset_n => myRegResultsmsb[0].ACLR
 reset_n => myRegResultsmsb[1].ACLR
 reset_n => myRegResultsmsb[2].ACLR
@@ -38,7 +38,7 @@ reset_n => myRegASICStatusmsb[4].ACLR
 reset_n => myRegASICStatusmsb[5].ACLR
 reset_n => myRegASICStatusmsb[6].ACLR
 reset_n => myRegASICStatusmsb[7].ACLR
-reset_n => pState~11.DATAIN
+reset_n => pState~12.DATAIN
 reset_n => clkcount[0].ENA
 reset_n => nextsample[31].ENA
 reset_n => nextsample[30].ENA
@@ -104,7 +104,7 @@ reset_n => clkcount[3].ENA
 reset_n => clkcount[2].ENA
 reset_n => clkcount[1].ENA
 sda <> I2C_Module:uI2C.port2
-writeEnOut <= I2C_Module:uI2C.port18
+writeEnOut << I2C_Module:uI2C.port18
 
 
 |Control_Module|I2C_Module:uI2C
