@@ -16,11 +16,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "scl",
+					"name" : "reset_n",
 					"strict" : false
 				},
 				{
-					"name" : "reset_n",
+					"name" : "scl",
 					"strict" : false
 				}
 			]

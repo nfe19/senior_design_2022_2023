@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Mar 30 13:21:41 2023
-Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Sat Apr  1 16:47:47 2023
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Control
 Top-level Entity Name : Control_Module
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 3908
+Total registers : 3912
 Total pins : 5
 Total virtual pins : 0
 Total block memory bits : 12,880
