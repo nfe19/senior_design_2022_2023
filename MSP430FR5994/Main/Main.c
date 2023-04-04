@@ -52,16 +52,17 @@ uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 /* END I2C Register Map */
 
 /*I2C COMMAND_REG Bit Definitions */
-    const uint16_t READY_FLAG = 0x0001;         //set: tells FPGA to wait, reset: data is sent and FPGA is ready
-    const uint16_t VALID_FLAG = 0x0002;         //set: data has been read, reset: data has not been read
-    const uint16_t RESET_FPGA = 0x0004;         //set: resets the FPGA, reset: enables the FPGA
+    const uint16_t MSP_BIT0 = 0;
+    const uint16_t MSP_BIT1 = 1;         //set: tells FPGA to wait, reset: data is sent and FPGA is ready
+    const uint16_t MSP_BIT2 = 2;         //set: data has been read, reset: data has not been read
+    const uint16_t MSP_BIT3 = 3;         //set: resets the FPGA, reset: enables the FPGA
 /* END COMMAND_REG Bit Definitions */
 
 /*I2C STATUS_REG Bit Definitions */
-    const uint16_t OUT_VALID_FLAG = 0x0001;     //set: output is valid, reset: output is invalid
-    const uint16_t BUSY_FLAG = 0x0002;          //set: FPGA is busy, reset: FPGA is not busy
-    const uint16_t INPUT_MODE_FLAG = 0x0004;    //set: FPGA is in input mode (wants inputs), reset: FPGA in output mode (calculating outputs)
-    const uint16_t INPUT_READY_FLAG = 0x0008;   //set: FPGA wants an input, reset: FPGA does not want an input
+    const uint16_t FPGA_BIT0 = 0;     //set: output is valid, reset: output is invalid
+    const uint16_t FPGA_BIT1 = 1;          //set: FPGA is busy, reset: FPGA is not busy
+    const uint16_t FPGA_BIT2 = 2;    //set: FPGA is in input mode (wants inputs), reset: FPGA in output mode (calculating outputs)
+    const uint16_t FPGA_BIT3 = 3;   //set: FPGA wants an input, reset: FPGA does not want an input
 /* END STATUS_REG Bit Definitions */
 
 //  Main Function
@@ -117,24 +118,66 @@ void main(void){
     volatile Tones toneResult = NONE;
     volatile uint16_t speakerValueList16[128];
     __enable_interrupt();
+
+    GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
+
+    Tones prevTone=NONE;
+    Tones password[4]={ONE, FIVE, NINE, d};
+    volatile Tones userEnteredPassword[4]={NONE,NONE,NONE,NONE};
+    uint8_t toneCount=0;
+    volatile bool pwValid=false;
+    bool oneToneDetected=false;
     while(1){
 
         //when 128 samples are picked up by ADC ISR, disable the ISR, convert the 128 list to 16 bits, adding 0's to the imagionary part, perform asicDecode, print the tone result,
         //reset sample counter, and re-enable ADC ISR
         if (ADCCounter > 127){
+
             __disable_interrupt();
-            volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
-                    myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-                    myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-                    myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-                    myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+//            volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
+//                    myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+//                    myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+//                    myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+//                    myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
             listConvert8to16(savedSpeakerValues, speakerValueList16);
             toneResult = asicDecode(speakerValueList16);
             tonePrinter(toneResult);
+
+            if((toneResult!=prevTone)&&(toneResult!=NONE)&&oneToneDetected!=true){
+                oneToneDetected=true;
+                //prevTone=toneResult;
+            }else if(toneResult==prevTone&&oneToneDetected==true){
+                if(toneResult==NONE){
+                    oneToneDetected=false;
+                }else{
+                    //UPDATE AND DISPLAY HOW MANY TONES ARE IN userEnteredPassword so far
+                    oneToneDetected=false;
+                    userEnteredPassword[toneCount]=toneResult;
+                    toneCount++;
+                    if(toneCount==4){
+                        toneCount=0;
+                        if((userEnteredPassword[0]==password[0])&&(userEnteredPassword[1]==password[1])&&(userEnteredPassword[2]==password[2])&&(userEnteredPassword[3]==password[3])){
+                            pwValid=true;//set door unlock signal high
+                            while(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)!=0);
+                            //userEnteredPassword[0]={NONE,NONE,NONE,NONE};
+                            pwValid=false;//set door unlock signal low
+                        }else{
+                            pwValid=false;
+                        }
+                    }
+                }
+            }//else if(toneResult!=prevTone){
+                //prevTone=toneResult;
+
+            //}
+            //oneToneDetected=false;
+            prevTone=toneResult;
             //GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);
             ADCCounter = 0;
             __enable_interrupt();
         }
+
+
 
     }
 
@@ -289,7 +332,7 @@ Tones asicDecode(uint16_t samples[128]){
         myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
         myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         //
-        set2Bits(&command_reg_data, 0, 1);
+        set2Bits(&command_reg_data, MSP_BIT0, MSP_BIT1);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
         myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
         myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
@@ -297,7 +340,7 @@ Tones asicDecode(uint16_t samples[128]){
         myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
 
         //poll ASIC to see when enters input mode, if input mode, move on
-        while(!readBit(STATUS_REG,2));
+        while(!readBit(STATUS_REG,FPGA_BIT2));
 
 
         uint16_t FPGASampleCounter, MCUSampleCounter = 0x00;
@@ -329,11 +372,11 @@ Tones asicDecode(uint16_t samples[128]){
         }
 
         //MCU status is that it is not longer in input mode
-        reset1Bit(&command_reg_data, 1);
+        reset1Bit(&command_reg_data, MSP_BIT1);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         //wait for tone detector to finish
-        while(!readBit(STATUS_REG,0));
+        while(!readBit(STATUS_REG,FPGA_BIT0));
 
         //read off the output and store it
         outputTone = I2C_read_16(SLAVE_ADDRESS, RESULTS_REG);
@@ -343,7 +386,7 @@ Tones asicDecode(uint16_t samples[128]){
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         //tell the FPGA that the output has been read, and the FPGA can reset
-        set1Bit(&command_reg_data, 2);
+        set1Bit(&command_reg_data, MSP_BIT2);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
 
         return outputTone;
