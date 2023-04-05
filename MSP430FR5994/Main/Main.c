@@ -120,9 +120,10 @@ void main(void){
     __enable_interrupt();
 
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
+    GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
 
     Tones prevTone=NONE;
-    Tones password[4]={ONE, FIVE, NINE, d};
+    Tones password[4]={ONE, THREE, NINE, d};
     volatile Tones userEnteredPassword[4]={NONE,NONE,NONE,NONE};
     uint8_t toneCount=0;
     volatile bool pwValid=false;
@@ -142,7 +143,14 @@ void main(void){
             listConvert8to16(savedSpeakerValues, speakerValueList16);
             toneResult = asicDecode(speakerValueList16);
             tonePrinter(toneResult);
-
+//            if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN2)!=0){
+//                userEnteredPassword[0] = NONE;
+//                userEnteredPassword[1] = NONE;
+//                userEnteredPassword[2] = NONE;
+//                userEnteredPassword[3] = NONE;
+//                toneCount = 0;
+//            }
+            ledStatus(toneCount);
             if((toneResult!=prevTone)&&(toneResult!=NONE)&&oneToneDetected!=true){
                 oneToneDetected=true;
                 //prevTone=toneResult;
@@ -154,15 +162,23 @@ void main(void){
                     oneToneDetected=false;
                     userEnteredPassword[toneCount]=toneResult;
                     toneCount++;
+                    ledStatus(toneCount);
                     if(toneCount==4){
                         toneCount=0;
                         if((userEnteredPassword[0]==password[0])&&(userEnteredPassword[1]==password[1])&&(userEnteredPassword[2]==password[2])&&(userEnteredPassword[3]==password[3])){
                             pwValid=true;//set door unlock signal high
+                            GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN2);
                             while(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)!=0);
                             //userEnteredPassword[0]={NONE,NONE,NONE,NONE};
                             pwValid=false;//set door unlock signal low
+                            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
                         }else{
                             pwValid=false;
+                            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                            userEnteredPassword[0] = NONE;
+                            userEnteredPassword[1] = NONE;
+                            userEnteredPassword[2] = NONE;
+                            userEnteredPassword[3] = NONE;
                         }
                     }
                 }
@@ -393,6 +409,33 @@ Tones asicDecode(uint16_t samples[128]){
 
 }
 
+void ledStatus(uint8_t toneCount){
+    if(toneCount == 0){
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN6);    //state of LEDRED
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN5);    //state of LEDGREEN
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN4);    //state of LEDBLUE
+    }
+    else if(toneCount == 1){
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN6);    //state of LEDRED
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN5);    //state of LEDGREEN
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN4);    //state of LEDBLUE
+    }
+    else if(toneCount == 2){
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN6);    //state of LEDRED
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN5);    //state of LEDGREEN
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN4);    //state of LEDBLUE
+    }
+    else if(toneCount == 3){
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN6);    //state of LEDRED
+        GPIO_setOutputLowOnPin(GPIO_PORT_P3,GPIO_PIN5);    //state of LEDGREEN
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN4);    //state of LEDBLUE
+    }
+    else{
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN6);    //state of LEDRED
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN5);    //state of LEDGREEN
+        GPIO_setOutputHighOnPin(GPIO_PORT_P3,GPIO_PIN4);    //state of LEDBLUE
+    }
+}
 
 void statusRead(uint8_t *myRegASICStatusmsb, uint8_t *myRegASICStatuslsb,uint8_t *myRegMCUStatusmsb,uint8_t *myRegMCUStatuslsb){
     *myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
