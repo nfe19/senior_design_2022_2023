@@ -1,0 +1,103 @@
+module ASICmain(input clk, reset_n, scl,
+					 inout sda);
+								  
+	//I2c 
+	wire [7:0] myRegDevAddresslsb;
+	wire [7:0] myRegDevAddressmsb;
+	wire [7:0] myRegManIDlsb;
+	wire [7:0] myRegManIDmsb;
+	wire [7:0] myRegDevIDlsb;
+	wire [7:0] myRegDevIDmsb;
+	wire [7:0] myRegMCUStatuslsb;
+	wire [7:0] myRegMCUStatusmsb;
+	wire [7:0] myRegSampleInlsb;
+	wire [7:0] myRegSampleInmsb;
+	wire [7:0] myRegASICStatuslsb;
+	wire [7:0] myRegASICStatusmsb;
+	wire [7:0] myRegResultslsb;
+	wire [7:0] myRegResultsmsb;
+	wire writeEnOut;
+								  
+	//FFT 
+	wire [15:0] i_sample;
+	wire [15:0] o_result; 
+	wire o_sync;
+	
+	//Tone Detector 
+	wire i_ce; 
+	wire TDenable;
+	wire [15:0] bins;
+	wire done;
+	wire [15:0] Tone;
+	
+	// Internal modules reset
+	wire FFT_rst, TD_rst, I2C_rst;
+								  
+	Control_Module u_Control_Module (
+		.clk(clk), 
+		.reset_n(reset_n), 
+		.myRegDevAddresslsb(myRegDevAddresslsb), 
+		.myRegDevAddressmsb(myRegDevAddressmsb), 
+		.myRegManIDlsb(myRegManIDlsb), 
+		.myRegManIDmsb(myRegManIDmsb), 
+		.myRegMCUStatuslsb(myRegMCUStatuslsb), 
+		.myRegMCUStatusmsb(myRegMCUStatusmsb), 
+		.myRegSampleInlsb(myRegSampleInlsb), 
+		.myRegSampleInmsb(myRegSampleInmsb), 
+		.myRegASICStatuslsb(myRegASICStatuslsb), 
+		.myRegASICStatusmsb(myRegASICStatusmsb), 
+		.myRegResultslsb(myRegResultslsb), 
+		.myRegResultsmsb(myRegResultsmsb),
+		.o_result(o_result), 
+		.o_sync(o_sync), 
+		.i_sample(i_sample),
+		.done(done), 
+		.Tone(Tone), 
+		.i_ce(i_ce), 
+		.TDenable(TDenable),
+		.FFT_rst(FFT_rst), 
+		.TD_rst(TD_rst), 
+		.I2C_rst(I2C_rst)
+	);
+	
+	I2C_Module u_I2C_Module (
+		.clk(clk),
+		.rst(I2C_rst),
+		.sda(sda),
+		.scl(scl),
+		.myRegDevAddressmsb(myRegDevAddressmsb),
+		.myRegDevAddresslsb(myRegDevAddresslsb),
+		.myRegManIDmsb(myRegManIDmsb),
+		.myRegManIDlsb(myRegManIDlsb),
+		.myRegDevIDmsb(myRegDevIDmsb),
+		.myRegDevIDlsb(myRegDevIDlsb),
+		.myRegMCUStatusmsb(myRegMCUStatusmsb),
+		.myRegMCUStatuslsb(myRegMCUStatuslsb),
+		.myRegSampleInmsb(myRegSampleInmsb),
+		.myRegSampleInlsb(myRegSampleInlsb),
+		.myRegASICStatusmsb(myRegASICStatusmsb),
+		.myRegASICStatuslsb(myRegASICStatuslsb),
+		.myRegResultsmsb(myRegResultsmsb),
+		.myRegResultslsb(myRegResultslsb),
+		.writeEnOut(writeEnOut)
+	);
+	
+	FFT_Module u_FFT_Module (
+		.i_clk(clk), 
+		.i_reset(FFT_rst), 
+		.i_ce(i_ce), 
+		.i_sample(i_sample), 
+		.o_result(o_result), 
+		.o_sync(o_sync)
+	);
+	
+	ToneDetector_Module u_ToneDetector_Module (
+		.clk(i_ce), 
+		.reset_n(TD_rst), 
+		.enable(TDenable), 
+		.dataIn(o_result), 
+		.done(done), 
+		.Tone(Tone)
+	);
+	
+endmodule

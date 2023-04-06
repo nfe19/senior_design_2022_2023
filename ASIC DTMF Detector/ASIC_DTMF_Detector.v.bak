@@ -1,0 +1,2 @@
+module ASIC_DTMF_Detector(input clock, reset_n, scl,
+								  inout sda);

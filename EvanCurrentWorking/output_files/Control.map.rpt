@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Control
-Sat Apr  1 16:47:47 2023
-Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Tue Apr 04 18:48:10 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -146,7 +146,7 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2022  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -163,27 +163,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Apr  1 16:47:47 2023          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; Control                                        ;
-; Top-level Entity Name           ; Control_Module                                 ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 3912                                           ;
-; Total pins                      ; 5                                              ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 12,880                                         ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 04 18:48:09 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; Control                                     ;
+; Top-level Entity Name           ; Control_Module                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 3912                                        ;
+; Total pins                      ; 5                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 12,880                                      ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -278,62 +278,66 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                    ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                                                             ; Library ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; bimpy.v                                    ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/bimpy.v                                    ;         ;
-; bitreverse.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v                               ;         ;
-; butterfly.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/butterfly.v                                ;         ;
-; convround.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/convround.v                                ;         ;
-; fftstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v                                 ;         ;
-; laststage.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/laststage.v                                ;         ;
-; longbimpy.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v                                ;         ;
-; Magnitude.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v                                ;         ;
-; qtrstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v                                 ;         ;
-; MagLUT.hex                                 ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/MagLUT.hex                                 ;         ;
-; FFT_Module.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v                               ;         ;
-; ToneDetector_Module.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v                      ;         ;
-; Control_Module.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v                           ;         ;
-; ToneLUT.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneLUT.v                                  ;         ;
-; i2c_module.v                               ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v                               ;         ;
-; i2cmodule_defines.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/i2cmodule_defines.v                        ;         ;
-; registerinterface.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/registerinterface.v                        ;         ;
-; serialinterface.v                          ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v                          ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                 ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                          ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                    ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                                                                 ;         ;
-; aglobal221.inc                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                                                                                                 ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                  ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                                                                                                     ;         ;
-; altram.inc                                 ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                                                                                                     ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                                          ; d:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                                                                                                   ;         ;
-; db/altsyncram_9o22.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_9o22.tdf                     ;         ;
-; db/control.ram0_magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/control.ram0_magnitude_4e04d15e.hdl.mif ;         ;
-; db/altsyncram_k3q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_k3q1.tdf                     ;         ;
-; db/altsyncram_msp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_msp1.tdf                     ;         ;
-; db/altsyncram_4tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_4tp1.tdf                     ;         ;
-; db/altsyncram_0tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_0tp1.tdf                     ;         ;
-; db/altsyncram_00q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_00q1.tdf                     ;         ;
-; db/altsyncram_uvp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_uvp1.tdf                     ;         ;
-; db/altsyncram_a0q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_a0q1.tdf                     ;         ;
-+--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                        ;
++--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                 ; Library ;
++--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+; bimpy.v                                    ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/bimpy.v                                    ;         ;
+; bitreverse.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v                               ;         ;
+; butterfly.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/butterfly.v                                ;         ;
+; convround.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/convround.v                                ;         ;
+; fftstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v                                 ;         ;
+; laststage.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/laststage.v                                ;         ;
+; longbimpy.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v                                ;         ;
+; Magnitude.v                                ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v                                ;         ;
+; qtrstage.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v                                 ;         ;
+; MagLUT.hex                                 ; yes             ; User Hexadecimal (Intel-Format) File                  ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/MagLUT.hex                                 ;         ;
+; FFT_Module.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v                               ;         ;
+; ToneDetector_Module.v                      ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v                      ;         ;
+; Control_Module.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v                           ;         ;
+; ToneLUT.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneLUT.v                                  ;         ;
+; i2c_module.v                               ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v                               ;         ;
+; i2cmodule_defines.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/i2cmodule_defines.v                        ;         ;
+; registerinterface.v                        ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/registerinterface.v                        ;         ;
+; serialinterface.v                          ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v                          ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                        ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                 ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                           ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                        ;         ;
+; aglobal201.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                        ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                         ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                            ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                            ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                          ;         ;
+; db/altsyncram_9o22.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_9o22.tdf                     ;         ;
+; db/control.ram0_magnitude_4e04d15e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/control.ram0_magnitude_4e04d15e.hdl.mif ;         ;
+; db/altsyncram_k3q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_k3q1.tdf                     ;         ;
+; db/altsyncram_msp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_msp1.tdf                     ;         ;
+; db/altsyncram_4tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_4tp1.tdf                     ;         ;
+; db/altsyncram_0tp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_0tp1.tdf                     ;         ;
+; db/altsyncram_00q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_00q1.tdf                     ;         ;
+; db/altsyncram_uvp1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_uvp1.tdf                     ;         ;
+; db/altsyncram_a0q1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_a0q1.tdf                     ;         ;
++--------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -341,14 +345,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2110      ;
+; Estimate of Logic utilization (ALMs needed) ; 2111      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 2633      ;
+; Combinational ALUT usage for logic          ; 2635      ;
 ;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 147       ;
-;     -- 5 input functions                    ; 384       ;
-;     -- 4 input functions                    ; 188       ;
-;     -- <=3 input functions                  ; 1913      ;
+;     -- 6 input functions                    ; 152       ;
+;     -- 5 input functions                    ; 380       ;
+;     -- 4 input functions                    ; 190       ;
+;     -- <=3 input functions                  ; 1912      ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 3912      ;
 ;                                             ;           ;
@@ -360,7 +364,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 4113      ;
-; Total fan-out                               ; 24482     ;
+; Total fan-out                               ; 24499     ;
 ; Average fan-out                             ; 3.58      ;
 +---------------------------------------------+-----------+
 
@@ -370,7 +374,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Entity Name         ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Control_Module                                 ; 2633 (200)          ; 3912 (113)                ; 12880             ; 0          ; 5    ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
+; |Control_Module                                 ; 2635 (202)          ; 3912 (113)                ; 12880             ; 0          ; 5    ; 0            ; |Control_Module                                                                                                                    ; Control_Module      ; work         ;
 ;    |FFT_Module:uFFT|                            ; 2169 (3)            ; 3587 (18)                 ; 8784              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT                                                                                                    ; FFT_Module          ; work         ;
 ;       |bitreverse:revstage|                     ; 16 (16)             ; 10 (10)                   ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage                                                                                ; bitreverse          ; work         ;
 ;          |altsyncram:brmem_rtl_0|               ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |Control_Module|FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0                                                         ; altsyncram          ; work         ;
@@ -3723,7 +3727,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 2                           ;
 ;     plain             ; 80                          ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 2633                        ;
+; arriav_lcell_comb     ; 2635                        ;
 ;     arith             ; 1344                        ;
 ;         0 data inputs ; 31                          ;
 ;         1 data inputs ; 417                         ;
@@ -3732,14 +3736,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 265                         ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 910                         ;
+;     normal            ; 912                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 384                         ;
-;         3 data inputs ; 56                          ;
-;         4 data inputs ; 184                         ;
-;         5 data inputs ; 119                         ;
-;         6 data inputs ; 147                         ;
+;         2 data inputs ; 382                         ;
+;         3 data inputs ; 57                          ;
+;         4 data inputs ; 186                         ;
+;         5 data inputs ; 115                         ;
+;         6 data inputs ; 152                         ;
 ;     shared            ; 378                         ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 3                           ;
@@ -3747,8 +3751,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 5                           ;
 ; stratixv_ram_block    ; 282                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.70                        ;
-; Average LUT depth     ; 1.75                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 1.76                        ;
 +-----------------------+-----------------------------+
 
 
@@ -3757,7 +3761,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -3766,105 +3770,105 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Apr  1 16:47:27 2023
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Apr 04 18:47:59 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Control -c Control
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bimpy.v
-    Info (12023): Found entity 1: bimpy File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/bimpy.v Line: 55
+    Info (12023): Found entity 1: bimpy File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/bimpy.v Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file bitreverse.v
-    Info (12023): Found entity 1: bitreverse File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v Line: 47
+    Info (12023): Found entity 1: bitreverse File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v Line: 47
 Info (12021): Found 1 design units, including 1 entities, in source file butterfly.v
-    Info (12023): Found entity 1: butterfly File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 107
+    Info (12023): Found entity 1: butterfly File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 107
 Info (12021): Found 1 design units, including 1 entities, in source file convround.v
-    Info (12023): Found entity 1: convround File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/convround.v Line: 49
+    Info (12023): Found entity 1: convround File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/convround.v Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file fftstage.v
-    Info (12023): Found entity 1: fftstage File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 65
-Warning (10335): Unrecognized synthesis attribute "use_dsp48" at hwbfly.v(120) File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/hwbfly.v Line: 120
+    Info (12023): Found entity 1: fftstage File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 65
+Warning (10335): Unrecognized synthesis attribute "use_dsp48" at hwbfly.v(120) File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/hwbfly.v Line: 120
 Info (12021): Found 1 design units, including 1 entities, in source file hwbfly.v
-    Info (12023): Found entity 1: hwbfly File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/hwbfly.v Line: 69
+    Info (12023): Found entity 1: hwbfly File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/hwbfly.v Line: 69
 Info (12021): Found 1 design units, including 1 entities, in source file laststage.v
-    Info (12023): Found entity 1: laststage File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/laststage.v Line: 46
+    Info (12023): Found entity 1: laststage File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/laststage.v Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file longbimpy.v
-    Info (12023): Found entity 1: longbimpy File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 52
+    Info (12023): Found entity 1: longbimpy File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 52
 Info (12021): Found 1 design units, including 1 entities, in source file magnitude.v
-    Info (12023): Found entity 1: Magnitude File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 1
+    Info (12023): Found entity 1: Magnitude File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file qtrstage.v
-    Info (12023): Found entity 1: qtrstage File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v Line: 73
+    Info (12023): Found entity 1: qtrstage File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v Line: 73
 Info (12021): Found 1 design units, including 1 entities, in source file fft_module.v
-    Info (12023): Found entity 1: FFT_Module File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 78
+    Info (12023): Found entity 1: FFT_Module File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file tonedetector_module.v
-    Info (12023): Found entity 1: ToneDetector_Module File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at Control_Module.v(52): "bins" is SystemVerilog-2005 keyword File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 52
+    Info (12023): Found entity 1: ToneDetector_Module File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at Control_Module.v(52): "bins" is SystemVerilog-2005 keyword File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 52
 Info (12021): Found 1 design units, including 1 entities, in source file control_module.v
-    Info (12023): Found entity 1: Control_Module File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 22
+    Info (12023): Found entity 1: Control_Module File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file tonelut.v
-    Info (12023): Found entity 1: ToneLUT File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneLUT.v Line: 1
+    Info (12023): Found entity 1: ToneLUT File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneLUT.v Line: 1
 Info (12127): Elaborating entity "Control_Module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Control_Module.v(52): object "bins" assigned a value but never read File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 52
-Warning (10230): Verilog HDL assignment warning at Control_Module.v(181): truncated value with size 32 to match size of target (7) File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 181
+Warning (10036): Verilog HDL or VHDL warning at Control_Module.v(52): object "bins" assigned a value but never read File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 52
+Warning (10230): Verilog HDL assignment warning at Control_Module.v(180): truncated value with size 32 to match size of target (7) File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 180
 Warning (12125): Using design file i2c_module.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: I2C_Module File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 48
-Info (12128): Elaborating entity "I2C_Module" for hierarchy "I2C_Module:uI2C" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 79
+    Info (12023): Found entity 1: I2C_Module File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 48
+Info (12128): Elaborating entity "I2C_Module" for hierarchy "I2C_Module:uI2C" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 79
 Warning (12125): Using design file registerinterface.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: registerInterface File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/registerinterface.v Line: 51
-Info (12128): Elaborating entity "registerInterface" for hierarchy "I2C_Module:uI2C|registerInterface:u_registerInterface" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 212
+    Info (12023): Found entity 1: registerInterface File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/registerinterface.v Line: 51
+Info (12128): Elaborating entity "registerInterface" for hierarchy "I2C_Module:uI2C|registerInterface:u_registerInterface" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 212
 Warning (12125): Using design file serialinterface.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: serialInterface File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v Line: 58
-Info (12128): Elaborating entity "serialInterface" for hierarchy "I2C_Module:uI2C|serialInterface:u_serialInterface" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 226
-Info (10264): Verilog HDL Case Statement information at serialinterface.v(250): all case item expressions in this case statement are onehot File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v Line: 250
-Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 82
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_128" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 123
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Info (12128): Elaborating entity "butterfly" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 294
-Warning (10230): Verilog HDL assignment warning at butterfly.v(303): truncated value with size 32 to match size of target (3) File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 303
-Info (12128): Elaborating entity "longbimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 692
-Warning (10855): Verilog HDL warning at longbimpy.v(159): initial value for variable r_a should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 159
-Warning (10855): Verilog HDL warning at longbimpy.v(160): initial value for variable r_b should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 160
-Warning (10855): Verilog HDL warning at longbimpy.v(172): initial value for variable acc should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 172
-Warning (10855): Verilog HDL warning at longbimpy.v(185): initial value for variable r_a should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 185
-Warning (10855): Verilog HDL warning at longbimpy.v(186): initial value for variable r_b should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 186
-Warning (10855): Verilog HDL warning at longbimpy.v(209): initial value for variable acc should be constant File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 209
-Info (12128): Elaborating entity "bimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 153
-Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 878
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_64" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 149
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_32" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 174
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_16" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 199
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_8" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 224
-Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-Info (12128): Elaborating entity "qtrstage" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 246
-Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v Line: 110
-Info (12128): Elaborating entity "laststage" for hierarchy "FFT_Module:uFFT|laststage:stage_2" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 267
-Info (12128): Elaborating entity "bitreverse" for hierarchy "FFT_Module:uFFT|bitreverse:revstage" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 294
-Warning (10230): Verilog HDL assignment warning at bitreverse.v(99): truncated value with size 32 to match size of target (8) File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v Line: 99
-Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 84
-Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 18
-Warning (10030): Net "rom.data_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
-Warning (10030): Net "rom.waddr_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
-Warning (10030): Net "rom.we_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
-Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 19
+    Info (12023): Found entity 1: serialInterface File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v Line: 58
+Info (12128): Elaborating entity "serialInterface" for hierarchy "I2C_Module:uI2C|serialInterface:u_serialInterface" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/i2c_module.v Line: 226
+Info (10264): Verilog HDL Case Statement information at serialinterface.v(250): all case item expressions in this case statement are onehot File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/serialinterface.v Line: 250
+Info (12128): Elaborating entity "FFT_Module" for hierarchy "FFT_Module:uFFT" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 82
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_128" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 123
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "butterfly" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 294
+Warning (10230): Verilog HDL assignment warning at butterfly.v(303): truncated value with size 32 to match size of target (3) File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 303
+Info (12128): Elaborating entity "longbimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 692
+Warning (10855): Verilog HDL warning at longbimpy.v(159): initial value for variable r_a should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 159
+Warning (10855): Verilog HDL warning at longbimpy.v(160): initial value for variable r_b should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 160
+Warning (10855): Verilog HDL warning at longbimpy.v(172): initial value for variable acc should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 172
+Warning (10855): Verilog HDL warning at longbimpy.v(185): initial value for variable r_a should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 185
+Warning (10855): Verilog HDL warning at longbimpy.v(186): initial value for variable r_b should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 186
+Warning (10855): Verilog HDL warning at longbimpy.v(209): initial value for variable acc should be constant File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 209
+Info (12128): Elaborating entity "bimpy" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|longbimpy:CKPCE_THREE.mpy|bimpy:lmpy_0" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/longbimpy.v Line: 153
+Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|fftstage:stage_128|butterfly:FWBFLY.bfly|convround:do_rnd_left_r" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/butterfly.v Line: 878
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_64" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 149
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_32" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 174
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_16" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 199
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "fftstage" for hierarchy "FFT_Module:uFFT|fftstage:stage_8" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 224
+Warning (10030): Net "cmem.data_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.waddr_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Warning (10030): Net "cmem.we_a" at fftstage.v(127) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+Info (12128): Elaborating entity "qtrstage" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 246
+Info (12128): Elaborating entity "convround" for hierarchy "FFT_Module:uFFT|qtrstage:stage_4|convround:do_rnd_sum_r" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/qtrstage.v Line: 110
+Info (12128): Elaborating entity "laststage" for hierarchy "FFT_Module:uFFT|laststage:stage_2" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 267
+Info (12128): Elaborating entity "bitreverse" for hierarchy "FFT_Module:uFFT|bitreverse:revstage" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/FFT_Module.v Line: 294
+Warning (10230): Verilog HDL assignment warning at bitreverse.v(99): truncated value with size 32 to match size of target (8) File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/bitreverse.v Line: 99
+Info (12128): Elaborating entity "ToneDetector_Module" for hierarchy "ToneDetector_Module:uTD" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Control_Module.v Line: 84
+Info (12128): Elaborating entity "Magnitude" for hierarchy "ToneDetector_Module:uTD|Magnitude:u0" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 19
+Warning (10030): Net "rom.data_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
+Warning (10030): Net "rom.waddr_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
+Warning (10030): Net "rom.we_a" at Magnitude.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/Magnitude.v Line: 11
+Info (12128): Elaborating entity "ToneLUT" for hierarchy "ToneDetector_Module:uTD|ToneLUT:u1" File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/ToneDetector_Module.v Line: 20
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "keypad" into its bus
 Info (286030): Timing-Driven Synthesis is running
 Info (276014): Found 5 instances of uninferred RAM logic
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_8|cmem" is uninferred due to inappropriate RAM size File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_16|cmem" is uninferred due to inappropriate RAM size File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_32|cmem" is uninferred due to inappropriate RAM size File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_64|cmem" is uninferred due to inappropriate RAM size File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
-    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_128|cmem" is uninferred due to inappropriate RAM size File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_8|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_16|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_32|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_64|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
+    Info (276004): RAM logic "FFT_Module:uFFT|fftstage:stage_128|cmem" is uninferred due to inappropriate RAM size File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/fftstage.v Line: 127
 Info (19000): Inferred 17 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "ToneDetector_Module:uTD|Magnitude:u0|rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
@@ -4180,7 +4184,7 @@ Info (12133): Instantiated megafunction "ToneDetector_Module:uTD|Magnitude:u0|al
     Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/Control.ram0_Magnitude_4e04d15e.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9o22.tdf
-    Info (12023): Found entity 1: altsyncram_9o22 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_9o22.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_9o22 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_9o22.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|bitreverse:revstage|altsyncram:brmem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4200,7 +4204,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|bitreverse:revstage|alt
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k3q1.tdf
-    Info (12023): Found entity 1: altsyncram_k3q1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_k3q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_k3q1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_k3q1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4220,7 +4224,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|altsyn
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_msp1.tdf
-    Info (12023): Found entity 1: altsyncram_msp1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_msp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_msp1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_msp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|butterfly:FWBFLY.bfly|altsyncram:fifo_left_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4240,7 +4244,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_8|butter
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4tp1.tdf
-    Info (12023): Found entity 1: altsyncram_4tp1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_4tp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_4tp1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_4tp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_16|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4260,7 +4264,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_16|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0tp1.tdf
-    Info (12023): Found entity 1: altsyncram_0tp1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_0tp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_0tp1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_0tp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_32|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4280,7 +4284,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_32|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_00q1.tdf
-    Info (12023): Found entity 1: altsyncram_00q1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_00q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_00q1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_00q1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_64|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4300,7 +4304,7 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_64|altsy
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_uvp1.tdf
-    Info (12023): Found entity 1: altsyncram_uvp1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_uvp1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_uvp1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_uvp1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0"
 Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_128|altsyncram:imem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -4320,27 +4324,27 @@ Info (12133): Instantiated megafunction "FFT_Module:uFFT|fftstage:stage_128|alts
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
     Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a0q1.tdf
-    Info (12023): Found entity 1: altsyncram_a0q1 File: C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_a0q1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_a0q1 File: C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/db/altsyncram_a0q1.tdf Line: 28
 Info (17049): 234 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/output_files/Control.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/output_files/Control.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4871 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4873 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 4584 logic cells
+    Info (21061): Implemented 4586 logic cells
     Info (21064): Implemented 282 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 4896 megabytes
-    Info: Processing ended: Sat Apr  1 16:47:47 2023
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 4927 megabytes
+    Info: Processing ended: Tue Apr 04 18:48:10 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:20
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/Karam/OneDrive - Florida State University/Desktop/2022-2023/Senior Design/senior_design_2022_2023/EvanCurrentWorking/output_files/Control.map.smsg.
+The suppressed messages can be found in C:/Users/aleja/Desktop/senior_design_2022_2023/EvanCurrentWorking/output_files/Control.map.smsg.
 
 

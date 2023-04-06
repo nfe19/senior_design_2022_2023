@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat Apr  1 16:49:26 2023
-Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Fitter Status : Successful - Tue Apr 04 18:47:27 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Control
 Top-level Entity Name : Control_Module
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
 Logic utilization (in ALMs) : 1,674 / 32,070 ( 5 % )
-Total registers : 3848
+Total registers : 3845
 Total pins : 5 / 457 ( 1 % )
 Total virtual pins : 0
 Total block memory bits : 12,880 / 4,065,280 ( < 1 % )
