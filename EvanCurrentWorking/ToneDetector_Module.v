@@ -9,7 +9,7 @@ module ToneDetector_Module(clock, reset_n, enable, dataIn, done, Tone);
 	wire [15:0] bins_mag;
 	reg [5:0] low_bin, high_bin, tempLowBin, tempHighBin, counter = 6'h00;
 	integer maxLow = 0, maxHigh = 0;
-	integer magThreshold = 500;
+	integer magThreshold = 300;
 	
 	reg lowReady, highReady;
 	

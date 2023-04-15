@@ -100,7 +100,6 @@ output writeEnOut //writeEnOut is an I2c signal
 			myRegResultslsb <= 8'h00;
 			myRegResultsmsb <= 8'h00;
 			I2C_rst <= 1'b0; //active low								//temp comment, this needs to be reset
-			//I2C_rst <= 1'b1;
 			FFT_rst <= 1'b1; // FFT reset is active high
 			TD_rst <= 1'b0; 
 			TDenable <= 1'b0;
