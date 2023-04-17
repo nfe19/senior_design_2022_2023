@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!--device view-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--search engine help-->
+    <meta name="keywords" content="Final Design">
+    <meta name="description" content="Final Design">
+    <meta name="author" content="Najeeb Eeso">
+
+    <!--CSS links-->
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="bootstrap-5.0.0-beta3-dist/css/bootstrap-utilities.css" rel="stylesheet" />
+    <script src="bootstrap-5.0.0-beta3-dist/js/bootstrap.js"></script>
+    <style>
+        .bg-img {
+            /* The image used */
+            background-color: #000;
+
+            min-height: 500px;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            /* Needed to position the navbar */
+            position: relative;
+        }
+    </style>
+    <!--Top Tap Logo-->
+    <link rel="icon" href="logo.png">
+
+    <!--Page Title-->
+    <title>Final Design</title>
+</head> 
+
+<body>
+    <div class="bg-img">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg_personal py-2_5">
+            <div class="container-fluid ms-3">
+
+                <!--Buttons and Links-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!--NavBar Buttons-->
+                    <span class="navbar-toggler-icon"></span>
+                </button> <!--NavBar Buttons End-->
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!--Begin NavBar-->
+                    <ul class="navbar-nav container justify-content-center">
+
+                        <!--About Me-->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+
+                        <!--Projects-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="Evidence_Book.html">Evidence Book</a>
+                        </li>
+
+                        <!--Resume-->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Final_Project.html">Final Product</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="hr_own_scroll mt-3"></div>
+        
+        <div class="container pt-personal">
+
+            <!--Start-->
+            <div class="row text-center">
+                <!--row-->
+                <div class="col-sm-12">
+                    <!--Paragraph Colomn-->
+                    <p class="p_appear_title ">
+                        Final Product
+                    </p>
+                </div>
+            </div>
+        </div> <!--end Paragraph and Image-->
+
+        <div class="container pt-5">
+
+          <!--Start-->
+          <div class="row text-center">
+              <div class="col-sm-4">
+
+            </div>
+              <div class="col-sm-8">
+                  <!--Paragraph Colomn-->
+                  <p class="p_appear_text">
+                      Learn about the final design presented during final design day. Also, learn about each indevidual component that was implemented. Lastly, learn about the future plans of this project
+                  </p>
+              </div>
+          </div>
+      </div> <!--end Paragraph and Image-->
+
+    </div>
+
+
+
+
+
+    <div class="container pt-personal">
+
+        <!--Start-->
+        <div class="row d-flex flex-wrap align-items-center">
+            <!--row-->
+            <div class="col-sm-4 text-center">
+                <!--Paragraph Colomn-->
+                <img src="ASICLayout.png" class="img-fluid" alt="...">
+
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
+                <!--Image Colomn-->
+                <p class="ownp text-center">ASIC Layout</p>
+                <p class="ownp_caption pb-5" style="max-width: 90%;">
+                    &emsp;The final product is an ASIC design. This design can be seen on the left. This ASIC layout includes the I2C interface, the FFT module, the Tone Detector module, and the control module.<br>
+                    &emsp;The plan for this ASIC design is to manufacture it over summer 2023, and the next senior design team through 2023-2024 will recieve the ASIC, note its specifications, document any inconsistancies, and test it.
+                </p>
+            </div>
+        </div>
+    </div> <!--end Paragraph and Image-->
+
+
+    <div class="container pt-personal">
+
+        <!--Start-->
+        <div class="row d-flex flex-wrap align-items-center">
+            <!--row-->
+
+            
+            <div class="col-sm-7">
+                <!--Image Colomn-->
+                <p class="ownp text-center">FPGA and MSP430 System</p>
+                <p class="ownp_caption pb-5">
+                    &emsp;Since it is very expensive to make personalized integrated circuits, it was decided to model the ASIC design as an FPGA. This system ca be seen in the video. The FPGA allows any digital circuits to be created through a Hardware Description Language. The chosen language for the design was Verilog.<br>
+                    &emsp;The FPGA and MSP430 design was used as the demonstration for senior design day. The MSP430 captures the audio data at a rate of 5 kHz and converts it to digital data. This digital data is anaylsed by the FPGA throught the FFT module and the tone detector module determines whether a tone is present. This detected tone is sent to the MSP430 through the I2C module. <br>
+                    &emsp;The specifications for the final design is that a tone is detected every 80 ms.
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4 text-center">
+                <!--Paragraph Colomn-->
+                <div class="col-sm-12 text-center embed-responsive embed-responsive-16by9">
+                    <video controls class="embed-responsive-item" src="sd_video.mov" allowfullscreen></iframe>
+                </div>
+        
+
+            </div>
+        </div>
+    </div> <!--end Paragraph and Image-->
+
+
+
+
+    
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
