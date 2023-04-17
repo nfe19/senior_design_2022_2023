@@ -118,16 +118,16 @@
         <!--Start-->
         <div class="row d-flex flex-wrap align-items-center">
             <!--row-->
-            <div class="col-sm-4 text-center">
+            <div class="col-md-4 text-center">
                 <!--Paragraph Colomn-->
                 <img src="ASICLayout.png" class="img-fluid" alt="...">
 
             </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
                 <!--Image Colomn-->
                 <p class="ownp text-center">ASIC Layout</p>
-                <p class="ownp_caption pb-5" style="max-width: 90%;">
+                <p class="ownp_caption pb-5" >
                     &emsp;The final product is an ASIC design. This design can be seen on the left. This ASIC layout includes the I2C interface, the FFT module, the Tone Detector module, and the control module.<br>
                     &emsp;The plan for this ASIC design is to manufacture it over summer 2023, and the next senior design team through 2023-2024 will recieve the ASIC, note its specifications, document any inconsistancies, and test it.
                 </p>
@@ -143,8 +143,7 @@
             <!--row-->
 
             
-            <div class="col-sm-7">
-                <!--Image Colomn-->
+            <div class="col-xxl-7">
                 <p class="ownp text-center">FPGA and MSP430 System</p>
                 <p class="ownp_caption pb-5">
                     &emsp;Since it is very expensive to make personalized integrated circuits, it was decided to model the ASIC design as an FPGA. This system ca be seen in the video. The FPGA allows any digital circuits to be created through a Hardware Description Language. The chosen language for the design was Verilog.<br>
@@ -152,13 +151,12 @@
                     &emsp;The specifications for the final design is that a tone is detected every 80 ms.
                 </p>
             </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4 text-center">
+            <div class="col-xxl-1"></div>
+            <div class="col-xxl-4 text-center">
                 <!--Paragraph Colomn-->
-                <div class="col-sm-12 text-center embed-responsive embed-responsive-16by9">
+                <div class="col-xxl-12 text-center embed-responsive embed-responsive-16by9">
                     <video controls class="embed-responsive-item" src="sd_video.mov" allowfullscreen></iframe>
                 </div>
-        
 
             </div>
         </div>
@@ -166,7 +164,51 @@
 
 
 
+    <div class="container pt-personal">
 
+        <!--Start-->
+        <div class="row d-flex flex-wrap align-items-center">
+            <!--row-->
+            <div class="col-md-4 text-center">
+                <!--Paragraph Colomn-->
+                <img src="fpga.jpg" class="img-fluid" alt="...">
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <!--Image Colomn-->
+                <p class="ownp text-center">FPGA Design</p>
+                <p class="ownp_caption pb-5" >
+                    &emsp;To model the ASIC before it gets manufactured, it was vital to test the functionaity of the DTMF Detector on an FPGA. These FPGAs have a sea of programmable switches that allows digital circuit to be created from scratch<br>
+                    &emsp;With this FPGA, the indevidual components of the design - the I2C interface, the FFT module, the Tone Detector module, and the control module -  were designed indevidually, then tested. After all componet testing was concluded, the entire system was tested, producing the final result seen in the design day. The chosen FPGA was the DE1-SoC board.
+                </p>
+            </div>
+        </div>
+    </div> <!--end Paragraph and Image-->
+
+    <div class="container pt-personal">
+
+        <!--Start-->
+        <div class="row d-flex flex-wrap align-items-center">
+            <!--row-->
+
+            
+            <div class="col-md-7">
+                <p class="ownp text-center">MSP430FR5994 Launchpad and Educational BoosterPack</p>
+                <p class="ownp_caption pb-5">
+                    &emsp;The idea of the project was to produce a purely digital ASIC. In order for the DTMF detector to work, digital data needs to be recieved. Since sound is not digital, a processor needs to capture sound, convert it to a digital signal, and send it to the ASIC for decoding. This is what the MSP430Fr5994 is used for.<br>
+                    &emsp;The job of the MSP430FR5994 processor and all of its peripherals connected through the educational boosterpack is to capture sound through the speakers, which outputs an analog signal. This analog signal is given to an analog to digital converter, which outputs a digital signal. This digital signal is given to the ASIC through a communication protocol called I2C<br>
+                    &emsp;The on-board microphone has 0 db gain (no gain or attenuation) between the range of dual tone frequnecies interested, the analog to digital converter has a sampling rate of 5 kHz and resolution of 8 bits using a reference of 3.3V. Lastly, the I2C communication runs at 400 kHz.
+                </p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 text-center">
+                <!--Paragraph Colomn-->
+                <img src="" class="img-fluid" alt="...">
+            </div>
+        </div>
+    </div> <!--end Paragraph and Image-->
+    
     
 </body>
 
