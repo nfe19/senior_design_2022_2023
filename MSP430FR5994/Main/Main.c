@@ -49,6 +49,7 @@ uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
     const uint8_t STATUS_REG = 0x08;            // the status register that the msp reads from
     const uint8_t RESULTS_REG = 0x0A;           // the register containing value of the result given from the FPGA
     const uint8_t IN_SAMPLE_REG = 0x0C;         // the register the input sample gets written to
+    const uint8_t THRESHOLD_REG = 0x0E;         // the address of the register of that controls the threshold used in the tone detector module
 /* END I2C Register Map */
 
 /*I2C COMMAND_REG Bit Definitions */
@@ -117,6 +118,9 @@ void main(void){
 
     volatile Tones toneResult = NONE;
     volatile uint16_t speakerValueList16[128];
+
+    I2C_write_16(SLAVE_ADDRESS, THRESHOLD_REG, 300);// write into threshold register
+
     __enable_interrupt();
 
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
