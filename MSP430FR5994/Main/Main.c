@@ -37,8 +37,17 @@ uint8_t testADC(void);
 volatile uint16_t ADCCounter = 0;
 uint8_t savedSpeakerValues[128];
 uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
+uint16_t THRESHOLD = 250;
 
-
+//Actuator logic variables
+Tones password[4]={ONE, THREE, NINE, d};
+volatile Tones userEnteredPassword[4]={NONE,NONE,NONE,NONE};
+Tones prevTone=NONE;
+uint8_t toneCount=0;
+volatile bool pwValid=false;
+bool oneToneDetected=false;
+uint8_t noneCount = 0;
+const uint8_t NONE_COUNT_THRESHOLD = 2;
 
 
 /*I2C Register Map */
@@ -71,7 +80,10 @@ uint8_t SLAVE_ADDRESS = 0x3c;   //define the slave address
 void main(void){
 
     volatile uint8_t myRegValues[7] = {0, 0, 0, 0, 0, 0, 0, 0};
-    // Define variables for light sensor
+    volatile Tones toneResult = NONE;
+    volatile uint16_t speakerValueList16[128];
+
+
 
     // Halt the WatchDog Timer
     WDT_A_hold(WDT_A_BASE);
@@ -86,52 +98,14 @@ void main(void){
     initializeADC();
 
     initializeUART();
-//    Tones incrementer = ONE;
-//    uint16_t speakerValueListMod[128] = {0x0000, 0x7100, 0x4500, 0xE000, 0xDC00, 0x0100, 0xDD00, 0xBB00, 0x1100, 0x7900, 0x4700, 0xBD00, 0xA300, 0xF700, 0x1700, 0xF500, 0x1000, 0x5700, 0x2F00, 0xA900, 0x8B00, 0x0200, 0x5400, 0x2500, 0xF800, 0x1800, 0x1100, 0xB500, 0x9C00, 0x1600, 0x7A00, 0x3B00, 0xD000, 0xD200, 0xFF00, 0xE300, 0xCA00, 0x2000, 0x7800, 0x3400, 0xAA00, 0xA100, 0x0200, 0x2400, 0xFF00, 0x1400, 0x4E00, 0x1C00, 0x9D00, 0x9400, 0x1600, 0x6000, 0x2300, 0xEF00, 0x0B00, 0x0500, 0xB400, 0xAC00, 0x2A00, 0x7E00, 0x2D00, 0xBF00, 0xCB00, 0x0100, 0xEC00, 0xD900, 0x2C00, 0x7300, 0x1F00, 0x9A00, 0xA400, 0x1100, 0x3100, 0x0500, 0x1300, 0x4200, 0x0900, 0x9500, 0xA100, 0x2B00, 0x6900, 0x1D00, 0xE300, 0x0000, 0xFD00, 0xB700, 0xBE00, 0x3C00, 0x7E00, 0x1B00, 0xAE00, 0xC700, 0x0700, 0xF700, 0xE700, 0x3400, 0x6900, 0x0900, 0x8E00, 0xAB00, 0x2200, 0x3D00, 0x0800, 0x0E00, 0x3400, 0xF900, 0x9200, 0xB200, 0x4000, 0x6E00, 0x1200, 0xD500, 0xF600, 0xF900, 0xBE00, 0xD100, 0x4B00, 0x7900, 0x0700, 0x9F00, 0xC700, 0x1000, 0x0300, 0xF300, 0x3700, 0x5C00, 0xF400, 0x8500, };
-//
-//    while(incrementer < NONE){
-//        /* obtain 128 samples, store in list, convert the list to 16 bits each (mimics ADC interrupt)*/
-//        volatile uint8_t speakerValueList[128];
-//        volatile uint16_t speakerValueList16[128];
-//        getMicValues128(incrementer, speakerValueList); //get 8 bit ADC values (what would come out of the interrupt of mic)
-//        listConvert8to16(speakerValueList, speakerValueList16); //convert all data to 16 bits with imagionary part set to 0x00
-//        uint8_t counter = 0;
-//
-//        /* end ADC mimic*/
-//        volatile uint8_t value;
-//
-//
-//
-//
-//        volatile Tones toneResult = NONE;
-//        volatile uint16_t toneHex;
-//
-//        //I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, 0x5688);
-//        //I2C_read_16(0x44,0x7E);
-//        //I2C_read_8(SLAVE_ADDRESS,COMMAND_REG);
-//
-//        toneResult = asicDecode(speakerValueList16);
-//
-//        tonePrinter(toneResult);
-//        incrementer++;
-//    }
 
-    volatile Tones toneResult = NONE;
-    volatile uint16_t speakerValueList16[128];
-
-    I2C_write_16(SLAVE_ADDRESS, THRESHOLD_REG, 300);// write into threshold register
+    I2C_write_16(SLAVE_ADDRESS, THRESHOLD_REG, THRESHOLD);// write into threshold register
 
     __enable_interrupt();
 
     GPIO_setAsInputPinWithPullUpResistor(GPIO_PORT_P4,GPIO_PIN3);   //PBS1
     GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
 
-    Tones prevTone=NONE;
-    Tones password[4]={ONE, THREE, NINE, d};
-    volatile Tones userEnteredPassword[4]={NONE,NONE,NONE,NONE};
-    uint8_t toneCount=0;
-    volatile bool pwValid=false;
-    bool oneToneDetected=false;
     while(1){
 
         //when 128 samples are picked up by ADC ISR, disable the ISR, convert the 128 list to 16 bits, adding 0's to the imagionary part, perform asicDecode, print the tone result,
@@ -139,60 +113,13 @@ void main(void){
         if (ADCCounter > 127){
 
             __disable_interrupt();
-//            volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
-//                    myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-//                    myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-//                    myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-//                    myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+
             listConvert8to16(savedSpeakerValues, speakerValueList16);
             toneResult = asicDecode(speakerValueList16);
             tonePrinter(toneResult);
-//            if(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN2)!=0){
-//                userEnteredPassword[0] = NONE;
-//                userEnteredPassword[1] = NONE;
-//                userEnteredPassword[2] = NONE;
-//                userEnteredPassword[3] = NONE;
-//                toneCount = 0;
-//            }
-            ledStatus(toneCount);
-            if((toneResult!=prevTone)&&(toneResult!=NONE)&&oneToneDetected!=true){
-                oneToneDetected=true;
-                //prevTone=toneResult;
-            }else if(toneResult==prevTone&&oneToneDetected==true){
-                if(toneResult==NONE){
-                    oneToneDetected=false;
-                }else{
-                    //UPDATE AND DISPLAY HOW MANY TONES ARE IN userEnteredPassword so far
-                    oneToneDetected=false;
-                    userEnteredPassword[toneCount]=toneResult;
-                    toneCount++;
-                    ledStatus(toneCount);
-                    if(toneCount==4){
-                        toneCount=0;
-                        if((userEnteredPassword[0]==password[0])&&(userEnteredPassword[1]==password[1])&&(userEnteredPassword[2]==password[2])&&(userEnteredPassword[3]==password[3])){
-                            pwValid=true;//set door unlock signal high
-                            GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN2);
-                            while(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)!=0);
-                            //userEnteredPassword[0]={NONE,NONE,NONE,NONE};
-                            pwValid=false;//set door unlock signal low
-                            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
-                        }else{
-                            pwValid=false;
-                            GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
-                            userEnteredPassword[0] = NONE;
-                            userEnteredPassword[1] = NONE;
-                            userEnteredPassword[2] = NONE;
-                            userEnteredPassword[3] = NONE;
-                        }
-                    }
-                }
-            }//else if(toneResult!=prevTone){
-                //prevTone=toneResult;
 
-            //}
-            //oneToneDetected=false;
-            prevTone=toneResult;
-            //GPIO_toggleOutputOnPin(GPIO_PORT_P3, GPIO_PIN1);
+            actuatorControlMod(toneResult);
+
             ADCCounter = 0;
             __enable_interrupt();
         }
@@ -329,10 +256,10 @@ Tones asicDecode(uint16_t samples[128]){
 //    const uint8_t RESULTS_REG = 0x0A;           // the register containing value of the result given from the FPGA
 //    const uint8_t IN_SAMPLE_REG = 0x0C;         // the register the input sample gets written to
         volatile uint8_t myRegASICStatusmsb,myRegASICStatuslsb,myRegMCUStatusmsb,myRegMCUStatuslsb;
-        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+//        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+//        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+//        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+//        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
 
         Tones outputTone = NONE;
 
@@ -341,23 +268,23 @@ Tones asicDecode(uint16_t samples[128]){
 
         //initialize msp status register
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
-        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+//        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+//        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+//        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+//        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         //initialize sample in status register
         I2C_write_16(SLAVE_ADDRESS, IN_SAMPLE_REG, 0x0000);
-        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+//        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+//        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+//        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+//        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
         //
         set2Bits(&command_reg_data, MSP_BIT0, MSP_BIT1);
         I2C_write_16(SLAVE_ADDRESS, COMMAND_REG, command_reg_data);
-        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
-        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
-        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
-        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
+//        myRegASICStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x08);
+//        myRegASICStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x09);
+//        myRegMCUStatusmsb = I2C_read_8(SLAVE_ADDRESS, 0x06);
+//        myRegMCUStatuslsb = I2C_read_8(SLAVE_ADDRESS, 0x07);
 
         //poll ASIC to see when enters input mode, if input mode, move on
         while(!readBit(STATUS_REG,FPGA_BIT2));
@@ -412,6 +339,104 @@ Tones asicDecode(uint16_t samples[128]){
         return outputTone;
 
 }
+
+void actuatorControl(Tones toneResult){
+    ledStatus(toneCount);
+    if((toneResult!=prevTone)&&(toneResult!=NONE)&&oneToneDetected!=true){
+        oneToneDetected=true;
+        //prevTone=toneResult;
+    }else if(toneResult==prevTone&&oneToneDetected==true){
+        if(toneResult==NONE){
+            oneToneDetected=false;
+        }else   {
+            //UPDATE AND DISPLAY HOW MANY TONES ARE IN userEnteredPassword so far
+            oneToneDetected=false;
+            userEnteredPassword[toneCount]=toneResult;
+            toneCount++;
+
+            ledStatus(toneCount);
+            if(toneCount==4){
+                toneCount=0;
+                if((userEnteredPassword[0]==password[0])&&(userEnteredPassword[1]==password[1])&&(userEnteredPassword[2]==password[2])&&(userEnteredPassword[3]==password[3])){
+                    pwValid=true;//set door unlock signal high
+                    GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                    while(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)!=0);
+                    //userEnteredPassword[0]={NONE,NONE,NONE,NONE};
+                    pwValid=false;//set door unlock signal low
+                    GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                }else{
+                    pwValid=false;
+                    GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                    userEnteredPassword[0] = NONE;
+                    userEnteredPassword[1] = NONE;
+                    userEnteredPassword[2] = NONE;
+                    userEnteredPassword[3] = NONE;
+                }
+            }
+        }
+    }//else if(toneResult!=prevTone){
+        //prevTone=toneResult;
+
+    //}
+    //oneToneDetected=false;
+    prevTone=toneResult;
+}
+
+void actuatorControlMod(Tones toneResult){
+    ledStatus(toneCount);
+
+    //if previous and current tone are NONE, increment noneCount
+    if((toneResult==NONE)&&(prevTone==NONE)){
+        noneCount++;
+    }
+
+    else{
+        //if current tone is not the same as previous, and a previous tone hasn't been detected, specify that a tone is detected
+        if((toneResult!=prevTone)&&(toneResult!=NONE)&&(oneToneDetected!=true)&&(noneCount>=NONE_COUNT_THRESHOLD)){
+            oneToneDetected=true;
+            noneCount = 0;
+        }
+
+        //if the current tone equals the previous tone, then increment the LED to show a tone has been detected, update the password list and compare
+        else if((toneResult==prevTone)&&(oneToneDetected==true)&&(noneCount>=NONE_COUNT_THRESHOLD)){
+            if(toneResult==NONE){
+                oneToneDetected=false;
+            }
+            else{
+                //UPDATE AND DISPLAY HOW MANY TONES ARE IN userEnteredPassword so far
+                oneToneDetected=false;
+                userEnteredPassword[toneCount]=toneResult;
+                toneCount++;
+                tonePrinter(toneResult);
+                ledStatus(toneCount);
+                if(toneCount==4){
+                    toneCount=0;
+                    if((userEnteredPassword[0]==password[0])&&(userEnteredPassword[1]==password[1])&&(userEnteredPassword[2]==password[2])&&(userEnteredPassword[3]==password[3])){
+                        pwValid=true;//set door unlock signal high
+                        GPIO_setOutputLowOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                        while(GPIO_getInputPinValue(GPIO_PORT_P4,GPIO_PIN3)!=0);
+                        //userEnteredPassword[0]={NONE,NONE,NONE,NONE};
+                        pwValid=false;//set door unlock signal low
+                        GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                    }
+                    else{
+                        pwValid=false;
+                        GPIO_setOutputHighOnPin(GPIO_PORT_P1,GPIO_PIN2);
+                        userEnteredPassword[0] = NONE;
+                        userEnteredPassword[1] = NONE;
+                        userEnteredPassword[2] = NONE;
+                        userEnteredPassword[3] = NONE;
+                    }
+                }
+            }
+        }//else if(toneResult!=prevTone){
+            //prevTone=toneResult;
+    }
+    //}
+    //oneToneDetected=false;
+    prevTone=toneResult;
+}
+
 
 void ledStatus(uint8_t toneCount){
     if(toneCount == 0){
